@@ -1,0 +1,28 @@
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  color: white;
+
+  height:auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+}
+p{
+
+  font-family: Georgia, serif;
+  font-size: 21px;
+  letter-spacing: -0.8px;
+  word-spacing: 6px;
+  color: azure;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: capitalize;
+}
