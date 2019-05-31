@@ -14,3 +14,11 @@ p {
   left: 75%;
   bottom: 0;
 }
+.invisibile{
+display: none;
+}
+button{
+  position: absolute;
+  left: 70%;
+  bottom: 0;
+}

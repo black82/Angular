@@ -6,13 +6,16 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  message = 'Teox DataBase';
+  message: string;
   url: string;
   isColapset: boolean;
 
   constructor() {
     this.url = 'https://teox.eu/';
     this.isColapset = true;
+    setTimeout(() => {
+      this.message = 'Teox DataBase';
+    }, 3000);
   }
 
   ngOnInit() {

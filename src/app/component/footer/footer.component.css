@@ -4,14 +4,11 @@ footer {
   padding: 10px;
   text-align: center;
   color: white;
-
-  height:auto;
   position: absolute;
   bottom: 0;
+  height: 60px;
   left: 0;
   right: 0;
-
-
 }
 p{
 
