@@ -1,14 +1,33 @@
-<table class="table">
+<div>
+  <input type="text" [(ngModel)]="city">
+  <button class="btn btn-primary" (click)="searcBycity()">Search By Cyty</button>
+
+</div>
+
+<table class="table" *ngIf="response">
+  <div *ngIf="response.size()==0">
+    Not found
+  </div>
   <thead class="table table-hover">
   <tr>
-    <th scope="col">Id</th>
-    <th scope="col">Name Company</th>
-    <th scope="col">Industry</th>
-    <th scope="col">Site</th>
-    <th scope="col">Email</th>
+    <td scope="col">Id</td>
+    <td scope="col">Name Company</td>
+    <td scope="col">Industry</td>
+    <td scope="col">Site</td>
+    <td scope="col">Email</td>
   </tr>
   </thead>
   <tbody>
+  <tr>
+    <th>{{response.id}}</th>
+    <th>{{response.name}}</th>
+    <th>{{response.keywordsIndustry}}</th>
+    <th>{{response.googleUri}}</th>
+    <th>{{response.emails}}</th>
+  </tr>
+  </tbody>
 
 </table>
-
+<div *ngIf="response">
+  Not found
+</div>

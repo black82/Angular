@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 class Rabotnik {
   id: LongRange;
@@ -74,18 +75,35 @@ class Company {
   keywordsIndustry: string;
   catalog: string;
   activity: string;
+  title = 'Company Database';
 }
+
 
 @Component({
   selector: 'app-search-by-name',
-  templateUrl: './search-by-name.component.html',
-  styleUrls: ['./search-by-name.component.css']
+  templateUrl: './search-by-id.component.html',
+  styleUrls: ['./search-by-id.component.css']
 })
-export class SearchByNameComponent implements OnInit {
-  company: Company;
-
-  constructor() {
+export class SearchByIdComponent implements OnInit {
+  constructor(private http: HttpClient) {
   }
+
+  id: string;
+  response: any;
+
+  searcById() {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      responseType: 'json'
+    });
+
+    this.http.get('http://127.0.0.1:8081/get/' + this.id, {headers})
+      .subscribe((response => {
+        this.response = response;
+        console.log(response);
+      }));
+  }
+
 
   ngOnInit() {
   }

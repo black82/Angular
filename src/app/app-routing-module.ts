@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {BodyComponent} from './component/body/body.component';
-import {SearchByNameComponent} from './component/search-by-name/search-by-name.component';
+import {SearchByIdComponent} from './component/search-by-id/search-by-id.component';
 import {SearchbyCityComponent} from './component/searchby-city/searchby-city.component';
 import {SearchbyIndustryComponent} from './component/searchby-industry/searchby-industry.component';
 import {NotFountComponent} from './component/not-fount/not-fount.component';
@@ -10,7 +10,7 @@ const routers: Routes = [{
   path: '', component: BodyComponent
 },
   {
-    path: 'byname', component: SearchByNameComponent
+    path: 'byid', component: SearchByIdComponent
   },
   {path: 'bycity', component: SearchbyCityComponent},
   {path: 'byindustry', component: SearchbyIndustryComponent},

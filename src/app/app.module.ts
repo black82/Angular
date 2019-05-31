@@ -7,13 +7,14 @@ import {FooterComponent} from './component/footer/footer.component';
 import {BodyComponent} from './component/body/body.component';
 import {ClockComponent} from './component/clock/clock.component';
 import {FormsModule} from '@angular/forms';
-import {SearchByNameComponent} from './component/search-by-name/search-by-name.component';
+import {SearchByIdComponent} from './component/search-by-id/search-by-id.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing-module';
 import { SearchbyCityComponent } from './component/searchby-city/searchby-city.component';
 import { SearchbyIndustryComponent } from './component/searchby-industry/searchby-industry.component';
 import { NotFountComponent } from './component/not-fount/not-fount.component';
+import {SearchbyidService} from './service/searchbyid.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { NotFountComponent } from './component/not-fount/not-fount.component';
     FooterComponent,
     BodyComponent,
     ClockComponent,
-    SearchByNameComponent,
+    SearchByIdComponent,
     SearchbyCityComponent,
     SearchbyIndustryComponent,
     NotFountComponent,
@@ -32,9 +33,11 @@ import { NotFountComponent } from './component/not-fount/not-fount.component';
     BrowserModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [SearchbyidService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

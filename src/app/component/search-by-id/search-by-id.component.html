@@ -1,0 +1,27 @@
+
+<div >
+  <input  type="text" [(ngModel)]="id">
+  <button class="btn btn-primary" (click)="searcById()">Search By Id</button>
+
+</div>
+<table class="table" *ngIf="response">
+  <thead class="table table-hover">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name Company</th>
+    <th scope="col">Industry</th>
+    <th scope="col">Site</th>
+    <th scope="col">Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th>{{response.id}}</th>
+    <th>{{response.name}}</th>
+    <th>{{response.keywordsIndustry}}</th>
+    <th>{{response.googleUri}}</th>
+    <th>{{response.emails}}</th>
+  </tr>
+  </tbody>
+
+</table>
