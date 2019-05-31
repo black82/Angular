@@ -1,4 +1,4 @@
-<div>
+<div xmlns="">
   <input type="text" [(ngModel)]="city">
   <button class="btn btn-primary" (click)="searcBycity()">Search By Cyty</button>
 
@@ -18,13 +18,13 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th>{{response.id}}</th>
-    <th>{{response.name}}</th>
-    <th>{{response.keywordsIndustry}}</th>
-    <th>{{response.googleUri}}</th>
-    <th>{{response.emails}}</th>
-  </tr>
+  <ul>
+    <li>{{response.id}}</li>
+    <li>{{response.name}}</li>
+    <li>{{response.keywordsIndustry}}</li>
+    <li>{{response.googleUri}}</li>
+    <li>{{response.emails}}</li>
+  </ul>
   </tbody>
 
 </table>
