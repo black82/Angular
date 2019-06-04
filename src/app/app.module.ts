@@ -11,10 +11,11 @@ import {SearchByIdComponent} from './component/search-by-id/search-by-id.compone
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing-module';
-import { SearchbyCityComponent } from './component/searchby-city/searchby-city.component';
-import { SearchbyIndustryComponent } from './component/searchby-industry/searchby-industry.component';
-import { NotFountComponent } from './component/not-fount/not-fount.component';
+import {SearchbyCityComponent} from './component/searchby-city/searchby-city.component';
+import {SearchbyIndustryComponent} from './component/searchby-industry/searchby-industry.component';
+import {NotFountComponent} from './component/not-fount/not-fount.component';
 import {SearchbyidService} from './service/searchbyid.service';
+import {FilterPipe} from './component/searchby-industry/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {SearchbyidService} from './service/searchbyid.service';
     SearchbyCityComponent,
     SearchbyIndustryComponent,
     NotFountComponent,
-
+    FilterPipe
   ],
   imports: [
     BrowserModule,
