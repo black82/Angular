@@ -1,13 +1,55 @@
-<table class="table">
-  <thead class="table table-hover">
-  <tr>
-    <th scope="col">Id</th>
-    <th scope="col">Name Company</th>
-    <th scope="col">Industry</th>
-    <th scope="col">Site</th>
-    <th scope="col">Email</th>
-  </tr>
-  </thead>
-  <tbody>
+<br>
+<body>
+<div class="form-inline md-form mr-auto mb-4">
 
-</table>
+  <label>
+    <input [(ngModel)]="industry" class="form-control mr-sm-2" placeholder="Industry branch"
+           type="text">
+  </label>
+
+  <button [(ngModel)]="industry" [hidden]="industry==null||industry==''||industry==' '||industry.length<4"
+          (click)="searchByActivity()" class="btn btn-outline-success">Search By Industry branch
+  </button>
+
+
+  <table *ngIf="companies?.length>0" class="table">
+
+    <thead class="table table-hover">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name Company</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Industry</th>
+      <th scope="col">Site</th>
+      <th scope="col">Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let company of companies">
+
+      <td><a>{{company.id}}</a></td>
+
+      <td>{{company.name}}</td>
+
+      <td>{{company.telephone}}</td>
+
+      <td>{{company.keywordsIndustry}}</td>
+
+      <td>{{company.googleUri + "\n" + company.url}}</td>
+
+      <td>{{company.emails}}</td>
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<div [(ngModel)]="alertShouw" class="alert alert-danger" role="alert" [hidden]="error==null||alertShouw" id="alert">
+  <strong>{{error}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="click()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+</div>
+
+</body>

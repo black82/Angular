@@ -1,0 +1,23 @@
+body{
+  margin-left: auto;
+  width: auto;
+  bottom: 0;
+  left: 0;
+  height: 98%;
+
+}
+label{
+  position: relative;
+  left: 30%;
+}
+button{
+  position: relative;
+  left: 30%;
+}
+.alert{
+  position: relative;
+
+  margin-left: 30%;
+  margin-right: 40%;
+}
+

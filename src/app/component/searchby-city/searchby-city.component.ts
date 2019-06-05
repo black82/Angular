@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Company} from '../../DTO/CompanyDto';
+
 
 @Component({
   selector: 'app-searchby-city',
@@ -11,23 +13,31 @@ export class SearchbyCityComponent implements OnInit {
   constructor(private http: HttpClient) {
   }
 
+  notFound: string;
   city: string;
-  response: any;
+  companies: Company [];
 
-  searcBycity() {
+  // searcBycity() {
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     responseType: 'json'
+  //   });
+  // }
+
+  ngOnInit() {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       responseType: 'json'
     });
-
-    this.http.get('http://127.0.0.1:8081/get1000/' + this.city, {headers})
+    this.http.get<Company[]>('http://127.0.0.1:8081/activiti/' + this.city, {headers})
       .subscribe((response => {
-        this.response = response;
-        console.log(response);
+        this.companies = response;
+        if (response.length < 1) {
+          this.notFound = 'Company not found';
+        } else {
+          this.companies = response;
+        }
       }));
-  }
-
-  ngOnInit() {
   }
 
 }

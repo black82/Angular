@@ -6,7 +6,7 @@ import {HeaderComponent} from './component/header/header.component';
 import {FooterComponent} from './component/footer/footer.component';
 import {BodyComponent} from './component/body/body.component';
 import {ClockComponent} from './component/clock/clock.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SearchByIdComponent} from './component/search-by-id/search-by-id.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
@@ -36,7 +36,8 @@ import {FilterPipe} from './component/searchby-industry/filter.pipe';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [SearchbyidService],
   bootstrap: [AppComponent]

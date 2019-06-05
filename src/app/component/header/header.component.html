@@ -3,14 +3,14 @@
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" >
     <h1>  {{message}}</h1>
-   <button (click)="teox($event)" *ngIf="isColapset" class="badge badge-light" >
+    <button (click)="teox($event)" *ngIf="isColapset" class="badge badge-light">
      <img  src="https://teox.eu/images/facicon.ico" width="30" height="30" class="d-inline-block align-top" alt="" >
    </button>
     <button (click)="teox($event)" *ngIf="!isColapset" class="badge badge-light">
      <img  src="https://teox.eu/images/facicon.ico" width="30" height="30" class="d-inline-block align-top" alt="" >
    </button>
     <div *ngIf="!isColapset">
-      <a href="https://teox.eu/" class="badge badge-light">https://teox.eu/</a>
+      <a class="badge badge-light" href="https://teox.eu/">https://teox.eu/</a>
     </div>
      <app-clock></app-clock>
   </a>

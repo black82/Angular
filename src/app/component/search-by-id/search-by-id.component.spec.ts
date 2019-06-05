@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SearchByIdComponent } from './search-by-id.component';
+import {SearchByIdComponent} from './search-by-id.component';
 
 describe('SearchByIdComponent', () => {
   let component: SearchByIdComponent;
@@ -8,9 +8,9 @@ describe('SearchByIdComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchByIdComponent ]
+      declarations: [SearchByIdComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

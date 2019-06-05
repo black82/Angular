@@ -1,14 +1,22 @@
 
 footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
   background-color: #333;
   padding: 10px;
   text-align: center;
   color: white;
-  position: absolute;
-  bottom: 0;
-  height: 60px;
-  left: 0;
-  right: 0;
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  /*height: 60px;*/
+  /*left: 0;*/
+  /*right: 0;*/
+
+
+  height: 50px;/*The footer' height*/
+
+  clear:both;
 }
 p{
 

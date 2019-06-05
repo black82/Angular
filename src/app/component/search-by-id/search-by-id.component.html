@@ -1,27 +1,59 @@
 
-<div >
-  <input  type="text" [(ngModel)]="id">
-  <button class="btn btn-primary" (click)="searcById()">Search By Id</button>
+<body>
+<div>
+
+  <label>
+    <input type="number" [(ngModel)]="id" pattern="/^[0-9]{1,7}$/"  inputmode="numeric" placeholder="Input Id">
+  </label>
+  <button [(ngModel)]="id" [hidden]="id==null||id==''"  class="btn btn-outline-success" (keyup.enter)="searcById()"
+          (click)="searcById()">Search By Id
+  </button>
+<!--  <button *ngIf="id!=null" class="btn btn-outline-success" (keyup.enter)="searcById()" (click)="searcById()">Search By-->
+<!--    Id-->
+<!--  </button>-->
 
 </div>
-<table class="table" *ngIf="response">
-  <thead class="table table-hover">
-  <tr>
-    <th scope="col">Id</th>
-    <th scope="col">Name Company</th>
-    <th scope="col">Industry</th>
-    <th scope="col">Site</th>
-    <th scope="col">Email</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th>{{response.id}}</th>
-    <th>{{response.name}}</th>
-    <th>{{response.keywordsIndustry}}</th>
-    <th>{{response.googleUri}}</th>
-    <th>{{response.emails}}</th>
-  </tr>
-  </tbody>
+<h1>{{notFound}}</h1>
+<div *ngIf="company!=null" class="container">
+  <div class="row">
+    <div *ngIf="company!={}" class="col">
+      <ul>
+        <li>Company Id -  {{company.id}}</li>
+        <li>Company Name -  {{company.name}}</li>
+        <li>Company Current Status -  {{company.current_status}}</li>
+        <li>Company Land -  {{company.registeredoffice}}</li>
+        <li>Company Jurisdiction -   {{company.jurisdiction_code}}</li>
+        <li>Company Number -  {{company.company_number}}</li>
+        <li>Company Native Number -   {{company.native_company_number}}</li>
+        <li>Company Registered Officer -   {{company.registeredoffice}}</li>
+        <li>Company Register Art -   {{company.register_art}}</li>
+        <li>Company Former Registrar -   {{company.former_registrar}}</li>
+        <li>Company Phone -   {{company.telephone}}</li>
+        <li>Company Fax -   {{company.fax}}</li>
+        <li>Company SiteToWeb -   {{company.url}}</li>
+        <li>Company SiteToGoogle -   {{company.googleUri}}</li>
+        <li>Company Industry Branch -   {{company.keywordsIndustry}}</li>
+        <li>Company Industry Activity -   {{company.activity}}</li>
+        <li>Company Industry Possibility Sector of Activity -   {{company.sector_of_activity}}</li>
+        <li>Company Industry Catalog Activity -   {{company.catalog}}</li>
+        <li>Company Capital -   {{company.kapital}}</li>
+        <li>Company Email -   {{company.emails}} // {{company.email}}</li>
+      </ul>
+    </div>
+    <div class="col">
+      Company Officer :
+      <ul *ngFor="let  Rabotnik of company.officers ">
+        <li>Company Officer Last Name First Name -  {{Rabotnik.lastname}}
+          {{Rabotnik.firstname}}</li>
+        <li> Company Officer City -{{Rabotnik.city}}</li>
+        <li> Company Officer Position -{{Rabotnik.position}}</li>
+        <li> Company Officer Title -{{Rabotnik.title}}</li>
+        <li> Company Officer Type -{{Rabotnik.type}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div>
+</div>
 
-</table>
+</body>

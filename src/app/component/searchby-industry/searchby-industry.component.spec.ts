@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SearchbyIndustryComponent } from './searchby-industry.component';
+import {SearchbyIndustryComponent} from './searchby-industry.component';
 
 describe('SearchbyIndustryComponent', () => {
   let component: SearchbyIndustryComponent;
@@ -8,9 +8,9 @@ describe('SearchbyIndustryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchbyIndustryComponent ]
+      declarations: [SearchbyIndustryComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
