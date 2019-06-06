@@ -16,44 +16,44 @@
 <h1>{{notFound}}</h1>
 <div *ngIf="company!=null" class="container">
   <div class="row">
-    <div *ngIf="company!={}" class="col">
+    <div id="companyShouw" *ngIf="company!={}" class="col">
       <ul>
-        <li>Company Id -  {{company.id}}</li>
-        <li>Company Name -  {{company.name}}</li>
-        <li>Company Current Status -  {{company.current_status}}</li>
-        <li>Company Land -  {{company.registeredoffice}}</li>
-        <li>Company Jurisdiction -   {{company.jurisdiction_code}}</li>
-        <li>Company Number -  {{company.company_number}}</li>
-        <li>Company Native Number -   {{company.native_company_number}}</li>
-        <li>Company Registered Officer -   {{company.registeredoffice}}</li>
-        <li>Company Register Art -   {{company.register_art}}</li>
-        <li>Company Former Registrar -   {{company.former_registrar}}</li>
-        <li>Company Phone -   {{company.telephone}}</li>
-        <li>Company Fax -   {{company.fax}}</li>
-        <li>Company SiteToWeb -   {{company.url}}</li>
-        <li>Company SiteToGoogle -   {{company.googleUri}}</li>
-        <li>Company Industry Branch -   {{company.keywordsIndustry}}</li>
-        <li>Company Industry Activity -   {{company.activity}}</li>
-        <li>Company Industry Possibility Sector of Activity -   {{company.sector_of_activity}}</li>
-        <li>Company Industry Catalog Activity -   {{company.catalog}}</li>
-        <li>Company Capital -   {{company.kapital}}</li>
-        <li>Company Email -   {{company.emails}} // {{company.email}}</li>
+        <li>Company Id -  <u>{{company.id}}</u></li>
+        <li>Company Name - <u> {{company.name}}</u></li>
+        <li>Company Current Status - <u> {{company.current_status}}</u></li>
+        <li>Company Land - <u> {{company.registeredoffice}}</u></li>
+        <li>Company Jurisdiction -   <u>{{company.jurisdiction_code}}</u></li>
+        <li>Company Number -  <u>{{company.company_number}}</u></li>
+        <li>Company Native Number -   <u>{{company.native_company_number}}</u></li>
+        <li>Company Registered Officer -   <u>{{company.registeredoffice}}</u></li>
+        <li>Company Register Art -   <u>{{company.register_art}}</u></li>
+        <li>Company Former Registrar -  <u> {{company.former_registrar}}</u></li>
+        <li>Company Phone -   <u>{{company.telephone}}</u></li>
+        <li>Company Fax -  <u> {{company.fax}}</u></li>
+        <li>Company SiteToWeb -   <u>{{company.url}}</u></li>
+        <li>Company SiteToGoogle -  <u> {{company.googleUri}}</u></li>
+        <li>Company Industry Branch -  <u> {{company.keywordsIndustry}}</u></li>
+        <li>Company Industry Activity -  <u> {{company.activity}}</u></li>
+        <li>Company Industry Possibility Sector of Activity -   <u>{{company.sector_of_activity}}</u></li>
+        <li>Company Industry Catalog Activity -   <u>{{company.catalog}}</u></li>
+        <li>Company Capital -   <u>{{company.kapital}}</u></li>
+        <li>Company Email -  <u> {{company.emails}}    {{company.email}}</u></li>
       </ul>
     </div>
-    <div class="col">
+    <div  id="emploeForm" class="col">
       Company Officer :
       <ul *ngFor="let  Rabotnik of company.officers ">
-        <li>Company Officer Last Name First Name -  {{Rabotnik.lastname}}
-          {{Rabotnik.firstname}}</li>
-        <li> Company Officer City -{{Rabotnik.city}}</li>
-        <li> Company Officer Position -{{Rabotnik.position}}</li>
-        <li> Company Officer Title -{{Rabotnik.title}}</li>
-        <li> Company Officer Type -{{Rabotnik.type}}</li>
+        <li>Company Officer Last Name First Name - <u> {{Rabotnik.lastname}}
+          {{Rabotnik.firstname}}</u></li>
+        <li> Company Officer City -<u>{{Rabotnik.city}}</u></li>
+        <li> Company Officer Position -<u>{{Rabotnik.position}}</u></li>
+        <li> Company Officer Title -<u>{{Rabotnik.title}}</u></li>
+        <li> Company Officer Type -<u>{{Rabotnik.type}}</u></li>
       </ul>
     </div>
   </div>
 </div>
 <div>
 </div>
-
 </body>
+<br>

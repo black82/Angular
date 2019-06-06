@@ -1,34 +1,44 @@
 
 <br>
 <body>
-<div  class="form-inline md-form mr-auto mb-4">
-  <input  class="form-control mr-sm-2" placeholder="Search by City" aria-label="Search" type="text" [(ngModel)]="city">
-  <button class="btn btn-outline-success" (click)="ngOnInit()">Search By City</button>
+<ngForm [formGroup]="formByCity" class="form-inline md-form mr-auto mb-4">
+  <input formControlName="city"  class="form-control mr-sm-2" placeholder="Search by City" aria-label="Search"
+          type="text" [(ngModel)]="city">
 
+  <button id="butonsubmit" class="btn btn-outline-success" (click)="searchByCity($event)">Search By City</button>
+
+  <table class="table" *ngIf="companies?.length>0" >
+
+    <thead class="table table-hover">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name Company</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Industry</th>
+      <th scope="col">Site</th>
+      <th scope="col">Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let company of companies" >
+      <td>{{company.id}}</td>
+      <td>{{company.name}}</td>
+      <td>{{company.telephone}}</td>
+      <td>{{company.keywordsIndustry}}</td>
+      <td>{{company.googleUri+"\n"+company.url}}</td>
+      <td >{{company.emails}}</td>
+    </tr>
+    </tbody>
+
+  </table>
+</ngForm>
+<div
+  *ngIf="formByCity.controls['city'].invalid
+                &&
+               (formByCity.controls['city'].dirty || formByCity.controls['city'].touched)"
+  class="alert alert-danger" id="alertDiv">
+  <u>Impute is Empty</u>
 </div>
-<table class="table"*ngIf="companies?.length>0" >
-
-  <thead class="table table-hover">
-  <tr>
-    <th scope="col">Id</th>
-    <th scope="col">Name Company</th>
-    <th scope="col">Phone</th>
-    <th scope="col">Industry</th>
-    <th scope="col">Site</th>
-    <th scope="col">Email</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let company of companies" >
-    <td>{{company.id}}</td>
-    <td>{{company.name}}</td>
-    <td>{{company.telephone}}</td>
-    <td>{{company.keywordsIndustry}}</td>
-    <td>{{company.googleUri+"\n"+company.url}}</td>
-    <td >{{company.emails}}</td>
-  </tr>
-  </tbody>
-
-</table>
+<!--<div id="allertNotFound" class="alert alert-danger" [hidden]="notFound==null"><u>{{notFound}}</u></div>-->
 
 </body>

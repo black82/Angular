@@ -3,11 +3,11 @@
 <div class="form-inline md-form mr-auto mb-4">
 
   <label>
-    <input [(ngModel)]="industry" class="form-control mr-sm-2" placeholder="Industry branch"
+    <input id="inputCity" [(ngModel)]="industry" class="form-control mr-sm-2" placeholder="Industry branch"
            type="text">
   </label>
 
-  <button [(ngModel)]="industry" [hidden]="industry==null||industry==''||industry==' '||industry.length<4"
+  <button id="butonsubmit"[(ngModel)]="industry" [hidden]="industry==null||industry==''||industry==' '||industry.length<4"
           (click)="searchByActivity()" class="btn btn-outline-success">Search By Industry branch
   </button>
 
@@ -17,11 +17,17 @@
     <thead class="table table-hover">
     <tr>
       <th scope="col">Id</th>
+
       <th scope="col">Name Company</th>
+
       <th scope="col">Phone</th>
+
       <th scope="col">Industry</th>
+
       <th scope="col">Site</th>
+
       <th scope="col">Email</th>
+
     </tr>
     </thead>
     <tbody>
@@ -40,14 +46,18 @@
       <td>{{company.emails}}</td>
 
     </tr>
-
     </tbody>
   </table>
 </div>
-<div [(ngModel)]="alertShouw" class="alert alert-danger" role="alert" [hidden]="error==null||alertShouw" id="alert">
+
+<div class="alert alert-danger" role="alert" [hidden]="error==null" id="alert">
+
   <strong>{{error}}</strong>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="click()">
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="refresh()">
+
     <span aria-hidden="true">&times;</span>
+
   </button>
 
 </div>

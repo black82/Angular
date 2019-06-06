@@ -173,23 +173,29 @@ export class SearchbyIndustryComponent implements OnInit {
   }
 
   alertShouw: boolean;
+  private number: string[];
+  numberIsPresent = false;
 
   click() {
     this.alertShouw = true;
   }
 
   onlyDigits(s) {
+    this.number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     for (let i = s.length - 1; i >= 0; i--) {
-      const d = s.charCodeAt(i);
-      if (d > 48 || d < 57) {
-        return false;
+
+      if (this.number.includes(s [i])) {
+        this.numberIsPresent = true;
       }
     }
-    return true;
+    if (this.numberIsPresent === true) {
+      return true;
+    }
   }
 
+
   searchByActivity() {
-    if (this.onlyDigits(this.industry)) {
+    if (!this.onlyDigits(this.industry)) {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         responseType: 'json'
@@ -200,11 +206,14 @@ export class SearchbyIndustryComponent implements OnInit {
         }));
     } else {
       this.error = 'The text that you entered contains numbers you enter again';
-      this.alertShouw = false;
+      setTimeout(this.refresh, 3000);
     }
 
   }
 
+  refresh(): void {
+    window.location.reload();
+  }
 
   ngOnInit() {
   }

@@ -11,10 +11,9 @@ img {
 
 body {
 
-  width: auto;
-  right: 36%;
-  left: 0;
-  height:100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 
 }
 

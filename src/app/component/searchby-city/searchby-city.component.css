@@ -1,16 +1,18 @@
 body{
-  margin-left: auto;
-  width: auto;
-  bottom: 0;
-  left: 0;
-  height: 98%;
-
+  display: flex;
+  min-height: auto;
+  flex-direction: column;
 }
 input{
   position: relative;
-  left: 30%;
+  left: 130%;
 }
-button{
+#butonsubmit{
   position: relative;
-  left: 30%;
+  left: 130%;
 }
+u{
+  position: relative;
+left: 40%;
+}
+

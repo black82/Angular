@@ -13,8 +13,8 @@ export class ClockComponent implements OnInit {
 
   constructor() {
     setInterval(() => {
-      this.clock = new Date().toLocaleTimeString();
-      this.date = new Date().toDateString();
+      this.clock = new Date().toLocaleTimeString().normalize();
+      this.date = new Date().toDateString().normalize();
     }, 1000);
   }
 

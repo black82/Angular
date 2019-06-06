@@ -3,3 +3,8 @@ div {
   left: 30%;
 
 }
+body{
+  display: flex;
+  min-height: auto;
+  flex-direction: column;
+}
