@@ -18,6 +18,11 @@ import {ClientServiceService} from './service/clientService.service';
 import {FilterPipe} from './component/searchby-industry/filter.pipe';
 import {AppAlertvalitationInputComponent} from './component/app-alert-valitation-input-by-empty/app-alertvalitation-input.component';
 
+import {MatAutocompleteModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +37,7 @@ import {AppAlertvalitationInputComponent} from './component/app-alert-valitation
     FilterPipe,
     AppAlertvalitationInputComponent
 
+
   ],
   imports: [
     BrowserModule,
@@ -39,8 +45,12 @@ import {AppAlertvalitationInputComponent} from './component/app-alert-valitation
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    BrowserAnimationsModule,
+    MatInputModule
+
   ],
   providers: [ClientServiceService],
   bootstrap: [AppComponent]

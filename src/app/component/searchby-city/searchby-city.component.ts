@@ -1,8 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ClientServiceService} from '../../service/clientService.service';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 
 @Component({
@@ -16,6 +18,9 @@ export class SearchbyCityComponent implements OnInit {
   constructor(private http: HttpClient, private fb: FormBuilder) {
   }
 
+  myControl = new FormControl();
+  options: string[] = ['Berlin', 'Hanover', 'Francfurt'];
+  filteredOptions: Observable<string[]>;
   @Input()
   service: ClientServiceService;
   @Input()
@@ -48,11 +53,24 @@ export class SearchbyCityComponent implements OnInit {
       ]
     });
   }
+
   onSubmit($event) {
     this.submitUser.emit(this.formByCity.value);
   }
+
   ngOnInit() {
+
     this.createForm();
+    this.filteredOptions = this.myControl.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
   }
 
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+
+  }
 }

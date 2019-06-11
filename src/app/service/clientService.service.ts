@@ -20,16 +20,16 @@ export class ClientServiceService {
   constructor(private http: HttpClient) {
   }
 
-  searchByCity(url): Observable<Company> {
+  searchByCity(url) {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       responseType: 'json'
     });
     this.http.get(url, {headers}).subscribe(value => {
-      return value.map
-    }
-  )
+
+      }
+    );
 
   }
 }

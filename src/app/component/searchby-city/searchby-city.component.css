@@ -3,7 +3,7 @@ body{
   min-height: auto;
   flex-direction: column;
 }
-input{
+mat-form-field{
   position: relative;
   left: 130%;
 }
@@ -16,3 +16,12 @@ u{
 left: 40%;
 }
 
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
