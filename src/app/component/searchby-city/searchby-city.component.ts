@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ClientServiceService} from '../../service/clientService.service';
 
 
 @Component({
@@ -15,23 +16,26 @@ export class SearchbyCityComponent implements OnInit {
   constructor(private http: HttpClient, private fb: FormBuilder) {
   }
 
-
+  @Input()
+  service: ClientServiceService;
   @Input()
   company: Company;
   notFound: string;
   city: string;
   companies: Company [];
   formByCity: FormGroup;
+  @Output()
+  submitUser: EventEmitter<Company> = new EventEmitter();
 
   searchByCity($event) {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      responseType: 'json'
-    });
-    this.http.get<Company[]>('http://127.0.0.1:8081/get1000/' + this.formByCity.controls.city.value, {headers})
-      .subscribe((response => {
-        this.companies = response;
-      }));
+    if (this.formByCity.valid) {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        responseType: 'json'
+      });
+      this.service.searchByCity('http://127.0.0.1:8081/get1000/' + this.formByCity.controls.city.value);
+
+    }
   }
 
   createForm() {
@@ -44,7 +48,9 @@ export class SearchbyCityComponent implements OnInit {
       ]
     });
   }
-
+  onSubmit($event) {
+    this.submitUser.emit(this.formByCity.value);
+  }
   ngOnInit() {
     this.createForm();
   }

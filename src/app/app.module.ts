@@ -14,8 +14,9 @@ import {AppRoutingModule} from './app-routing-module';
 import {SearchbyCityComponent} from './component/searchby-city/searchby-city.component';
 import {SearchbyIndustryComponent} from './component/searchby-industry/searchby-industry.component';
 import {NotFountComponent} from './component/not-fount/not-fount.component';
-import {SearchbyidService} from './service/searchbyid.service';
+import {ClientServiceService} from './service/clientService.service';
 import {FilterPipe} from './component/searchby-industry/filter.pipe';
+import {AppAlertvalitationInputComponent} from './component/app-alert-valitation-input-by-empty/app-alertvalitation-input.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import {FilterPipe} from './component/searchby-industry/filter.pipe';
     SearchbyCityComponent,
     SearchbyIndustryComponent,
     NotFountComponent,
-    FilterPipe
+    FilterPipe,
+    AppAlertvalitationInputComponent
+
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import {FilterPipe} from './component/searchby-industry/filter.pipe';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [SearchbyidService],
+  providers: [ClientServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
