@@ -61,7 +61,8 @@ export class SearchbyCityComponent implements OnInit {
   ngOnInit() {
 
     this.createForm();
-    this.filteredOptions = this.myControl.valueChanges
+
+    this.filteredOptions = this.formByCity.controls.city.valueChanges
       .pipe(
         startWith(''),
         map(value => this._filter(value))

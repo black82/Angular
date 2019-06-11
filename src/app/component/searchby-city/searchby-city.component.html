@@ -3,7 +3,7 @@
 <form [formGroup]="formByCity" class="form-inline md-form mr-auto mb-4">
   <mat-form-field class="example-full-width">
     <input formControlName="city" placeholder="Search by City" aria-label="Search"
-           type="text" [(ngModel)]="city" matInput [formControl]="myControl"
+           type="text" [(ngModel)]="city" matInput [formControl]="city"
            [matAutocomplete]="auto" [formGroup]="formByCity" >
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
