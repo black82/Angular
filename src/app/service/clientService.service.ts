@@ -3,7 +3,8 @@ import {HttpClient, HttpEventType, HttpHeaders, HttpResponse} from '@angular/com
 import {Company} from '../DTO/CompanyDto';
 import {FormGroup} from '@angular/forms';
 import {Observable, Subscription} from 'rxjs';
-import {subscribeOn} from 'rxjs/operators';
+import {retry, subscribeOn} from 'rxjs/operators';
+import {__values} from 'tslib';
 
 
 @Injectable({
@@ -20,17 +21,18 @@ export class ClientServiceService {
   constructor(private http: HttpClient) {
   }
 
-  searchByCity(url) {
+  searchByCityConection(url) {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       responseType: 'json'
     });
-    this.http.get(url, {headers}).subscribe(value => {
-
-      }
-    );
-
+    return this.http.get<Company[]>(url)
+      .pipe(
+        retry(15)
+      );
   }
+
+
 }
 

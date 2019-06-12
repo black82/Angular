@@ -12,7 +12,7 @@ export class AppAlertvalitationInputComponent implements OnInit {
   @Input()
   errorMessage: string;
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
   }
 
   ngOnInit() {
