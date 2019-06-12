@@ -11,7 +11,7 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  <button id="butonsubmit" class="btn btn-outline-success" (click)="searchByCity($event)">Search By City</button>
+  <button [disabled]="city==null||!city||''||formByCity.invalid|| !checkisPresent(city)" id="butonsubmit" class="btn btn-outline-success" (click)="searchByCity($event)">Search By City</button>
 
   <table class="table" *ngIf="companies?.length>0">
 
