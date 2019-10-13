@@ -1,10 +1,7 @@
-import {Injectable, Input} from '@angular/core';
-import {HttpClient, HttpEventType, HttpHeaders, HttpResponse} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Company} from '../DTO/CompanyDto';
-import {FormGroup} from '@angular/forms';
-import {Observable, Subscription} from 'rxjs';
-import {retry, subscribeOn} from 'rxjs/operators';
-import {__values} from 'tslib';
+import {retry} from 'rxjs/operators';
 
 
 @Injectable({

@@ -21,6 +21,9 @@ import {AppAlertvalitationInputComponent} from './component/app-alert-valitation
 import {MatAutocompleteModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PanelComponent} from './component/app-panel/panel.component';
+import {CollapseModule} from '../../Angular-Bootstrap-with-Material-Design/projects/angular-bootstrap-md/src/lib/free/collapse';
+import {AccordionModule} from 'ngx-bootstrap/accordion';
 
 
 @NgModule({
@@ -35,9 +38,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SearchbyIndustryComponent,
     NotFountComponent,
     FilterPipe,
-    AppAlertvalitationInputComponent
-
-
+    AppAlertvalitationInputComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatAutocompleteModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    CollapseModule,
+    AccordionModule.forRoot()
 
   ],
   providers: [ClientServiceService],
