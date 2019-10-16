@@ -4,7 +4,7 @@
   <label>
     <input [(ngModel)]="id" inputmode="numeric" pattern="/^[0-9]{1,7}$/" placeholder="Input Id" type="number">
   </label>
-  <button (keyup.enter)="searcById()" [(ngModel)]="id" [hidden]="id==null||id==''" class="btn btn-outline-success"
+  <button (keyup.enter)="searcById()"  class="btn btn-outline-success"
           (click)="searcById()">Search By Id
   </button>
   <!--  <button *ngIf="id!=null" class="btn btn-outline-success" (keyup.enter)="searcById()" (click)="searcById()">Search By-->

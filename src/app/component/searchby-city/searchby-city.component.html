@@ -3,7 +3,7 @@
 <form [formGroup]="formByCity" class="form-inline md-form mr-auto mb-4">
   <mat-form-field class="example-full-width">
     <input formControlName="city" placeholder="Search by City" aria-label="Search"
-           type="text" [(ngModel)]="city" matInput
+           type="text" matInput
            [matAutocomplete]="auto" [formGroup]="formByCity">
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
@@ -11,7 +11,7 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  <button [disabled]="city==null||formByCity.invalid|| checkedPresent(city)" id="batonsSubmit"
+  <button [disabled]="formByCity.invalid|| checkedPresent(city)" id="batonsSubmit"
           class="btn btn-outline-success" (click)="searchByCity($event)">Search By City
   </button>
 </form>
@@ -35,7 +35,7 @@
   </thead>
   <tbody>
   <div *ngFor="let company of companies let i = index">
-    <button (click)="hideme[i] = !hideme[i];toggle();closeall(hideme[i])" [hidden]="hideme[i]"
+    <button (click)="hideme[i] = !hideme[i];toggle();toggleClass(i)" [hidden]="hideme[i]"
             class="btn btn-outline-success" type="button">Show
     </button>
     <button (click)="hideme[i] = !hideme[i];toggle()" [hidden]="!hideme[i]" class="btn btn-outline-warning"
@@ -50,7 +50,7 @@
       <td>{{company.emails}}</td>
       <td>{{company.company_number}}</td>
     </tr>
-    <div [@toggleBox]="isOpen ? 'open' : 'closed'" [hidden]="!hideme[i]">
+    <div [@toggleBox]="isOpen ? 'open' : 'closed'" [hidden]="!hideme[i]" [id]="i">
       <ul>
         <p>Company Information</p>
         <li>Company Id - <u>{{company.id}}</u></li>

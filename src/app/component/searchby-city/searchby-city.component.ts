@@ -1,12 +1,14 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Inject, Input, OnInit, Output, Renderer, ViewChild} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ClientServiceService} from '../../service/clientService.service';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
-import {CityArray} from '../../DTO/CityArray';
+import {count, map, startWith} from 'rxjs/operators';
+
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {DOCUMENT} from '@angular/common';
+import {CitiarrayService} from '../../service/services/citiarray.service';
+import {ClientServiceService} from '../../service/httpclient/clientService.service';
 
 
 @Component({
@@ -32,20 +34,19 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 
 export class SearchbyCityComponent implements OnInit {
-  private eroreMesage: string;
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {
 
+  constructor(private http: HttpClient, private fb: FormBuilder,
+              private citis: CitiarrayService,
+              private client: ClientServiceService) {
   }
 
+
+  num = 0;
   isOpen = 'closed';
   hideme = [];
-  @Input()
-  citiArr: CityArray;
-
   filteredOptions: Observable<string[]>;
-  @Input()
-  service: ClientServiceService;
+
   @Input()
   company: Company;
   notFound: string;
@@ -55,488 +56,20 @@ export class SearchbyCityComponent implements OnInit {
   @Output()
   submitUser: EventEmitter<Company> = new EventEmitter();
 
-  cityarr: string[] = ['Baabe',
-    'Babenhausen',
-    'Bacharach',
-    'Backnang',
-    'Bad Aibling',
-    'Bad Alexandersbad',
-    'Bad Arolsen',
-    'Bad Belzig',
-    'Bad Bentheim',
-    'Bad Bergzabern',
-    'Bad Berleburg',
-    'Bad Berneck im Fichtelgebirge',
-    'Bad Bertrich',
-    'Bad Bevensen',
-    'Bad Birnbach',
-    'Bad Blankenburg',
-    'Bad Boll',
-    'Bad Bramstedt',
-    'Bad Breisig',
-    'Bad Brückenau',
-    'Bad Buchau',
-    'Bad Camberg',
-    'Bad Doberan',
-    'Bad Driburg',
-    'Bad Düben',
-    'Bad Dürkheim',
-    'Bad Dürrheim',
-    'Bad Eilsen',
-    'Bad Ems',
-    'Bad Emstal',
-    'Bad Endbach',
-    'Bad Endorf',
-    'Bad Essen',
-    'Bad Fallingbostel',
-    'Bad Feilnbach',
-    'Bad Frankenhausen/Kyffhäuser',
-    'Bad Friedrichshall',
-    'Bad Füssing',
-    'Bad Gandersheim',
-    'Bad Harzburg',
-    'Bad Heilbrunn',
-    'Bad Herrenalb',
-    'Bad Hersfeld',
-    'Bad Hindelang',
-    'Bad Homburg',
-    'Bad Honnef',
-    'Bad Hönningen',
-    'Bad Iburg',
-    'Bad Karlshafen',
-    'Bad Kissingen',
-    'Bad Kohlgrub',
-    'Bad König',
-    'Bad Kötzting',
-    'Bad Kreuznach',
-    'Bad Laasphe',
-    'Bad Laer',
-    'Bad Langensalza',
-    'Bad Lausick',
-    'Bad Lauterberg im Harz',
-    'Bad Liebenwerda',
-    'Bad Liebenzell',
-    'Bad Lippspringe',
-    'Bad Marienberg (Westerwald)',
-    'Bad Mergentheim',
-    'Bad Münder am Deister',
-    'Bad Münstereifel',
-    'Bad Muskau',
-    'Bad Nauheim',
-    'Bad Nenndorf',
-    'Bad Neuenahr-Ahrweiler',
-    'Bad Oeynhausen',
-    'Bad Oldesloe',
-    'Bad Orb',
-    'Bad Pyrmont',
-    'Bad Rappenau',
-    'Bad Reichenhall',
-    'Bad Sachsa',
-    'Bad Säckingen',
-    'Bad Salzdetfurth',
-    'Bad Salzuflen',
-    'Bad Salzungen',
-    'Bad Sassendorf',
-    'Bad Saulgau',
-    'Bad Schönborn',
-    'Bad Schussenried',
-    'Bad Schwalbach',
-    'Bad Schwartau',
-    'Bad Segeberg',
-    'Bad Soden am Taunus',
-    'Bad Soden-Salmünster',
-    'Bad Sooden-Allendorf',
-    'Bad Staffelstein',
-    'Bad Tölz',
-    'Bad Urach',
-    'Bad Vilbel',
-    'Bad Waldsee',
-    'Bad Wiessee',
-    'Bad Wildbad',
-    'Bad Wildungen',
-    'Bad Wimpfen',
-    'Bad Windsheim',
-    'Bad Wörishofen',
-    'Bad Wurzach',
-    'Bad Zwischenahn',
-    'Baden-Baden',
-    'Badenweiler',
-    'Baesweiler',
-    'Bahlingen am Kaiserstuhl',
-    'Baierbrunn',
-    'Baiersbronn',
-    'Baiersdorf',
-    'Balingen',
-    'Balve',
-    'Balzheim',
-    'Bamberg',
-    'Bammental',
-    'Bardowick',
-    'Barendorf',
-    'Bargteheide',
-    'Barleben',
-    'Barmstedt',
-    'Barntrup',
-    'Barßel',
-    'Barsinghausen',
-    'Barum',
-    'Bassum',
-    'Battenberg (Eder)',
-    'Baumholder',
-    'Baunatal',
-    'Baustert',
-    'Bautzen',
-    'Bayerbach',
-    'Bayreuth',
-    'Bayrischzell',
-    'Bebra',
-    'Beckingen',
-    'Beckum',
-    'Bedburg',
-    'Bedburg-Hau',
-    'Beelen',
-    'Beerfelden',
-    'Beeskow',
-    'Beilngries',
-    'Bellenberg',
-    'Bellheim',
-    'Belm',
-    'Bempflingen',
-    'Benediktbeuern',
-    'Benningen am Neckar',
-    'Bensheim',
-    'Beratzhausen',
-    'Berching',
-    'Berchtesgaden',
-    'Berghausen',
-    'Bergheim',
-    'Bergholz',
-    'Bergisch Gladbach',
-    'Bergkamen',
-    'Bergkirchen',
-    'Berglen',
-    'Berka vor dem Hainich',
-    'Berkatal',
-    'Berka/Werra',
-    'Berkheim',
-    'Berlin',
-    'Berlingerode',
-    'Bermatingen',
-    'Bermbach',
-    'Bernau bei Berlin',
-    'Bernburg (Saale)',
-    'Berne',
-    'Berngau',
-    'Bernhardswald',
-    'Bernkastel-Kues',
-    'Bersenbrück',
-    'Beselich',
-    'Besigheim',
-    'Bessenbach',
-    'Bestensee',
-    'Bestwig',
-    'Betzenstein',
-    'Beverungen',
-    'Bexbach',
-    'Biberach',
-    'Bibertal',
-    'Biblis',
-    'Biburg',
-    'Bickenbach',
-    'Biebergemünd',
-    'Biebertal',
-    'Biebesheim am Rhein',
-    'Biedenkopf',
-    'Biederitz',
-    'Bielefeld',
-    'Bienenbüttel',
-    'Bietigheim-Bissingen',
-    'Billerbeck',
-    'Billigheim',
-    'Bindlach',
-    'Bingen am Rhein',
-    'Binzen',
-    'Birenbach',
-    'Birkenau',
-    'Birkenfeld',
-    'Birkenwerder',
-    'Birkweiler',
-    'Birnbach',
-    'Birstein',
-    'Bischofsheim',
-    'Bischofswerda',
-    'Bisingen',
-    'Bispingen',
-    'Bissendorf',
-    'Bissingen',
-    'Bitburg',
-    'Bitterfeld-Wolfen',
-    'Blaichach',
-    'Blankenbach',
-    'Blankenburg (Harz)',
-    'Blankenheim',
-    'Blaubeuren',
-    'Blaufelden',
-    'Blaustein',
-    'Bleicherode',
-    'Blieskastel',
-    'Blomberg',
-    'Blumberg',
-    'Blumenthal',
-    'Bobenheim am Berg',
-    'Bobenheim-Roxheim',
-    'Böblingen',
-    'Böchingen',
-    'Bocholt',
-    'Bochum',
-    'Bockhorn',
-    'Bodelshausen',
-    'Bodenheim',
-    'Bodenmais',
-    'Bodenwerder',
-    'Bodenwöhr',
-    'Bodman-Ludwigshafen',
-    'Bogen',
-    'Böhmenkirch',
-    'Bokholt-Hanredder',
-    'Bondorf',
-    'Bönen',
-    'Bonn',
-    'Bönnigheim',
-    'Bönningstedt',
-    'Bopfingen',
-    'Boppard',
-    'Borchen',
-    'Bordesholm',
-    'Borgentreich',
-    'Börgerende',
-    'Borgholzhausen',
-    'Borken',
-    'Borkum',
-    'Borna',
-    'Bornheim',
-    'Börnichen',
-    'Borod',
-    'Börrstadt',
-    'Bosau',
-    'Bösel',
-    'Bösingen',
-    'Bottrop',
-    'Bötzingen',
-    'Bovenden',
-    'Boxberg/Oberlausitz',
-    'Braak',
-    'Brachbach',
-    'Brackel',
-    'Brackenheim',
-    'Brake (Unterweser)',
-    'Brakel',
-    'Bramsche',
-    'Brand',
-    'Brandenburg an der Havel',
-    'Braubach',
-    'Brauneberg',
-    'Braunfels',
-    'Braunlage',
-    'Bräunlingen',
-    'Braunschweig',
-    'Breckerfeld',
-    'Bredstedt',
-    'Breisach am Rhein',
-    'Breitbrunn',
-    'Breitscheid',
-    'Bremen',
-    'Bremerhaven',
-    'Bremervörde',
-    'Brensbach',
-    'Bretten',
-    'Bretzfeld',
-    'Breuberg',
-    'Brieselang',
-    'Brilon',
-    'Brome',
-    'Bromskirchen',
-    'Bruchertseifen',
-    'Bruchhausen-Vilsen',
-    'Bruchköbel',
-    'Bruchsal',
-    'Bruchweiler-Bärenbach',
-    'Brücken (Pfalz',
-    ')Bruckmühl',
-    'Brüggen',
-    'Brühl',
-    'Brunsbüttel',
-    'Bubenreuth',
-    'Bucha',
-    'Büchel',
-    'Buchen (Odenwald)',
-    'Buchenbach',
-    'Buchhofen',
-    'Buchholz in der Nordheide',
-    'Buchloe',
-    'Bückeburg',
-    'Büdelsdorf',
-    'Budenheim',
-    'Büdingen',
-    'Bühl',
-    'Bühlertal',
-    'Bünde',
-    'Burbach',
-    'Burg',
-    'Burgau',
-    'Burgberg im Allgäu',
-    'Burgdorf',
-    'Burgebrach',
-    'Bürgel',
-    'Burgen',
-    'Burghausen',
-    'Burgkunstadt',
-    'Burglengenfeld',
-    'Burgoberbach',
-    'Burgschwalbach',
-    'Burgstädt',
-    'Burgthann',
-    'Burgwald',
-    'Burgwedel',
-    'Burladingen',
-    'Burow',
-    'Burscheid',
-    'Bürstadt',
-    'Burtenbach',
-    'Buseck',
-    'Büsum',
-    'Butjadingen',
-    'Büttelborn',
-    'Buttenheim',
-    'Buttstädt',
-    'Butzbach',
-    'Bützow',
-    'Aachen',
-    'Aalen',
-    'Aarbergen',
-    'Abenberg',
-    'Abensberg',
-    'Abtsgmünd',
-    'Achern',
-    'Achim',
-    'Adelebsen',
-    'Adelsdorf',
-    'Adenau',
-    'Adendorf',
-    'Adlkofen',
-    'Adorf',
-    'Aerzen',
-    'Ahaus',
-    'Ahnsen',
-    'Ahrbrück',
-    'Ahrensburg',
-    'Ahrensfelde',
-    'Aichach',
-    'Aichtal',
-    'Aidlingen',
-    'Ainring',
-    'Aiterhofen',
-    'Albbruck',
-    'Albershausen',
-    'Albig',
-    'Albstadt',
-    'Aldenhoven',
-    'Aldingen',
-    'Alfdorf',
-    'Alfeld (Leine)',
-    'AlfterAllendorf',
-    'Allensbach',
-    'Allersberg',
-    'Alling',
-    'Allmersbach im Tal',
-    'Almdorf',
-    'Alpen',
-    'Alpirsbach',
-    'Alsbach-Hähnlein',
-    'Alsdorf',
-    'Alsenz',
-    'Alsfeld',
-    'Altbach',
-    'Altdorf',
-    'Altena',
-    'Altenahr',
-    'Altenberg',
-    'Altenberge',
-    'Altenbuch',
-    'Altenburg',
-    'Altendiez',
-    'Altenkirchen (Westerwald)',
-    'Altenkunstadt',
-    'Altenstadt',
-    'Altenstadt an der Waldnaab',
-    'Altensteig',
-    'Althegnenberg',
-    'Althengstett',
-    'Althütte',
-    'Altlußheim',
-    'Altmannstein',
-    'Altötting',
-    'Altrip',
-    'Alzenau',
-    'Alzey',
-    'Amberg',
-    'Amerang',
-    'Ammerbuch',
-    'Amöneburg',
-    'Amorbach',
-    'Ampfing',
-    'Andechs',
-    'Andernach',
-    'Angelbachtal',
-    'Ankum',
-    'Annaberg-Buchholz',
-    'Annweiler am Trifels',
-    'Ansbach',
-    'Apen',
-    'Apensen',
-    'Apolda',
-    'Appenweier',
-    'Arnsberg',
-    'Arnstadt',
-    'Arnstorf',
-    'Artern/Unstrut',
-    'Arzfeld',
-    'Asbach',
-    'Aschaffenburg',
-    'Ascheberg',
-    'Aschersleben',
-    'Aschheim',
-    'Aßlar',
-    'Aspach',
-    'Asperg',
-    'Attendorn',
-    'Au',
-    'Aue',
-    'Auerbach',
-    'Auetal',
-    'Augsburg',
-    'Auhausen',
-    'Aulendorf',
-    'Aumühle',
-    'Aurich',
-    'Aystetten'];
+
   visibili = true;
+  private counter = 0;
+  private cityarr: string[];
 
   searchByCity($event) {
-    if (this.formByCity.valid) {
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        responseType: 'json'
-      });
-      this.http.get<Company[]>('http://127.0.0.1:8081/get1000/' + this.formByCity.controls.city.value, {headers}).subscribe(
-        (company: Company[]) => {
-          this.companies = company;
-        },
-        error1 => this.notFound
-      );
+    this.client.getListCompany('/get1000/' + this.formByCity.controls.city.value).subscribe(
+      company => {
+        this.companies = company;
+      }
+    );
 
-    }
   }
+
 
   createForm() {
     this.formByCity = this.fb.group({
@@ -554,7 +87,7 @@ export class SearchbyCityComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.cityarr = this.citis.cityarr;
     this.createForm();
 
     this.filteredOptions = this.formByCity.controls.city.valueChanges
@@ -571,11 +104,7 @@ export class SearchbyCityComponent implements OnInit {
   }
 
   checkedPresent(city: string) {
-    if (this.cityarr.includes(city)) {
-      return false;
-    } else {
-      return true;
-    }
+    return this.cityarr.includes(city);
   }
 
   toggle() {
@@ -583,8 +112,15 @@ export class SearchbyCityComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
-  // tslint:disable-next-line:variable-name
-  closeall(any: any) {
-    any = false;
+  toggleClass(id: number) {
+    let first;
+    this.num++;
+    if (this.num > 1) {
+      this.hideme[first] = !this.hideme[first];
+      first = id;
+    } else {
+      first = id;
+    }
+
   }
 }

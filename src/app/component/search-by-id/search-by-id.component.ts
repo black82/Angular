@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Company} from '../../DTO/CompanyDto';
+import {ClientServiceService} from '../../service/httpclient/clientService.service';
 
 
 @Component({
@@ -10,8 +11,9 @@ import {Company} from '../../DTO/CompanyDto';
   styleUrls: ['./search-by-id.component.css']
 })
 export class SearchByIdComponent implements OnInit {
-  constructor(private http: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private client: ClientServiceService) {
   }
+
 
   id: number;
   company: Company;
@@ -26,16 +28,10 @@ export class SearchByIdComponent implements OnInit {
   }
 
   searcById() {
-    this.createForm();
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      responseType: 'json'
+    this.client.GetCompanyOane(this.id).subscribe(response => {
+      console.log(response);
+      this.company = response;
     });
-
-    this.http.get<Company>('http://127.0.0.1:8081/get/' + this.id, {headers})
-      .subscribe((response => {
-        this.company = response;
-      }));
   }
 
 
