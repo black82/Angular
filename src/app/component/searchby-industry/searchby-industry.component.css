@@ -1,7 +1,5 @@
 body{
-  display: flex;
-  min-height: auto;
-  flex-direction: column;
+  min-height: 70vh;
 
 }
 label{

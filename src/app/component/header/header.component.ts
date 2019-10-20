@@ -14,8 +14,8 @@ export class HeaderComponent implements OnInit {
     this.url = 'https://teox.eu/';
     this.isColapset = true;
     setTimeout(() => {
-      this.message = 'Teox DataBase';
-    }, 3000);
+      this.message = 'Company DataBase';
+    }, 1000);
   }
 
   ngOnInit() {

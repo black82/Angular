@@ -49,6 +49,7 @@ export class ClientServiceService {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     console.log(errorMessage);
+    onmessageerror.apply(errorMessage);
     return throwError(errorMessage);
   }
 

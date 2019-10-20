@@ -1,10 +1,10 @@
-p {
+.text-info {
 
   font-family: Georgia, serif;
   font-size: 15px;
   letter-spacing: -0.8px;
   word-spacing: 6px;
-  color: -moz-buttonhoverface;
+  color: #6351ce;
   font-weight: 400;
   text-decoration: none;
   font-style: italic;

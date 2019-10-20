@@ -1,12 +1,10 @@
-<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-
-<div [ngClass]="{invisibile: !visibility}">
+<div [ngClass]="{invisibile: !visibility}" class="text-info">
 <p>
   Time:{{" "+clock+"  Date:  "+date}}
 </p>
 
 </div>
-<button (click)="show()" *ngIf="!visibility" class="btn btn-light" type="button">Show Time</button>
-<button (click)="show()" *ngIf="visibility" class="btn btn-light" type="button">Hide</button>
+<button (click)="show()" *ngIf="!visibility" class="btn btn-light" type="button"><p class="text-info">Show Time</p>
+</button>
+<button (click)="show()" *ngIf="visibility" class="btn btn-light" type="button"><p class="text-info">Hide</p></button>
 

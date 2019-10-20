@@ -1,18 +1,22 @@
 <body>
 <div>
+  <app-app-alertvalitation-input (durationchange)="formId" *ngIf="alertShouw" [control]="formId"
+                                 errorMessage="You entered an incorrect value in the search field. Try again !!!{{formId.controls.idControl.value}}">
+  </app-app-alertvalitation-input>
+  <form (ngSubmit)="searcById()" [formGroup]="formId" class="form-inline md-form mr-auto mb-4">
+    <mat-form-field class="example-full-width">
+      <label>
+        <input [readOnly]="true" autocapitalize="off" autocomplete="false" formControlName="idControl" matInput
+               name="idControl"
+               placeholder="Search by Id" spellcheck="false" style="">
+      </label>
+    </mat-form-field>
 
-  <label>
-    <input [(ngModel)]="id" inputmode="numeric" pattern="/^[0-9]{1,7}$/" placeholder="Input Id" type="number">
-  </label>
-  <button (keyup.enter)="searcById()"  class="btn btn-outline-success"
-          (click)="searcById()">Search By Id
-  </button>
-  <!--  <button *ngIf="id!=null" class="btn btn-outline-success" (keyup.enter)="searcById()" (click)="searcById()">Search By-->
-  <!--    Id-->
-  <!--  </button>-->
-
+    <button class="btn btn-outline-success" id="batonsSubmit" type="submit"
+    >Search By ID
+    </button>
+  </form>
 </div>
-<h1>{{notFound}}</h1>
 <div *ngIf="company!=null" class="container">
   <div class="row">
     <div id="companyShouw" *ngIf="company!={}" class="col">
@@ -67,5 +71,6 @@
     </div>
   </div>
 </div>
+
 </body>
-<br>
+

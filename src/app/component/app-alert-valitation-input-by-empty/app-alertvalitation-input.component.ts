@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, NgZone, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 
 @Component({
@@ -11,13 +11,20 @@ export class AppAlertvalitationInputComponent implements OnInit {
   control: FormGroup;
   @Input()
   errorMessage: string;
+  shoerore = false;
 
-  constructor() {
+  constructor(zone: NgZone) {
+
+    zone.runOutsideAngular(() => {
+      setTimeout(() => {
+        this.shoerore = true;
+      }, 10);
+    });
   }
+
 
   ngOnInit() {
 
   }
-
 
 }

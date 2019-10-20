@@ -1,4 +1,17 @@
 #errorAlert{
   position: relative;
+
+  animation: css 2s 4s forwards;
+}
+
+@keyframes css {
+  to {
+    visibility: hidden;
+  }
+}
+
+#errorMessage {
   left: 40%;
 }
+
+

@@ -22,8 +22,10 @@ import {MatAutocompleteModule, MatFormFieldModule, MatInputModule} from '@angula
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PanelComponent} from './component/app-panel/panel.component';
-import {CollapseModule} from '../../Angular-Bootstrap-with-Material-Design/projects/angular-bootstrap-md/src/lib/free/collapse';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
+import {CarouselModule, CollapseModule} from 'ngx-bootstrap';
+import {CaruseliComponent} from './component/caruseli/caruseli.component';
+import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import {AccordionModule} from 'ngx-bootstrap/accordion';
     NotFountComponent,
     FilterPipe,
     AppAlertvalitationInputComponent,
-    PanelComponent
+    PanelComponent,
+    CaruseliComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,10 @@ import {AccordionModule} from 'ngx-bootstrap/accordion';
     BrowserAnimationsModule,
     MatInputModule,
     CollapseModule,
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    CarouselModule,
+    NgbCarouselModule,
+
 
   ],
   providers: [ClientServiceService],
