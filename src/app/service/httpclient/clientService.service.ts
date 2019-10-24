@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
 import {catchError, retry} from 'rxjs/operators';
 import {Observable, throwError} from 'rxjs';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Injectable({
@@ -10,6 +11,7 @@ import {Observable, throwError} from 'rxjs';
 })
 export class ClientServiceService {
 
+  notifier: NotificationService;
   basetUrl = 'http://localhost:8081';
 
   httpOptions = {
@@ -17,6 +19,7 @@ export class ClientServiceService {
       'Content-Type': 'application/json'
     })
   };
+
 
   constructor(private http: HttpClient) {
 
@@ -50,11 +53,26 @@ export class ClientServiceService {
     }
     console.log(errorMessage);
     onmessageerror.apply(errorMessage);
+    window.alert(errorMessage);
+    this.notifier.showError(errorMessage);
     return throwError(errorMessage);
   }
 
 }
 
 
+export class NotificationService {
 
+  constructor(public snackBar: MatSnackBar) {
+  }
+
+  showSuccess(message: string): void {
+    this.snackBar.open(message);
+  }
+
+  showError(message: string): void {
+
+    this.snackBar.open(message, 'X', {panelClass: ['error']});
+  }
+}
 

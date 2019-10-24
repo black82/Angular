@@ -8,7 +8,7 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbCarouselConfig]
 })
 export class BodyComponent implements OnInit {
-  images = [1, 2, 3, 4].map(() => `https://picsum.photos/900/500?random&t= =${Math.random()}`);
+  images: string[];
 
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
@@ -17,6 +17,12 @@ export class BodyComponent implements OnInit {
     config.keyboard = false;
     config.pauseOnHover = false;
   }
+
   ngOnInit() {
+    this.images = ['assets/image/caruseli.jpg', 'assets/image/caruseli2.jpg',
+      'assets/image/caruseli1.jpg', 'assets/image/caruseli3.jpg', 'assets/image/caruseli5.jpg',
+      'assets/image/caruseli6.jpg', 'assets/image/caruseli7.jpg',
+      'assets/image/caruseli8.jpg', 'assets/image/caruseli9.jpg', 'assets/image/caruseli10.jpg',
+      'assets/image/caruseli11.jpg', 'assets/image/caruseli12.jpg'];
   }
 }

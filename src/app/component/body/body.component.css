@@ -3,19 +3,128 @@ img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
-  width: auto;
-  height: auto;
+  height: 160%;
+  width: 70%;
 }
 
 
 body {
   position: center;
   display: grid;
-  background-image: url('src/assets/image/caruseli.jpg');
+  background-image: url('src/assets/image/backgraund.jpg');
   flex-direction: initial;
-  background-size: contain;
+  background-size: cover;
   min-height: 70vh;
 }
 
 
+.ia-container {
+  width: 100%;
+  margin: 5px auto;
+  overflow: hidden;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08);
+  border: 0px solid rgba(255, 255, 255, 0.6);
+
+}
+
+.ia-container figure {
+  position: absolute;
+  top: 0;
+  left: 30px; /* width of visible piece */
+  width: 100%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.ia-container > figure {
+  position: relative;
+  left: 0 !important;
+}
+
+.ia-container img {
+  display: block;
+  width: 60%;
+}
+
+.ia-container input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px; /* just cover visible part */
+  height: 100%;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  opacity: 0;
+  z-index: 100;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.ia-container input:checked {
+  width: 5px;
+  left: auto;
+  right: 0px;
+}
+
+.ia-container input:checked ~ figure {
+  left: 600px;
+  transition: all 0.7s ease-in-out;
+}
+
+.ia-container input:checked ~ figure input {
+  z-index: 1;
+}
+
+@media screen and (max-width: 720px) {
+  .ia-container {
+    width: 700px;
+  }
+
+  .ia-container figure {
+    left: 40px;
+    width: 260px;
+  }
+
+  .ia-container input {
+    width: 40px;
+  }
+
+  .ia-container input:checked ~ figure {
+    left: 260px;
+  }
+
+  .ia-container figcaption span {
+
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .ia-container {
+    width: 320px;
+  }
+
+  .ia-container figure {
+    left: 20px;
+    width: 180px;
+  }
+
+  .ia-container input {
+    width: 20px;
+  }
+
+  .ia-container input:checked ~ figure {
+
+  }
+
+  .ia-container figcaption span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-top: -10px;
+    left: 100px;
+  }
+
+}
 

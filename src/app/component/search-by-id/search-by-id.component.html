@@ -10,6 +10,7 @@
                name="idControl"
                placeholder="Search by Id" spellcheck="false" style="">
       </label>
+      <mat-error *ngIf="formId.get('idControl').errors?.serverError"></mat-error>
     </mat-form-field>
 
     <button class="btn btn-outline-success" id="batonsSubmit" type="submit"
