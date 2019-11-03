@@ -10,15 +10,15 @@
     <div class="col-md-3 mx-auto mt-5">
       <h4 class="text-center">Chips - with avatar</h4>
       <div class="chip">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person"> Jane Doe
-    </div>
+        <img alt="Contact Person" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg"> Jane Doe
+      </div>
     </div>
     <div class="col-md-3 mx-auto mt-5">
       <h4 class="text-center">Chips - without avatar</h4>
-      <div class="chip" *ngIf="hideElement">
+      <div *ngIf="hideElement" class="chip">
         Tag 1
-        <i class="close fa fa-times" (click)="hideElement=!hideElement"></i>
-    </div>
+        <i (click)="hideElement=!hideElement" class="close fa fa-times"></i>
+      </div>
     </div>
   </div>
   <!-- Basic Example -->

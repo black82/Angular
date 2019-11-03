@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-radar',
@@ -10,8 +10,8 @@ export class RadarComponent {
   public chartType: string = 'radar';
 
   public chartDatasets: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'My Second dataset' }
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'My Second dataset'}
   ];
 
   public chartLabels: Array<any> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
@@ -40,7 +40,11 @@ export class RadarComponent {
   public chartOptions: any = {
     responsive: true
   };
-  public chartClicked(): void { }
-  public chartHovered(): void { }
+
+  public chartClicked(): void {
+  }
+
+  public chartHovered(): void {
+  }
 
 }

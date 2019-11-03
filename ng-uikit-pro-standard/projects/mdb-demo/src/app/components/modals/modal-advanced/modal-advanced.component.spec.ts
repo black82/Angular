@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModalAdvancedComponent } from './modal-advanced.component';
+import {ModalAdvancedComponent} from './modal-advanced.component';
 
 describe('ModalAdvancedComponent', () => {
   let component: ModalAdvancedComponent;
@@ -8,9 +8,9 @@ describe('ModalAdvancedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalAdvancedComponent ]
+      declarations: [ModalAdvancedComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

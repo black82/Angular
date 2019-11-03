@@ -1,14 +1,14 @@
-
 <body>
 <app-app-alertvalitation-input *ngIf="visibili" [control]="formByCity"
-                               errorMessage="{{errorMenage}}"></app-app-alertvalitation-input>
+                               errorMessage="{{errorMessage}}">
+</app-app-alertvalitation-input>
 <form (ngSubmit)="searchByCity($event)" [formGroup]="formByCity" class="form-inline md-form mr-auto mb-4">
   <mat-form-field class="example-full-width">
     <input [matAutocomplete]="auto" [readOnly]="true" autocapitalize="off"
-           type="text" matInput
-           formControlName="city"
+           formControlName="city" matInput
            name="city"
-           placeholder="Search by City" spellcheck="false">
+           placeholder="Search by City"
+           spellcheck="false" type="text">
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option}}

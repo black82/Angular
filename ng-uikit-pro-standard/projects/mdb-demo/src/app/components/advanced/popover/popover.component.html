@@ -9,23 +9,31 @@
   <div class="row">
     <div class="col-md-12 mx-auto text-center mt-5">
       <h4 class="text-center">Basic Examples</h4>
-      <button type="button" mdbBtn color="default" class="waves-light" mdbPopover="And here some amazing content. It's very engaging. Right?"
-        placement="right" mdbPopoverHeader="Popover on right" mdbWavesEffect>
+      <button class="waves-light" color="default" mdbBtn
+              mdbPopover="And here some amazing content. It's very engaging. Right?"
+              mdbPopoverHeader="Popover on right"
+              mdbWavesEffect placement="right" type="button">
         Popover on right
       </button>
 
-      <button type="button" mdbBtn color="default" class="waves-light" mdbPopover="And here some amazing content. It's very engaging. Right?"
-        placement="bottom" mdbPopoverHeader="Popover on bottom" mdbWavesEffect>
+      <button class="waves-light" color="default" mdbBtn
+              mdbPopover="And here some amazing content. It's very engaging. Right?"
+              mdbPopoverHeader="Popover on bottom"
+              mdbWavesEffect placement="bottom" type="button">
         Popover on bottom
       </button>
 
-      <button type="button" mdbBtn color="default" class="waves-light" mdbPopover="And here some amazing content. It's very engaging. Right?"
-        placement="left" mdbPopoverHeader="Popover on left" mdbWavesEffect>
+      <button class="waves-light" color="default" mdbBtn
+              mdbPopover="And here some amazing content. It's very engaging. Right?"
+              mdbPopoverHeader="Popover on left"
+              mdbWavesEffect placement="left" type="button">
         Popover on left
       </button>
 
-      <button type="button" mdbBtn color="default" class="waves-light" mdbPopover="And here some amazing content. It's very engaging. Right?"
-        placement="top" mdbPopoverHeader="Popover on top" mdbWavesEffect>
+      <button class="waves-light" color="default" mdbBtn
+              mdbPopover="And here some amazing content. It's very engaging. Right?"
+              mdbPopoverHeader="Popover on top"
+              mdbWavesEffect placement="top" type="button">
         Popover on top
       </button>
     </div>
@@ -38,8 +46,10 @@
   <div class="row">
     <div class="col-md-12 mx-auto text-center">
       <h4 class="text-center">Dismiss on next click</h4>
-      <button type="button" mdbBtn color="danger" class="waves-light" mdbPopover="And here some amazing content. It's very engaging. Right?"
-        placement="right" mdbPopoverHeader="Dismissible popover" triggers="focus" mdbWavesEffect>
+      <button class="waves-light" color="danger" mdbBtn
+              mdbPopover="And here some amazing content. It's very engaging. Right?"
+              mdbPopoverHeader="Dismissible popover"
+              mdbWavesEffect placement="right" triggers="focus" type="button">
         Dismissible popover
       </button>
     </div>
@@ -52,7 +62,8 @@
   <div class="row mb-5">
     <div class="col-md-3 mx-auto text-center">
       <h4 class="text-center">Simple binding</h4>
-      <button type="button" class="btn btn-info waves-light" [mdbPopover]="content" mdbPopoverHeader="title" mdbWavesEffect>
+      <button [mdbPopover]="content" class="btn btn-info waves-light" mdbPopoverHeader="title" mdbWavesEffect
+              type="button">
         Simple binding
       </button>
     </div>
@@ -61,25 +72,30 @@
       <ng-template #popTemplate>Here we go:
         <div [innerHtml]="html"></div>
       </ng-template>
-      <button id="popTemplate" type="button" class="btn btn-success waves-light" mdbPopoverHeader="Dynamic html inside" [mdbPopover]="popTemplate"
-        mdbWavesEffect>
+      <button [mdbPopover]="popTemplate" class="btn btn-success waves-light" id="popTemplate"
+              mdbPopoverHeader="Dynamic html inside"
+              mdbWavesEffect
+              type="button">
         Popover with html
       </button>
     </div>
     <div class="col-md-3 mx-auto text-center">
-    <h4 class="text-center">Preconfigured</h4>
-    <button type="button" mdbBtn color="primary" class="waves-light" mdbPopoverHeader="title" mdbPopover="And here some amazing content. It's very engaging. Right?"
-      mdbWavesEffect>
-      Preconfigured popover
-    </button>
+      <h4 class="text-center">Preconfigured</h4>
+      <button class="waves-light" color="primary" mdbBtn
+              mdbPopover="And here some amazing content. It's very engaging. Right?" mdbPopoverHeader="title"
+              mdbWavesEffect
+              type="button">
+        Preconfigured popover
+      </button>
+    </div>
+    <div class="col-md-3 mx-auto text-center">
+      <h4 class="text-center">Simple hover</h4>
+      <button class="waves-light" color="info" mdbBtn mdbPopover="I will hide on blur" mdbWavesEffect
+              triggers="mouseenter:mouseleave" type="button">
+        Hover over me!
+      </button>
+    </div>
   </div>
-  <div class="col-md-3 mx-auto text-center">
-  <h4 class="text-center">Simple hover</h4>
-  <button type="button" mdbBtn color="info" class="waves-light" mdbPopover="I will hide on blur" triggers="mouseenter:mouseleave" mdbWavesEffect>
-    Hover over me!
-  </button>
-</div>
-</div>
-<!-- Usage -->
+  <!-- Usage -->
 
 </div>

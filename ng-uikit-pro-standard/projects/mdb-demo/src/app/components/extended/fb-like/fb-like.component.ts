@@ -1,5 +1,6 @@
-import { Http } from '@angular/http';
-import { Component, OnInit } from '@angular/core';
+import {Http} from '@angular/http';
+import {Component, OnInit} from '@angular/core';
+
 // import { FacebookService, InitParams } from 'ngx-facebook';
 
 @Component({
@@ -28,8 +29,8 @@ export class FbLikeComponent implements OnInit {
     this.http.get('https://graph.facebook.com/?ids=' + `${httpUrl}`
       + '&access_token=' + `${accessToken}`
       + '&fields=og_object{engagement}').subscribe((data: any) => {
-        this.likeCounter = data.json()[`${httpUrl}`].og_object.engagement.count;
-      });
+      this.likeCounter = data.json()[`${httpUrl}`].og_object.engagement.count;
+    });
   }
 
 }

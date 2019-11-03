@@ -14,7 +14,8 @@ const routers: Routes = [{
   },
   {path: 'bycity', component: SearchbyCityComponent},
   {path: 'byindustry', component: SearchbyIndustryComponent},
-  {path: '**', component: NotFountComponent}
+  {path: '**', component: NotFountComponent},
+  {path: 'error', component: NotFountComponent}
 ];
 
 @NgModule({

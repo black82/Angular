@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HSFNComponent } from './h-s-f-n.component';
+import {HSFNComponent} from './h-s-f-n.component';
 
 describe('HSFNComponent', () => {
   let component: HSFNComponent;
@@ -8,9 +8,9 @@ describe('HSFNComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HSFNComponent ]
+      declarations: [HSFNComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

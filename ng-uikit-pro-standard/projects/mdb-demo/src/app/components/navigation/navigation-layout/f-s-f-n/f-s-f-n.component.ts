@@ -1,6 +1,6 @@
-import { Component, OnInit, Renderer2, Inject, RendererStyleFlags2, OnDestroy } from '@angular/core';
-import { SharedService } from '../../../../shared/shared.service';
-import { DOCUMENT } from '@angular/common';
+import {Component, Inject, OnDestroy, OnInit, Renderer2, RendererStyleFlags2} from '@angular/core';
+import {SharedService} from '../../../../shared/shared.service';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
   selector: 'app-f-s-f-n',
@@ -10,8 +10,9 @@ import { DOCUMENT } from '@angular/common';
 export class FSFNComponent implements OnInit, OnDestroy {
 
   constructor(private sharedService: SharedService,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: any) { }
+              private renderer: Renderer2,
+              @Inject(DOCUMENT) private document: any) {
+  }
 
   ngOnInit() {
     const nav = this.document.querySelector('app-nav');

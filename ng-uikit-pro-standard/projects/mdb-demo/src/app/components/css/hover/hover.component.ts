@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-hover',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HoverComponent implements OnInit {
   zoom = false;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

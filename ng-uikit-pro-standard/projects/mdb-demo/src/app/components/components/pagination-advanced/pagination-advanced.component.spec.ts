@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PaginationAdvancedComponent } from './pagination-advanced.component';
+import {PaginationAdvancedComponent} from './pagination-advanced.component';
 
 describe('PaginationAdvancedComponent', () => {
   let component: PaginationAdvancedComponent;
@@ -8,9 +8,9 @@ describe('PaginationAdvancedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaginationAdvancedComponent ]
+      declarations: [PaginationAdvancedComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

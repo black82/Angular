@@ -8,9 +8,9 @@ describe('AppAlertvalitationInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppAlertvalitationInputComponent ]
+      declarations: [AppAlertvalitationInputComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

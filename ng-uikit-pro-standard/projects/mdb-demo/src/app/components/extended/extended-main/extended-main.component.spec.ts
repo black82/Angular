@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ExtendedMainComponent } from './extended-main.component';
+import {ExtendedMainComponent} from './extended-main.component';
 
 describe('ExtendedMainComponent', () => {
   let component: ExtendedMainComponent;
@@ -8,9 +8,9 @@ describe('ExtendedMainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExtendedMainComponent ]
+      declarations: [ExtendedMainComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,5 +1,13 @@
-import { Component, HostListener, Renderer2, ElementRef, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
-import { NavbarComponent } from 'ng-uikit-pro-standard';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  Renderer2,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
+import {NavbarComponent} from 'ng-uikit-pro-standard';
 
 @Component({
   selector: 'app-light',
@@ -12,7 +20,8 @@ export class LightComponent implements AfterViewInit {
   @ViewChild('nav') nav: NavbarComponent;
   breakpoint = 992;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) { }
+  constructor(private renderer: Renderer2, private el: ElementRef) {
+  }
 
   transformDropdowns() {
     const dropdownMenu = Array.from(this.el.nativeElement.querySelectorAll('.dropdown-menu'));

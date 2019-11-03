@@ -1,7 +1,7 @@
 <div [ngClass]="{invisibile: !visibility}" class="text-info">
-<p>
-  Time:{{" "+clock+"  Date:  "+date}}
-</p>
+  <p>
+    Time:{{" " + clock + "  Date:  " + date}}
+  </p>
 
 </div>
 <button (click)="show()" *ngIf="!visibility" class="btn btn-light" type="button"><p class="text-info">Show Time</p>

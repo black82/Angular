@@ -9,7 +9,9 @@ export class PanelComponent implements OnInit {
   @Input() opened = false;
   @Input() title: string;
   @Output() toggle: EventEmitter<any> = new EventEmitter<any>();
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

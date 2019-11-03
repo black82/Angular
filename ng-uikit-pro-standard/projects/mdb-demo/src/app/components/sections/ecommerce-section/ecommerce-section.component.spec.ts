@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { EcommerceSectionComponent } from './ecommerce-section.component';
+import {EcommerceSectionComponent} from './ecommerce-section.component';
 
 describe('EcommerceSectionComponent', () => {
   let component: EcommerceSectionComponent;
@@ -8,9 +8,9 @@ describe('EcommerceSectionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EcommerceSectionComponent ]
+      declarations: [EcommerceSectionComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

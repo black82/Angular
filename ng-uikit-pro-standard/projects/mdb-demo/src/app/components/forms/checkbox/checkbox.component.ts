@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -7,8 +7,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class CheckboxComponent implements OnInit {
-  public checkboxModel: any = { left: true, middle: false, right: false };
-  constructor() { }
+  public checkboxModel: any = {left: true, middle: false, right: false};
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

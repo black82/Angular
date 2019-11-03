@@ -7,17 +7,20 @@ body {
 form {
   min-height: 20vh;
 }
-mat-form-field{
+
+mat-form-field {
   position: relative;
   left: 130%;
 }
-#batonsSubmit{
+
+#batonsSubmit {
   position: relative;
   left: 130%;
 }
-u{
+
+u {
   position: relative;
-left: 40%;
+  left: 40%;
 }
 
 .example-form {

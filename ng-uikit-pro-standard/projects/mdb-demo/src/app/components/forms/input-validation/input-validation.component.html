@@ -11,7 +11,9 @@
       <h4 class="text-center">minLength Validator</h4>
       <form [formGroup]="validatingForm">
         <div class="md-form">
-          <input mdbInputDirective type="text" id="form2" class="form-control" data-error="wrong text" data-success="right text" formControlName="minlength">
+          <input class="form-control" data-error="wrong text" data-success="right text" formControlName="minlength"
+                 id="form2"
+                 mdbInputDirective type="text">
           <label for="form2">minLength validator</label>
         </div>
       </form>
@@ -26,7 +28,9 @@
       <h4 class="text-center">maxLength Validator</h4>
       <form [formGroup]="validatingForm">
         <div class="md-form">
-          <input mdbInputDirective type="text" id="form3" class="form-control" data-error="wrong text" data-success="right text" formControlName="maxlength">
+          <input class="form-control" data-error="wrong text" data-success="right text" formControlName="maxlength"
+                 id="form3"
+                 mdbInputDirective type="text">
           <label for="form3">maxLength validator</label>
         </div>
       </form>
@@ -41,8 +45,10 @@
       <h4 class="text-center">Min value Validator</h4>
       <form [formGroup]="validatingForm">
         <div class="md-form">
-          <input mdbInputDirective type="number" id="form4" class="form-control" data-error="wrong number" data-success="right number"
-            formControlName="min">
+          <input class="form-control" data-error="wrong number" data-success="right number" formControlName="min"
+                 id="form4"
+                 mdbInputDirective
+                 type="number">
           <label for="form4">min value validator</label>
         </div>
       </form>
@@ -57,8 +63,10 @@
       <h4 class="text-center">Max value Validator</h4>
       <form [formGroup]="validatingForm">
         <div class="md-form">
-          <input mdbInputDirective type="number" id="form5" class="form-control" data-error="wrong number" data-success="right number"
-            formControlName="max">
+          <input class="form-control" data-error="wrong number" data-success="right number" formControlName="max"
+                 id="form5"
+                 mdbInputDirective
+                 type="number">
           <label for="form5">max value validator</label>
         </div>
       </form>
@@ -73,8 +81,10 @@
       <h4 class="text-center">Email Validator</h4>
       <form [formGroup]="validatingForm">
         <div class="md-form">
-          <input mdbInputDirective type="email" id="form6" class="form-control" data-error="wrong email" data-success="right email"
-            formControlName="email">
+          <input class="form-control" data-error="wrong email" data-success="right email" formControlName="email"
+                 id="form6"
+                 mdbInputDirective
+                 type="email">
           <label for="form6">max value validator</label>
         </div>
       </form>
@@ -89,7 +99,9 @@
       <h4 class="text-center">Pattern Validator</h4>
       <form [formGroup]="validatingForm">
         <div class="md-form">
-          <input mdbInputDirective type="text" id="form7" class="form-control" data-error="wrong text" data-success="right text" formControlName="pattern">
+          <input class="form-control" data-error="wrong text" data-success="right text" formControlName="pattern"
+                 id="form7"
+                 mdbInputDirective type="text">
           <label for="form7">only letters (pattern) validator</label>
         </div>
       </form>
@@ -104,8 +116,10 @@
       <h4 class="text-center">Required Validator</h4>
       <form [formGroup]="validatingForm">
         <div class="md-form">
-          <input mdbInputDirective type="text" id="form1" class="form-control" data-error="Something went wrong..." data-success="Everything is okay!"
-            formControlName="required">
+          <input class="form-control" data-error="Something went wrong..." data-success="Everything is okay!"
+                 formControlName="required" id="form1"
+                 mdbInputDirective
+                 type="text">
           <label for="form1">Required validator</label>
         </div>
       </form>
@@ -121,39 +135,47 @@
       <form>
         <div class="md-form">
           <i class="fa fa-envelope prefix"></i>
-          <input mdbInputDirective data-error="wrong email" [formControl]="emailFormEx" data-success="valid email" minLength="8" maxLength="25"
-            type="email" class="form-control" id="form9" name="email" mdbInputDirective>
+          <input [formControl]="emailFormEx" class="form-control" data-error="wrong email" data-success="valid email"
+                 id="form9" maxLength="25"
+                 mdbInputDirective mdbInputDirective minLength="8" name="email" type="email">
           <label for="form9">Type your e-mail</label>
         </div>
 
         <div class="md-form">
           <i class="fa fa-lock prefix"></i>
-          <input mdbInputDirective data-error="wrong password" [formControl]="passwordFormEx" data-success="valid password" minLength="10"
-            maxLength="25" type="password" class="form-control" id="form10" name="password">
+          <input [formControl]="passwordFormEx" class="form-control" data-error="wrong password"
+                 data-success="valid password" id="form10"
+                 maxLength="25" mdbInputDirective minLength="10" name="password" type="password">
           <label for="form10">Type your password</label>
         </div>
 
         <div class="md-form">
-          <input mdbInputDirective data-error="wrong password" [mdbValidate]="false" [formControl]="noValidation" data-success="valid password"
-            type="text" class="form-control" id="form11" name="password">
+          <input [formControl]="noValidation" [mdbValidate]="false" class="form-control" data-error="wrong password"
+                 data-success="valid password"
+                 id="form11" mdbInputDirective name="password" type="text">
           <label for="form11">Turn off validation</label>
         </div>
 
         <div class="md-form">
-          <input mdbInputDirective data-error="wrong password" [validateSuccess]="false" [formControl]="noSuccessValidation" data-success="valid password"
-            type="text" class="form-control" id="form12" name="password">
+          <input [formControl]="noSuccessValidation" [validateSuccess]="false" class="form-control"
+                 data-error="wrong password" data-success="valid password"
+                 id="form12" mdbInputDirective name="password" type="text">
           <label for="form12">Turn off success validation</label>
         </div>
 
         <div class="md-form">
-          <input mdbInputDirective data-error="wrong password" [validateError]="false" [formControl]="noErrorValidation" data-success="valid password"
-            type="text" class="form-control" id="form13" name="password">
+          <input [formControl]="noErrorValidation" [validateError]="false" class="form-control"
+                 data-error="wrong password"
+                 data-success="valid password"
+                 id="form13" mdbInputDirective name="password" type="text">
           <label for="form13">Turn off error validation</label>
         </div>
 
         <div class="md-form">
-          <input mdbInputDirective [errorMessage]="errorMessage" [successMessage]="'Custom success message'" [formControl]="customMessages"
-            type="text" class="form-control" id="form14" name="password">
+          <input [errorMessage]="errorMessage" [formControl]="customMessages"
+                 [successMessage]="'Custom success message'"
+                 class="form-control"
+                 id="form14" mdbInputDirective name="password" type="text">
           <label for="form14">Custom validation messages</label>
         </div>
       </form>

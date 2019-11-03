@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InputValidationComponent } from './input-validation.component';
+import {InputValidationComponent} from './input-validation.component';
 
 describe('InputValidationComponent', () => {
   let component: InputValidationComponent;
@@ -8,9 +8,9 @@ describe('InputValidationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputValidationComponent ]
+      declarations: [InputValidationComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

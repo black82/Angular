@@ -11,14 +11,16 @@
       <h4 class="text-center">"onShow" event</h4>
 
       <div class="d-flex justify-content-center">
-        <button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample"
-          (click)="onshow.show()" mdbWavesEffect>
+        <button (click)="onshow.show()" class="waves-light" color="primary" data-target="#basicExample"
+                data-toggle="modal" mdbBtn
+                mdbWavesEffect type="button">
           "onShow" event
         </button>
       </div>
 
-      <div mdbModal #onshow="mdbModal" class="modal fade" id="frameModalTop" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel" aria-hidden="true" (onShow)="onShow($event)">
+      <div #onshow="mdbModal" (onShow)="onShow($event)" aria-hidden="true" aria-labelledby="myModalLabel"
+           class="modal fade" id="frameModalTop"
+           mdbModal role="dialog" tabindex="-1">
         <div class="modal-dialog modal-notify modal-success" role="document">
           <!--Content-->
           <div class="modal-content">
@@ -26,7 +28,7 @@
             <div class="modal-header">
               <p class="heading lead">Modal Success</p>
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onshow.hide()">
+              <button (click)="onshow.hide()" aria-label="Close" class="close" data-dismiss="modal" type="button">
                 <span aria-hidden="true" class="white-text">&times;</span>
               </button>
             </div>
@@ -37,17 +39,19 @@
                 <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis ad
                   consequatur
-                  in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim, ab officiis totam.</p>
+                  in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim, ab officiis
+                  totam.</p>
               </div>
             </div>
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
-              <a type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect>Get it now
+              <a class="waves-light" color="primary" mdbBtn mdbWavesEffect type="button">Get it now
                 <i class="fa fa-diamond ml-1"></i>
               </a>
-              <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" mdbWavesEffect (click)="onshow.hide()"
-                data-dismiss="modal">No, thanks</a>
+              <a (click)="onshow.hide()" class="waves-effect" color="primary" data-dismiss="modal" mdbBtn mdbWavesEffect
+                 outline="true"
+                 type="button">No, thanks</a>
             </div>
           </div>
           <!--/.Content-->
@@ -66,14 +70,16 @@
       <h4 class="text-center">"onShown" event</h4>
 
       <div class="d-flex justify-content-center">
-        <button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample"
-          (click)="onshow.show()" mdbWavesEffect>
+        <button (click)="onshow.show()" class="waves-light" color="primary" data-target="#basicExample"
+                data-toggle="modal" mdbBtn
+                mdbWavesEffect type="button">
           "onShown" event
         </button>
       </div>
 
-      <div mdbModal #onshown="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel" aria-hidden="true" (onShown)="onShown($event)">
+      <div #onshown="mdbModal" (onShown)="onShown($event)" aria-hidden="true" aria-labelledby="myModalLabel"
+           class="modal fade left" id="frameModalTop"
+           mdbModal role="dialog" tabindex="-1">
         <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
           <!--Content-->
           <div class="modal-content">
@@ -81,7 +87,7 @@
             <div class="modal-header">
               <p class="heading lead">Modal Info</p>
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onshown.hide()">
+              <button (click)="onshown.hide()" aria-label="Close" class="close" data-dismiss="modal" type="button">
                 <span aria-hidden="true" class="white-text">&times;</span>
               </button>
             </div>
@@ -89,7 +95,8 @@
             <!--Body-->
             <div class="modal-body">
 
-              <img src="https://mdbootstrap.com/wp-content/uploads/2016/11/admin-dashboard-bootstrap.jpg" alt="" class="img-fluid">
+              <img alt="" class="img-fluid"
+                   src="https://mdbootstrap.com/wp-content/uploads/2016/11/admin-dashboard-bootstrap.jpg">
 
               <div class="text-center">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt vero illo error eveniet cum.</p>
@@ -98,11 +105,13 @@
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
-              <a type="button" mdbBtn color="primary" class="waves-effect" mdbWavesEffect>Get it now
+              <a class="waves-effect" color="primary" mdbBtn mdbWavesEffect type="button">Get it now
                 <i class="fa fa-diamond ml-1"></i>
               </a>
-              <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" mdbWavesEffect (click)="onshown.hide()"
-                data-dismiss="modal">No, thanks</a>
+              <a (click)="onshown.hide()" class="waves-effect" color="primary" data-dismiss="modal" mdbBtn
+                 mdbWavesEffect
+                 outline="true"
+                 type="button">No, thanks</a>
             </div>
           </div>
           <!--/.Content-->
@@ -121,14 +130,16 @@
       <h4 class="text-center">"onHide" event</h4>
 
       <div class="d-flex justify-content-center">
-        <button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample"
-          (click)="onhide.show()" mdbWavesEffect>
+        <button (click)="onhide.show()" class="waves-light" color="primary" data-target="#basicExample"
+                data-toggle="modal" mdbBtn
+                mdbWavesEffect type="button">
           "onHide" event
         </button>
       </div>
 
-      <div mdbModal #onhide="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel" aria-hidden="true" (onHide)="onHide($event)">
+      <div #onhide="mdbModal" (onHide)="onHide($event)" aria-hidden="true" aria-labelledby="myModalLabel"
+           class="modal fade right" id="frameModalTop"
+           mdbModal role="dialog" tabindex="-1">
         <div class="modal-dialog modal-notify modal-danger modal-side modal-top-right" role="document">
           <!--Content-->
           <div class="modal-content">
@@ -136,7 +147,7 @@
             <div class="modal-header">
               <p class="heading">Modal Danger</p>
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onhide.hide()">
+              <button (click)="onhide.hide()" aria-label="Close" class="close" data-dismiss="modal" type="button">
                 <span aria-hidden="true" class="white-text">&times;</span>
               </button>
             </div>
@@ -164,11 +175,12 @@
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
-              <a type="button" mdbBtn color="primary" class="waves-effect" mdbWavesEffect>Get it now
+              <a class="waves-effect" color="primary" mdbBtn mdbWavesEffect type="button">Get it now
                 <i class="fa fa-diamond ml-1"></i>
               </a>
-              <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" mdbWavesEffect (click)="onhide.hide()"
-                data-dismiss="modal">No, thanks</a>
+              <a (click)="onhide.hide()" class="waves-effect" color="primary" data-dismiss="modal" mdbBtn mdbWavesEffect
+                 outline="true"
+                 type="button">No, thanks</a>
             </div>
           </div>
           <!--/.Content-->
@@ -187,14 +199,16 @@
       <h4 class="text-center">"onHidden" event</h4>
 
       <div class="d-flex justify-content-center">
-        <button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample"
-          (click)="onhidden.show()" mdbWavesEffect>
+        <button (click)="onhidden.show()" class="waves-light" color="primary" data-target="#basicExample"
+                data-toggle="modal" mdbBtn
+                mdbWavesEffect type="button">
           "onHidden" event
         </button>
       </div>
 
-      <div mdbModal #onhidden="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel" aria-hidden="true" (onHidden)="onHidden($event)">
+      <div #onhidden="mdbModal" (onHidden)="onHidden($event)" aria-hidden="true" aria-labelledby="myModalLabel"
+           class="modal fade left" id="frameModalTop"
+           mdbModal role="dialog" tabindex="-1">
         <div class="modal-dialog modal-notify modal-warning modal-side modal-bottom-left" role="document">
           <!--Content-->
           <div class="modal-content">
@@ -202,7 +216,7 @@
             <div class="modal-header">
               <p class="heading">Modal Warning</p>
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onhidden.hide()">
+              <button (click)="onhidden.hide()" aria-label="Close" class="close" data-dismiss="modal" type="button">
                 <span aria-hidden="true" class="white-text">&times;</span>
               </button>
             </div>
@@ -212,8 +226,9 @@
 
               <div class="row">
                 <div class="col-3 text-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" alt="Michal Szymanski - founder of Material Design for Bootstrap"
-                    class="img-fluid z-depth-1-half rounded-circle">
+                  <img alt="Michal Szymanski - founder of Material Design for Bootstrap"
+                       class="img-fluid z-depth-1-half rounded-circle"
+                       src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg">
                   <div style="height: 10px"></div>
                   <p class="title mb-0">Jane</p>
                   <p class="text-muted " style="font-size: 13px">Consultant</p>
@@ -233,11 +248,13 @@
 
             <!--Footer-->
             <div class="modal-footer justify-content-center waves-effect" mdbWavesEffect>
-              <a type="button" mdbBtn color="primary">Get it now
+              <a color="primary" mdbBtn type="button">Get it now
                 <i class="fa fa-diamond ml-1"></i>
               </a>
-              <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" mdbWavesEffect (click)="onhidden.hide()"
-                data-dismiss="modal">No, thanks</a>
+              <a (click)="onhidden.hide()" class="waves-effect" color="primary" data-dismiss="modal" mdbBtn
+                 mdbWavesEffect
+                 outline="true"
+                 type="button">No, thanks</a>
             </div>
           </div>
           <!--/.Content-->

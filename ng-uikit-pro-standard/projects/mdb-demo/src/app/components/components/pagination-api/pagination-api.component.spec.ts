@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PaginationApiComponent } from './pagination-api.component';
+import {PaginationApiComponent} from './pagination-api.component';
 
 describe('PaginationApiComponent', () => {
   let component: PaginationApiComponent;
@@ -8,9 +8,9 @@ describe('PaginationApiComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaginationApiComponent ]
+      declarations: [PaginationApiComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

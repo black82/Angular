@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { StickyContentComponent } from './sticky-content.component';
+import {StickyContentComponent} from './sticky-content.component';
 
 describe('StickyContentComponent', () => {
   let component: StickyContentComponent;
@@ -8,9 +8,9 @@ describe('StickyContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StickyContentComponent ]
+      declarations: [StickyContentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

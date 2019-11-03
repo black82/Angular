@@ -1,5 +1,13 @@
-import { Component, AfterViewInit, ViewChild, Renderer2, ElementRef, HostListener, ViewEncapsulation } from '@angular/core';
-import { NavbarComponent } from 'ng-uikit-pro-standard';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  Renderer2,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
+import {NavbarComponent} from 'ng-uikit-pro-standard';
 
 @Component({
   selector: 'app-dark',
@@ -12,7 +20,8 @@ export class DarkComponent implements AfterViewInit {
   @ViewChild('nav') nav: NavbarComponent;
   breakpoint = 992;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) { }
+  constructor(private renderer: Renderer2, private el: ElementRef) {
+  }
 
   transformDropdowns() {
     const dropdownMenu = Array.from(this.el.nativeElement.querySelectorAll('.dropdown-menu'));

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { IntroMinimalisticComponent } from './intro-minimalistic.component';
+import {IntroMinimalisticComponent} from './intro-minimalistic.component';
 
 describe('IntroMinimalisticComponent', () => {
   let component: IntroMinimalisticComponent;
@@ -8,9 +8,9 @@ describe('IntroMinimalisticComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IntroMinimalisticComponent ]
+      declarations: [IntroMinimalisticComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, Renderer2, Inject, OnDestroy } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import {Component, Inject, OnDestroy, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
+import {DOCUMENT} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-sticky-content',
@@ -9,7 +9,9 @@ import { DOCUMENT } from '@angular/platform-browser';
 })
 export class StickyContentComponent implements OnInit, OnDestroy {
   footer: any;
-  constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) { }
+
+  constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {
+  }
 
   ngOnInit() {
     this.footer = this.document.querySelector('app-footer');

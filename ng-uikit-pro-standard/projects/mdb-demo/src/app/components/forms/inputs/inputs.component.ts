@@ -1,6 +1,6 @@
-import { Component, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { UploadOutput, UploadFile, UploadInput, humanizeBytes } from 'ng-uikit-pro-standard';
+import {Component, ElementRef, EventEmitter, Renderer2, ViewChild} from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+import {humanizeBytes, UploadFile, UploadInput, UploadOutput} from 'ng-uikit-pro-standard';
 
 @Component({
   selector: 'app-inputs',
@@ -54,14 +54,14 @@ export class InputsComponent {
       type: 'uploadAll',
       url: 'your-path-to-backend-endpoint',
       method: 'POST',
-      data: { foo: 'bar' },
+      data: {foo: 'bar'},
     };
 
     this.uploadInput.emit(event);
   }
 
   cancelUpload(id: string): void {
-    this.uploadInput.emit({ type: 'cancel', id: id });
+    this.uploadInput.emit({type: 'cancel', id: id});
   }
 
   onUploadOutput(output: UploadOutput | any): void {

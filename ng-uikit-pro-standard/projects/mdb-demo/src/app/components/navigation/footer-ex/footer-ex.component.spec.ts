@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FooterExComponent } from './footer-ex.component';
+import {FooterExComponent} from './footer-ex.component';
 
 describe('FooterExComponent', () => {
   let component: FooterExComponent;
@@ -8,9 +8,9 @@ describe('FooterExComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterExComponent ]
+      declarations: [FooterExComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

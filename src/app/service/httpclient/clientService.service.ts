@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
 import {catchError, retry} from 'rxjs/operators';
 import {Observable, throwError} from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 
 @Injectable({
@@ -11,15 +12,15 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class ClientServiceService {
 
-  notifier: NotificationService;
-  basetUrl = 'http://localhost:8081';
 
+  basetUrl = 'http://localhost:8081';
+  router: Router;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
-
+  notific: NotificationService;
 
   constructor(private http: HttpClient) {
 
@@ -29,7 +30,7 @@ export class ClientServiceService {
     return this.http.get<Company>(this.basetUrl + '/get/' + id, this.httpOptions)
       .pipe(
         retry(3),
-        catchError(this.errorHandl)
+        catchError(this.errorHandler)
       );
   }
 
@@ -37,27 +38,25 @@ export class ClientServiceService {
     return this.http.get<Company[]>(this.basetUrl + param, this.httpOptions)
       .pipe(
         retry(2),
-        catchError(this.errorHandl)
+        catchError(this.errorHandler)
       );
 
   }
 
-  errorHandl(error) {
-    let errorMessage = '';
+  errorHandler(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
     } else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
     }
-    console.log(errorMessage);
-    onmessageerror.apply(errorMessage);
-    window.alert(errorMessage);
-    this.notifier.showError(errorMessage);
-    return throwError(errorMessage);
-  }
 
+    return throwError(error.message);
+  }
 }
 
 
@@ -71,6 +70,7 @@ export class NotificationService {
   }
 
   showError(message: string): void {
+
 
     this.snackBar.open(message, 'X', {panelClass: ['error']});
   }

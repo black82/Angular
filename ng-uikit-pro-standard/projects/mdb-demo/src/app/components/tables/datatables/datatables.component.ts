@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChildren, QueryList, ElementRef, HostListener } from '@angular/core';
-import { Http } from '@angular/http';
-import { Angular5Csv } from 'angular5-csv/Angular5-csv';
+import {Component, ElementRef, HostListener, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {Http} from '@angular/http';
+import {Angular5Csv} from 'angular5-csv/Angular5-csv';
+
 @Component({
   selector: 'app-datatables',
   templateUrl: './datatables.component.html',
@@ -32,7 +33,8 @@ export class DatatablesComponent implements OnInit {
   lastPageNumber: number;
   maxVisibleItems: number = 10;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+  }
 
   getData() {
     return this.http.get(this.url);
@@ -41,7 +43,7 @@ export class DatatablesComponent implements OnInit {
   ngOnInit() {
     this.getData().subscribe((next: any) => {
       next.json().forEach((element: any) => {
-        this.tableData.push({ id: (element.id).toString(), title: element.title, body: element.body });
+        this.tableData.push({id: (element.id).toString(), title: element.title, body: element.body});
       });
     });
 
@@ -69,6 +71,7 @@ export class DatatablesComponent implements OnInit {
     }
     this.lastPageNumber = this.paginators.length;
   }
+
   changePage(event: any) {
     if (event.target.text >= 1 && event.target.text <= this.maxVisibleItems) {
       this.activePage = +event.target.text;
@@ -82,6 +85,7 @@ export class DatatablesComponent implements OnInit {
     this.firstVisibleIndex = this.activePage * this.maxVisibleItems - this.maxVisibleItems + 1;
     this.lastVisibleIndex = this.activePage * this.maxVisibleItems;
   }
+
   previousPage() {
     this.activePage -= 1;
     this.firstVisibleIndex = this.activePage * this.maxVisibleItems - this.maxVisibleItems + 1;

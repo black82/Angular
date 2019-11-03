@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CitiarrayService {
 
-  constructor() { }
   cityarr: string[] = ['Baabe',
     'Babenhausen',
     'Bacharach',
@@ -471,4 +470,7 @@ export class CitiarrayService {
     'Aumühle',
     'Aurich',
     'Aystetten'];
+
+  constructor() {
+  }
 }

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RFNComponent } from './r-f-n.component';
+import {RFNComponent} from './r-f-n.component';
 
 describe('RFNComponent', () => {
   let component: RFNComponent;
@@ -8,9 +8,9 @@ describe('RFNComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RFNComponent ]
+      declarations: [RFNComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

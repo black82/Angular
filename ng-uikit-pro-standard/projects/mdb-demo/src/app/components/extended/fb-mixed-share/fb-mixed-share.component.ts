@@ -1,5 +1,6 @@
-import { Http } from '@angular/http';
-import { Component, AfterViewInit } from '@angular/core';
+import {Http} from '@angular/http';
+import {AfterViewInit, Component} from '@angular/core';
+
 // import { FacebookService, InitParams } from 'ngx-facebook';
 
 @Component({
@@ -11,7 +12,7 @@ export class FbMixedShareComponent implements AfterViewInit {
 
   shareCounter: number = 0;
 
-  constructor( private http: Http) {
+  constructor(private http: Http) {
     // const initParams: InitParams = {
     //   appId: '263350547594130',
     //   xfbml: true,

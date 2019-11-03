@@ -17,7 +17,8 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [{
+            "assets": [
+              {
                 "glob": "favicon.ico",
                 "input": "src",
                 "output": "/"
@@ -28,7 +29,8 @@
                 "output": "/assets"
               }
             ],
-            "styles": [{
+            "styles": [
+              {
                 "input": "node_modules/font-awesome/scss/font-awesome.scss"
               },
               {
@@ -41,7 +43,8 @@
                 "input": "src/styles.scss"
               }
             ],
-            "scripts": [{
+            "scripts": [
+              {
                 "input": "node_modules/chart.js/dist/Chart.js"
               },
               {
@@ -57,10 +60,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -97,11 +102,14 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": [{
-              "input": "styles.scss"
-            }],
+            "styles": [
+              {
+                "input": "styles.scss"
+              }
+            ],
             "scripts": [],
-            "assets": [{
+            "assets": [
+              {
                 "glob": "favicon.ico",
                 "input": "src/",
                 "output": "/"

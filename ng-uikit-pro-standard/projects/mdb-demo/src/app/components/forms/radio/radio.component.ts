@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-radio',
@@ -8,7 +8,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class RadioComponent implements OnInit {
   public radioModel: string = 'Left';
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

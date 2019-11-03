@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, OnDestroy } from '@angular/core';
-import { ToastService } from 'ng-uikit-pro-standard';
-import { Http } from '@angular/http';
+import {AfterViewInit, Component, OnDestroy} from '@angular/core';
+import {ToastService} from 'ng-uikit-pro-standard';
+import {Http} from '@angular/http';
+
 @Component({
   selector: 'app-alerts',
   templateUrl: './alerts.component.html',
@@ -10,7 +11,9 @@ export class AlertsComponent implements AfterViewInit, OnDestroy {
   url: string = 'https://jsonplaceholder.typicode.com/users/';
   usersArray: Array<any> = [];
   getDataInterval: any;
-  constructor(private toastrService: ToastService, private http: Http) { }
+
+  constructor(private toastrService: ToastService, private http: Http) {
+  }
 
   showSuccess() {
     this.toastrService.success('Info message');
@@ -29,22 +32,22 @@ export class AlertsComponent implements AfterViewInit, OnDestroy {
   }
 
   opacityShowSuccess() {
-    const options = { toastClass: 'opacity' };
+    const options = {toastClass: 'opacity'};
     this.toastrService.success('Success message description', 'Success message', options);
   }
 
   opacityShowError() {
-    const options = { toastClass: 'opacity' };
+    const options = {toastClass: 'opacity'};
     this.toastrService.error('Error message description', 'Error message', options);
   }
 
   opacityShowInfo() {
-    const options = { toastClass: 'opacity' };
+    const options = {toastClass: 'opacity'};
     this.toastrService.info('Info message description', 'Info message', options);
   }
 
   opacityShowWarning() {
-    const options = { toastClass: 'opacity' };
+    const options = {toastClass: 'opacity'};
     this.toastrService.warning('Warning message description', 'Warning message', options);
   }
 

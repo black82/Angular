@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RadarComponent } from './radar.component';
+import {RadarComponent} from './radar.component';
 
 describe('RadarComponent', () => {
   let component: RadarComponent;
@@ -8,9 +8,9 @@ describe('RadarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RadarComponent ]
+      declarations: [RadarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

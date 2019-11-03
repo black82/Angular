@@ -1,5 +1,5 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { MDBDatePickerComponent, IMyOptions } from 'ng-uikit-pro-standard';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {IMyOptions, MDBDatePickerComponent} from 'ng-uikit-pro-standard';
 
 @Component({
   selector: 'app-datepicker',
@@ -16,8 +16,16 @@ export class DatepickerComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.datePicker.addLocale({
       de: {
-        dayLabels: { su: 'Son', mo: 'Mon', tu: 'Die', we: 'Mit', th: 'Don', fr: 'Fre', sa: 'Sam' },
-        dayLabelsFull: { su: 'Sonntag', mo: 'Montag', tu: 'Dienstag', we: 'Mittwoch', th: 'Donnerstag', fr: 'Freitag', sa: 'Samstag' },
+        dayLabels: {su: 'Son', mo: 'Mon', tu: 'Die', we: 'Mit', th: 'Don', fr: 'Fre', sa: 'Sam'},
+        dayLabelsFull: {
+          su: 'Sonntag',
+          mo: 'Montag',
+          tu: 'Dienstag',
+          we: 'Mittwoch',
+          th: 'Donnerstag',
+          fr: 'Freitag',
+          sa: 'Samstag'
+        },
         monthLabels: {
           1: 'Jan', 2: 'Feb', 3: 'Mär', 4: 'Apr', 5: 'Mai', 6: 'Jun',
           7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Okt', 11: 'Nov', 12: 'Dez'

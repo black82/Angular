@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-md-6 mx-auto mt-5">
       <h4 class="text-center">Basic Example</h4>
-      <mdb-date-picker name="mydate" [placeholder]="'Selected date'" [(ngModel)]="model" required></mdb-date-picker>
+      <mdb-date-picker [(ngModel)]="model" [placeholder]="'Selected date'" name="mydate" required></mdb-date-picker>
     </div>
   </div>
   <!-- Basic Example -->
@@ -18,10 +18,11 @@
 
   <!-- Translation -->
   <div class="row">
-      <div class="col-md-6 mx-auto mb-5">
-        <h4 class="text-center">Translation</h4>
-        <mdb-date-picker name="datepicker" #datePicker [options]="myDatePickerOptions" [placeholder]="'Selected date'" [locale]="'de'" [(ngModel)]="modell" required></mdb-date-picker>
-      </div>
+    <div class="col-md-6 mx-auto mb-5">
+      <h4 class="text-center">Translation</h4>
+      <mdb-date-picker #datePicker [(ngModel)]="modell" [locale]="'de'" [options]="myDatePickerOptions"
+                       [placeholder]="'Selected date'" name="datepicker" required></mdb-date-picker>
     </div>
-    <!-- Translation -->
+  </div>
+  <!-- Translation -->
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import {Component, OnInit, QueryList, ViewChildren} from '@angular/core';
 
 @Component({
   selector: 'app-pagination-advanced',
@@ -19,7 +19,8 @@ export class PaginationAdvancedComponent implements OnInit {
   lastVisiblePaginator = this.numberOfVisiblePaginators;
   tableData: Array<any> = [];
 
-  constructor() { }
+  constructor() {
+  }
 
 
   changePage(event: any) {
@@ -86,7 +87,7 @@ export class PaginationAdvancedComponent implements OnInit {
 
   ngOnInit() {
     for (let i = 1; i <= 100; i++) {
-      this.tableData.push({ id: i, title: 'Post ' + i });
+      this.tableData.push({id: i, title: 'Post ' + i});
     }
 
     if (this.tableData.length % this.itemsPerPage === 0) {

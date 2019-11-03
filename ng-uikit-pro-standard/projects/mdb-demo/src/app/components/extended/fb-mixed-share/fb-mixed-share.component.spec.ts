@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FbMixedShareComponent } from './fb-mixed-share.component';
+import {FbMixedShareComponent} from './fb-mixed-share.component';
 
 describe('FbMixedShareComponent', () => {
   let component: FbMixedShareComponent;
@@ -8,9 +8,9 @@ describe('FbMixedShareComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FbMixedShareComponent ]
+      declarations: [FbMixedShareComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

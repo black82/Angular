@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
@@ -35,12 +34,7 @@ import {ClientServiceService} from '../../service/httpclient/clientService.servi
 export class SearchbyCityComponent implements OnInit {
 
 
-  constructor(private http: HttpClient, private fb: FormBuilder,
-              private citis: CitiarrayService,
-              private client: ClientServiceService) {
-  }
-
-  errorMenage: string;
+  errorMessage: string;
   isOpen = 'closed';
   hideme = [];
   filteredOptions: Observable<string[]>;
@@ -54,22 +48,31 @@ export class SearchbyCityComponent implements OnInit {
   visibili = false;
   private cityarr: string[];
 
+  constructor(private fb: FormBuilder,
+              private citis: CitiarrayService,
+              private client: ClientServiceService) {
+  }
+
   searchByCity($event) {
     if (this.formByCity.invalid) {
-      this.errorMenage = 'You entered an incorrect value in the search field. Try again !!! ' + this.formByCity.controls.city.value;
-
+      this.errorMessage = 'You entered an incorrect value in the search field. Try again !!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
     }
     if (!this.cheekCity()) {
       this.formByCity.get('city').setErrors({incorrect: true});
-      this.errorMenage = 'The value you entered is not present in the list of cities!!! ' + this.formByCity.controls.city.value;
+      this.errorMessage = 'The value you entered is not present in the list of cities!!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
     } else {
-      this.client.getListCompany('/get1000/' + this.formByCity.controls.city.value).subscribe(
-        company => {
-          this.companies = company;
-        }
-      );
+      this.client.getListCompany('/get1000/' + this.formByCity.controls.city.value)
+        .subscribe(company => {
+            this.companies = company;
+          },
+          error => {
+            this.errorMessage = 'Something bad happened;   please try again later.';
+            this.formByCity.get('city').setErrors({incorrect: true});
+            this.visibili = true;
+          }
+        );
     }
   }
 

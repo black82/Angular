@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FlippingCardsComponent } from './flipping-cards.component';
+import {FlippingCardsComponent} from './flipping-cards.component';
 
 describe('FlippingCardsComponent', () => {
   let component: FlippingCardsComponent;
@@ -8,9 +8,9 @@ describe('FlippingCardsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FlippingCardsComponent ]
+      declarations: [FlippingCardsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

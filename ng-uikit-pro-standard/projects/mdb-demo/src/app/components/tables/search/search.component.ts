@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -9,12 +9,12 @@ export class SearchTableComponent {
 
   searchText: string;
   tableData = [
-    { id: '1', firstName: 'Mark', lastName: 'Otto', username: '@mdo' },
-    { id: '2', firstName: 'Jacob', lastName: 'Thornton', username: '@jcox' },
-    { id: '3', firstName: 'Larry', lastName: 'Last', username: '@larry' },
-    { id: '4', firstName: 'John', lastName: 'Doe', username: '@johny' },
-    { id: '5', firstName: 'Zigi', lastName: 'Kiwi', username: '@zk' },
-    { id: '6', firstName: 'Beatrice', lastName: 'Selphie', username: '@bsl' },
+    {id: '1', firstName: 'Mark', lastName: 'Otto', username: '@mdo'},
+    {id: '2', firstName: 'Jacob', lastName: 'Thornton', username: '@jcox'},
+    {id: '3', firstName: 'Larry', lastName: 'Last', username: '@larry'},
+    {id: '4', firstName: 'John', lastName: 'Doe', username: '@johny'},
+    {id: '5', firstName: 'Zigi', lastName: 'Kiwi', username: '@zk'},
+    {id: '6', firstName: 'Beatrice', lastName: 'Selphie', username: '@bsl'},
   ];
 
   filterIt(arr: any, searchKey: any) {

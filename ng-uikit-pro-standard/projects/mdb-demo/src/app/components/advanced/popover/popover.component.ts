@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-popover',
@@ -9,8 +9,9 @@ export class PopoverComponent implements OnInit {
   public content: string = 'Add your content here';
   public html: string = '<span class="btn btn-danger">Your HTML here</span>';
 
-  
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

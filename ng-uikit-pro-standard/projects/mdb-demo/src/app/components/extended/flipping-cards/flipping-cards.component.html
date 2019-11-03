@@ -21,18 +21,20 @@
 
               <!-- Image-->
               <div class="card-up">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">
+                <img class="img-fluid"
+                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg">
               </div>
               <!--Avatar-->
               <div class="avatar">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg" class="rounded-circle img-responsive">
+                <img class="rounded-circle img-responsive"
+                     src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg">
               </div>
               <!--Content-->
               <div class="card-body">
                 <h4>Jonathan Doe</h4>
                 <p>Web developer</p>
                 <!--Triggering button-->
-                <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                <a (click)="cards.toggle()" class="rotate-btn" data-card="card-1">
                   <i class="fa fa-repeat"></i> Click here to rotate</a>
               </div>
             </div>
@@ -73,7 +75,7 @@
                 </li>
               </ul>
               <!--Triggering button-->
-              <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+              <a (click)="cards.toggle()" class="rotate-btn" data-card="card-1">
                 <i class="fa fa-undo"></i> Click here to rotate back</a>
 
             </div>
@@ -90,8 +92,9 @@
               <!-- Image-->
               <div class="card-up">
                 <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28110%29.jpg" class="img-fluid"
-                    alt="">
+                  <img alt=""
+                       class="img-fluid"
+                       src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28110%29.jpg">
 
                 </div>
               </div>
@@ -99,7 +102,7 @@
 
               <!--Content-->
               <div class="content">
-                <a class="rotate-btn" data-card="card-2" (click)="card.toggle()">
+                <a (click)="card.toggle()" class="rotate-btn" data-card="card-2">
                   <i class="fa fa-share-alt"></i>
                 </a>
                 <h4>Card title</h4>
@@ -122,44 +125,44 @@
             <div class="face back tp-box_side tp-box_back">
               <!--Title-->
               <h4 class="card-title">Social shares
-                <i class="fa fa-close rotate-btn" (click)="card.toggle()"></i>
+                <i (click)="card.toggle()" class="fa fa-close rotate-btn"></i>
               </h4>
               <hr>
 
               <!--Social Icons-->
               <ul class="list-inline">
                 <li class="list-inline-item">
-                  <a mdbBtn floating="true" size="sm" class="btn-fb waves-light" mdbWavesEffect>
+                  <a class="btn-fb waves-light" floating="true" mdbBtn mdbWavesEffect size="sm">
                     <i class="fa fa-facebook"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn floating="true" size="sm" class="btn-tw waves-light" mdbWavesEffect>
+                  <a class="btn-tw waves-light" floating="true" mdbBtn mdbWavesEffect size="sm">
                     <i class="fa fa-twitter"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn floating="true" size="sm" class="btn-gplus waves-light" mdbWavesEffect>
+                  <a class="btn-gplus waves-light" floating="true" mdbBtn mdbWavesEffect size="sm">
                     <i class="fa fa-google-plus"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn floating="true" size="sm" class="btn-li waves-light" mdbWavesEffect>
+                  <a class="btn-li waves-light" floating="true" mdbBtn mdbWavesEffect size="sm">
                     <i class="fa fa-linkedin"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn floating="true" size="sm" class="btn-git waves-light" mdbWavesEffect>
+                  <a class="btn-git waves-light" floating="true" mdbBtn mdbWavesEffect size="sm">
                     <i class="fa fa-github"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn floating="true" size="sm" class="btn-pin waves-light" mdbWavesEffect>
+                  <a class="btn-pin waves-light" floating="true" mdbBtn mdbWavesEffect size="sm">
                     <i class="fa fa-pinterest"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn floating="true" size="sm" class="btn-ins waves-light" mdbWavesEffect>
+                  <a class="btn-ins waves-light" floating="true" mdbBtn mdbWavesEffect size="sm">
                     <i class="fa fa-instagram"> </i>
                   </a>
                 </li>
@@ -171,22 +174,22 @@
               <!--Social Icons-->
               <ul class="list-inline">
                 <li class="list-inline-item">
-                  <a mdbBtn class="btn-fb waves-light" mdbWavesEffect>
+                  <a class="btn-fb waves-light" mdbBtn mdbWavesEffect>
                     <i class="fa fa-facebook"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn class=" btn-tw waves-light" mdbWavesEffect>
+                  <a class=" btn-tw waves-light" mdbBtn mdbWavesEffect>
                     <i class="fa fa-twitter"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn class="btn-li waves-light" mdbWavesEffect>
+                  <a class="btn-li waves-light" mdbBtn mdbWavesEffect>
                     <i class="fa fa-linkedin"> </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a mdbBtn class="btn-ins waves-light" mdbWavesEffect>
+                  <a class="btn-ins waves-light" mdbBtn mdbWavesEffect>
                     <i class="fa fa-instagram"> </i>
                   </a>
                 </li>
@@ -219,18 +222,20 @@
 
               <!-- Image-->
               <div class="card-up">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">
+                <img class="img-fluid"
+                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg">
               </div>
               <!--Avatar-->
               <div class="avatar">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg" class="rounded-circle img-responsive">
+                <img class="rounded-circle img-responsive"
+                     src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg">
               </div>
               <!--Content-->
               <div class="card-body">
                 <h4>Jonathan Doe</h4>
                 <p>Web developer</p>
                 <!--Triggering button-->
-                <a class="rotate-btn" data-card="card-1" (click)="cards1.toggle()">
+                <a (click)="cards1.toggle()" class="rotate-btn" data-card="card-1">
                   <i class="fa fa-repeat"></i> Click here to rotate</a>
               </div>
             </div>
@@ -271,7 +276,7 @@
                 </li>
               </ul>
               <!--Triggering button-->
-              <a class="rotate-btn" data-card="card-1" (click)="cards1.toggle()">
+              <a (click)="cards1.toggle()" class="rotate-btn" data-card="card-1">
                 <i class="fa fa-undo"></i> Click here to rotate back</a>
 
             </div>
@@ -289,18 +294,19 @@
 
               <!-- Image-->
               <div class="card-up">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(41).jpg" class="img-fluid">
+                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(41).jpg">
               </div>
               <!--Avatar-->
               <div class="avatar">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(11).jpg" class="rounded-circle img-responsive">
+                <img class="rounded-circle img-responsive"
+                     src="https://mdbootstrap.com/img/Photos/Avatars/img%20(11).jpg">
               </div>
               <!--Content-->
               <div class="card-body">
                 <h4>Marie Johnson</h4>
                 <p>Web developer</p>
                 <!--Triggering button-->
-                <a class="rotate-btn" data-card="card-1" (click)="cards2.toggle()">
+                <a (click)="cards2.toggle()" class="rotate-btn" data-card="card-1">
                   <i class="fa fa-repeat"></i> Click here to rotate</a>
               </div>
             </div>
@@ -341,7 +347,7 @@
                 </li>
               </ul>
               <!--Triggering button-->
-              <a class="rotate-btn" data-card="card-1" (click)="cards2.toggle()">
+              <a (click)="cards2.toggle()" class="rotate-btn" data-card="card-1">
                 <i class="fa fa-undo"></i> Click here to rotate back</a>
 
             </div>
@@ -359,18 +365,19 @@
 
               <!-- Image-->
               <div class="card-up">
-                <img src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg" class="img-fluid">
+                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg">
               </div>
               <!--Avatar-->
               <div class="avatar">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle img-responsive">
+                <img class="rounded-circle img-responsive"
+                     src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg">
               </div>
               <!--Content-->
               <div class="card-body">
                 <h4>Amy Kill</h4>
                 <p>Content Specialist</p>
                 <!--Triggering button-->
-                <a class="rotate-btn" data-card="card-1" (click)="cards3.toggle()">
+                <a (click)="cards3.toggle()" class="rotate-btn" data-card="card-1">
                   <i class="fa fa-repeat"></i> Click here to rotate</a>
               </div>
             </div>
@@ -411,7 +418,7 @@
                 </li>
               </ul>
               <!--Triggering button-->
-              <a class="rotate-btn" data-card="card-1" (click)="cards3.toggle()">
+              <a (click)="cards3.toggle()" class="rotate-btn" data-card="card-1">
                 <i class="fa fa-undo"></i> Click here to rotate back</a>
 
             </div>
@@ -440,7 +447,8 @@
             <div class="card card-front">
               <!--Card image-->
               <div class="view overlay waves-light" mdbWavesEffect>
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo11.jpg" alt="Card image cap">
+                <img alt="Card image cap" class="card-img-top"
+                     src="https://mdbootstrap.com/img/Photos/Others/photo11.jpg">
                 <a>
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -450,7 +458,7 @@
               <div class="card-body">
                 <!--Social shares button-->
                 <a class="activator mr-2">
-                  <i class="fa fa-share-alt" (click)="cards4.toggle()"></i>
+                  <i (click)="cards4.toggle()" class="fa fa-share-alt"></i>
                 </a>
                 <!--Title-->
                 <h4 class="card-title">Card title</h4>
@@ -476,43 +484,43 @@
               <div class="content text-center">
 
                 <h4 class="card-title font-weight-bold py-4">Social shares
-                  <i class="fa fa-close text-muted" (click)="cards4.toggle()"></i>
+                  <i (click)="cards4.toggle()" class="fa fa-close text-muted"></i>
                 </h4>
                 <hr>
                 <!-- Social Icons -->
                 <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap">
                   <li class="list-inline-item">
-                    <a mdbBtn floating="true" class="btn-dribbble">
+                    <a class="btn-dribbble" floating="true" mdbBtn>
                       <i class="fa fa-dribbble"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn floating="true" class="btn-slack">
+                    <a class="btn-slack" floating="true" mdbBtn>
                       <i class="fa fa-slack"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn floating="true" class="btn-ins">
+                    <a class="btn-ins" floating="true" mdbBtn>
                       <i class="fa fa-instagram"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn floating="true" class="btn-pin">
+                    <a class="btn-pin" floating="true" mdbBtn>
                       <i class="fa fa-pinterest"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn floating="true" class="btn-tw">
+                    <a class="btn-tw" floating="true" mdbBtn>
                       <i class="fa fa-twitter"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn floating="true" class="btn-gplus">
+                    <a class="btn-gplus" floating="true" mdbBtn>
                       <i class="fa fa-google-plus"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn floating="true" class="btn-git">
+                    <a class="btn-git" floating="true" mdbBtn>
                       <i class="fa fa-github"> </i>
                     </a>
                   </li>
@@ -522,22 +530,22 @@
                 <!-- Social Icons -->
                 <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap mt-4">
                   <li class="list-inline-item">
-                    <a mdbBtn class="btn-fb px-4">
+                    <a class="btn-fb px-4" mdbBtn>
                       <i class="fa fa-facebook"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn class="btn-tw px-4">
+                    <a class="btn-tw px-4" mdbBtn>
                       <i class="fa fa-twitter"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn class="btn-li px-4">
+                    <a class="btn-li px-4" mdbBtn>
                       <i class="fa fa-linkedin"> </i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a mdbBtn class="btn-ins px-4">
+                    <a class="btn-ins px-4" mdbBtn>
                       <i class="fa fa-instagram"> </i>
                     </a>
                   </li>

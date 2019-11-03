@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DarkComponent } from './dark.component';
+import {DarkComponent} from './dark.component';
 
 describe('DarkComponent', () => {
   let component: DarkComponent;
@@ -8,9 +8,9 @@ describe('DarkComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DarkComponent ]
+      declarations: [DarkComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

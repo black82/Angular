@@ -10,24 +10,31 @@
     <div class="col-md-6 mx-auto mt-5">
       <h4 class="text-center">Basic Example</h4>
       <nav class="mx-auto">
-          <ul class="pagination d-flex justify-content-center">
-              <li class="page-item">
-                <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('basic')" [ngClass]="{'disabled': basic.currentActivePage == 1, 'text-muted': basic.currentActivePage == 1}">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == basic.currentActivePage}"
-                (click)="basic.currentActivePage = i+1">
-                <a class="page-link" mdbWavesEffect>{{paginator}}</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('basic')" [ngClass]="{'disabled': basic.currentActivePage == 5, 'text-muted': basic.currentActivePage == 5}">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
+        <ul class="pagination d-flex justify-content-center">
+          <li class="page-item">
+            <a (click)="prevPage('basic')"
+               [ngClass]="{'disabled': basic.currentActivePage == 1, 'text-muted': basic.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li (click)="basic.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == basic.currentActivePage}"
+              class="page-item">
+            <a class="page-link" mdbWavesEffect>{{paginator}}</a>
+          </li>
+          <li class="page-item">
+            <a (click)="nextPage('basic')"
+               [ngClass]="{'disabled': basic.currentActivePage == 5, 'text-muted': basic.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
     <!-- Basic Example -->
@@ -43,17 +50,24 @@
       <nav class="mx-auto">
         <ul class="pagination pg-blue d-flex justify-content-center">
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('blue')" [ngClass]="{'disabled': blue.currentActivePage == 1, 'text-muted': blue.currentActivePage == 1}">
+            <a (click)="prevPage('blue')"
+               [ngClass]="{'disabled': blue.currentActivePage == 1, 'text-muted': blue.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
-          <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == blue.currentActivePage}"
-            (click)="blue.currentActivePage = i+1">
+          <li (click)="blue.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == blue.currentActivePage}"
+              class="page-item">
             <a class="page-link" mdbWavesEffect>{{paginator}}</a>
           </li>
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('blue')" [ngClass]="{'disabled': blue.currentActivePage == 5, 'text-muted': blue.currentActivePage == 5}">
+            <a (click)="nextPage('blue')"
+               [ngClass]="{'disabled': blue.currentActivePage == 5, 'text-muted': blue.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -66,17 +80,24 @@
       <nav class="mx-auto">
         <ul class="pagination pg-red d-flex justify-content-center">
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('red')" [ngClass]="{'disabled': red.currentActivePage == 1, 'text-muted': red.currentActivePage == 1}">
+            <a (click)="prevPage('red')"
+               [ngClass]="{'disabled': red.currentActivePage == 1, 'text-muted': red.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
-          <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == red.currentActivePage}"
-            (click)="red.currentActivePage = i+1">
+          <li (click)="red.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == red.currentActivePage}"
+              class="page-item">
             <a class="page-link" mdbWavesEffect>{{paginator}}</a>
           </li>
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('red')" [ngClass]="{'disabled': red.currentActivePage == 5, 'text-muted': red.currentActivePage == 5}">
+            <a (click)="nextPage('red')"
+               [ngClass]="{'disabled': red.currentActivePage == 5, 'text-muted': red.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -89,17 +110,24 @@
       <nav class="mx-auto">
         <ul class="pagination pg-teal d-flex justify-content-center">
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('teal')" [ngClass]="{'disabled': teal.currentActivePage == 1, 'text-muted': teal.currentActivePage == 1}">
+            <a (click)="prevPage('teal')"
+               [ngClass]="{'disabled': teal.currentActivePage == 1, 'text-muted': teal.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
-          <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == teal.currentActivePage}"
-            (click)="teal.currentActivePage = i+1">
+          <li (click)="teal.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == teal.currentActivePage}"
+              class="page-item">
             <a class="page-link" mdbWavesEffect>{{paginator}}</a>
           </li>
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('teal')" [ngClass]="{'disabled': teal.currentActivePage == 5, 'text-muted': teal.currentActivePage == 5}">
+            <a (click)="nextPage('teal')"
+               [ngClass]="{'disabled': teal.currentActivePage == 5, 'text-muted': teal.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -112,17 +140,24 @@
       <nav class="mx-auto">
         <ul class="pagination pg-dark d-flex justify-content-center">
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('dark')" [ngClass]="{'disabled': dark.currentActivePage == 1, 'text-muted': dark.currentActivePage == 1}">
+            <a (click)="prevPage('dark')"
+               [ngClass]="{'disabled': dark.currentActivePage == 1, 'text-muted': dark.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
-          <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == dark.currentActivePage}"
-            (click)="dark.currentActivePage = i+1">
+          <li (click)="dark.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == dark.currentActivePage}"
+              class="page-item">
             <a class="page-link" mdbWavesEffect>{{paginator}}</a>
           </li>
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('dark')" [ngClass]="{'disabled': dark.currentActivePage == 5, 'text-muted': dark.currentActivePage == 5}">
+            <a (click)="nextPage('dark')"
+               [ngClass]="{'disabled': dark.currentActivePage == 5, 'text-muted': dark.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -135,17 +170,24 @@
       <nav class="mx-auto">
         <ul class="pagination pg-bluegrey d-flex justify-content-center">
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('bluegrey')" [ngClass]="{'disabled': bluegrey.currentActivePage == 1, 'text-muted': bluegrey.currentActivePage == 1}">
+            <a (click)="prevPage('bluegrey')"
+               [ngClass]="{'disabled': bluegrey.currentActivePage == 1, 'text-muted': bluegrey.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
-          <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == bluegrey.currentActivePage}"
-            (click)="bluegrey.currentActivePage = i+1">
+          <li (click)="bluegrey.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == bluegrey.currentActivePage}"
+              class="page-item">
             <a class="page-link" mdbWavesEffect>{{paginator}}</a>
           </li>
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('bluegrey')" [ngClass]="{'disabled': bluegrey.currentActivePage == 5, 'text-muted': bluegrey.currentActivePage == 5}">
+            <a (click)="nextPage('bluegrey')"
+               [ngClass]="{'disabled': bluegrey.currentActivePage == 5, 'text-muted': bluegrey.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -158,17 +200,24 @@
       <nav class="mx-auto">
         <ul class="pagination pg-amber d-flex justify-content-center">
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('amber')" [ngClass]="{'disabled': amber.currentActivePage == 1, 'text-muted': amber.currentActivePage == 1}">
+            <a (click)="prevPage('amber')"
+               [ngClass]="{'disabled': amber.currentActivePage == 1, 'text-muted': amber.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
-          <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == amber.currentActivePage}"
-            (click)="amber.currentActivePage = i+1">
+          <li (click)="amber.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == amber.currentActivePage}"
+              class="page-item">
             <a class="page-link" mdbWavesEffect>{{paginator}}</a>
           </li>
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('amber')" [ngClass]="{'disabled': amber.currentActivePage == 5, 'text-muted': amber.currentActivePage == 5}">
+            <a (click)="nextPage('amber')"
+               [ngClass]="{'disabled': amber.currentActivePage == 5, 'text-muted': amber.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -181,17 +230,24 @@
       <nav class="mx-auto">
         <ul class="pagination pg-purple d-flex justify-content-center">
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('purple')" [ngClass]="{'disabled': purple.currentActivePage == 1, 'text-muted': purple.currentActivePage == 1}">
+            <a (click)="prevPage('purple')"
+               [ngClass]="{'disabled': purple.currentActivePage == 1, 'text-muted': purple.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
-          <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == purple.currentActivePage}"
-            (click)="purple.currentActivePage = i+1">
+          <li (click)="purple.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == purple.currentActivePage}"
+              class="page-item">
             <a class="page-link" mdbWavesEffect>{{paginator}}</a>
           </li>
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('purple')" [ngClass]="{'disabled': purple.currentActivePage == 5, 'text-muted': purple.currentActivePage == 5}">
+            <a (click)="nextPage('purple')"
+               [ngClass]="{'disabled': purple.currentActivePage == 5, 'text-muted': purple.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -204,17 +260,24 @@
       <nav class="mx-auto">
         <ul class="pagination pg-darkgrey d-flex justify-content-center">
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('darkgrey')" [ngClass]="{'disabled': darkgrey.currentActivePage == 1, 'text-muted': darkgrey.currentActivePage == 1}">
+            <a (click)="prevPage('darkgrey')"
+               [ngClass]="{'disabled': darkgrey.currentActivePage == 1, 'text-muted': darkgrey.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
-          <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == darkgrey.currentActivePage}"
-            (click)="darkgrey.currentActivePage = i+1">
+          <li (click)="darkgrey.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == darkgrey.currentActivePage}"
+              class="page-item">
             <a class="page-link" mdbWavesEffect>{{paginator}}</a>
           </li>
           <li class="page-item">
-            <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('darkgrey')" [ngClass]="{'disabled': darkgrey.currentActivePage == 5, 'text-muted': darkgrey.currentActivePage == 5}">
+            <a (click)="nextPage('darkgrey')"
+               [ngClass]="{'disabled': darkgrey.currentActivePage == 5, 'text-muted': darkgrey.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -229,52 +292,66 @@
   <hr class="my-5">
 
   <div class="row">
-      <!-- Sizing -->
-      <div class="col-md-6 mx-auto">
-        <h4 class="text-center">Sizing</h4>
-        <nav class="mx-auto">
-          <ul class="pagination d-flex pagination-lg justify-content-center">
-            <li class="page-item">
-              <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('big')" [ngClass]="{'disabled': big.currentActivePage == 1, 'text-muted': big.currentActivePage == 1}">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-            <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == big.currentActivePage}"
-              (click)="big.currentActivePage = i+1">
-              <a class="page-link" mdbWavesEffect>{{paginator}}</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('big')" [ngClass]="{'disabled': big.currentActivePage == 5, 'text-muted': big.currentActivePage == 5}">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="mx-auto">
-            <ul class="pagination d-flex pagination-sm justify-content-center">
-              <li class="page-item">
-                <a class="page-link" mdbWavesEffect aria-label="Previous" (click)="prevPage('small')" [ngClass]="{'disabled': small.currentActivePage == 1, 'text-muted': small.currentActivePage == 1}">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item" *ngFor="let paginator of paginationCounter; let i = index" [ngClass]="{'active': i + 1 == small.currentActivePage}"
-                (click)="small.currentActivePage = i+1">
-                <a class="page-link" mdbWavesEffect>{{paginator}}</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" mdbWavesEffect aria-label="Next" (click)="nextPage('small')" [ngClass]="{'disabled': small.currentActivePage == 5, 'text-muted': small.currentActivePage == 5}">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-      </div>
-      <!-- Sizing -->
+    <!-- Sizing -->
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Sizing</h4>
+      <nav class="mx-auto">
+        <ul class="pagination d-flex pagination-lg justify-content-center">
+          <li class="page-item">
+            <a (click)="prevPage('big')"
+               [ngClass]="{'disabled': big.currentActivePage == 1, 'text-muted': big.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li (click)="big.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == big.currentActivePage}"
+              class="page-item">
+            <a class="page-link" mdbWavesEffect>{{paginator}}</a>
+          </li>
+          <li class="page-item">
+            <a (click)="nextPage('big')"
+               [ngClass]="{'disabled': big.currentActivePage == 5, 'text-muted': big.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="mx-auto">
+        <ul class="pagination d-flex pagination-sm justify-content-center">
+          <li class="page-item">
+            <a (click)="prevPage('small')"
+               [ngClass]="{'disabled': small.currentActivePage == 1, 'text-muted': small.currentActivePage == 1}"
+               aria-label="Previous" class="page-link"
+               mdbWavesEffect>
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li (click)="small.currentActivePage = i+1" *ngFor="let paginator of paginationCounter; let i = index"
+              [ngClass]="{'active': i + 1 == small.currentActivePage}"
+              class="page-item">
+            <a class="page-link" mdbWavesEffect>{{paginator}}</a>
+          </li>
+          <li class="page-item">
+            <a (click)="nextPage('small')"
+               [ngClass]="{'disabled': small.currentActivePage == 5, 'text-muted': small.currentActivePage == 5}"
+               aria-label="Next" class="page-link"
+               mdbWavesEffect>
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  
-    <hr class="my-5">
+    <!-- Sizing -->
+  </div>
+
+  <hr class="my-5">
 </div>

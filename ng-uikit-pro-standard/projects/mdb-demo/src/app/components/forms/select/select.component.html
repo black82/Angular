@@ -42,7 +42,8 @@
   <div class="row">
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Colorful Select</h4>
-      <mdb-select [options]="optionsSelect" class="colorful-select dropdown-primary" placeholder="Choose your option"></mdb-select>
+      <mdb-select [options]="optionsSelect" class="colorful-select dropdown-primary"
+                  placeholder="Choose your option"></mdb-select>
       <label>Example label</label>
     </div>
   </div>
@@ -64,7 +65,8 @@
   <div class="row">
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Default value in Select</h4>
-      <mdb-select [(ngModel)]="selectedValue" [options]="dateOptionsSelect" placeholder="Choose time period"></mdb-select>
+      <mdb-select [(ngModel)]="selectedValue" [options]="dateOptionsSelect"
+                  placeholder="Choose time period"></mdb-select>
     </div>
   </div>
   <!-- Default value in multiselect -->
@@ -75,7 +77,7 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Array of selected values</h4>
       <mdb-select (ngModelChange)="getArrayOfValues($event)" [(ngModel)]="selectedValue" [options]="dateOptionsSelect"
-        placeholder="Choose time period"></mdb-select>
+                  placeholder="Choose time period"></mdb-select>
     </div>
   </div>
   <!-- Array of selected values -->
@@ -85,9 +87,12 @@
   <div class="row">
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Events</h4>
-      <mdb-select [options]="optionsSelect" [filterEnabled]="true" (changed)="selectChanged($event)" (opened)="selectOpened($event)"
-        (closed)="selectClosed($event)" (selected)="optionSelected($event)" (deselected)="optionDeselected($event)" (noOptionsFound)="noOptionsFound($event)"
-        placeholder="Choose your option"></mdb-select>
+      <mdb-select (changed)="selectChanged($event)" (closed)="selectClosed($event)"
+                  (deselected)="optionDeselected($event)"
+                  (noOptionsFound)="noOptionsFound($event)"
+                  (opened)="selectOpened($event)" (selected)="optionSelected($event)"
+                  [filterEnabled]="true" [options]="optionsSelect"
+                  placeholder="Choose your option"></mdb-select>
       <label>Example label</label>
     </div>
   </div>

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FSNFNComponent } from './f-s-n-f-n.component';
+import {FSNFNComponent} from './f-s-n-f-n.component';
 
 describe('FSNFNComponent', () => {
   let component: FSNFNComponent;
@@ -8,9 +8,9 @@ describe('FSNFNComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FSNFNComponent ]
+      declarations: [FSNFNComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

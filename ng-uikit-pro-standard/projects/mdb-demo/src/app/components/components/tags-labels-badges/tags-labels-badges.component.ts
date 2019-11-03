@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tags-labels-badges',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagsLabelsBadgesComponent implements OnInit {
   hideElement: boolean = true;
-  addtags: string[]  = [];
+  addtags: string[] = [];
   initialtags: string[] = ['Tag 1', 'Tag 2', 'Tag 3'];
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

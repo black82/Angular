@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FacebookService, InitParams } from 'ngx-facebook';
-import { Http } from '@angular/http';
+import {Component, OnInit} from '@angular/core';
+import {FacebookService, InitParams} from 'ngx-facebook';
+import {Http} from '@angular/http';
 
 @Component({
   selector: 'app-fb-share',

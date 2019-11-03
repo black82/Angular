@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NavigationMainComponent } from './navigation-main.component';
+import {NavigationMainComponent} from './navigation-main.component';
 
 describe('NavigationMainComponent', () => {
   let component: NavigationMainComponent;
@@ -8,9 +8,9 @@ describe('NavigationMainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationMainComponent ]
+      declarations: [NavigationMainComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

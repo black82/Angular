@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DatepickerComponent } from './datepicker.component';
+import {DatepickerComponent} from './datepicker.component';
 
 describe('DatepickerComponent', () => {
   let component: DatepickerComponent;
@@ -8,9 +8,9 @@ describe('DatepickerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatepickerComponent ]
+      declarations: [DatepickerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

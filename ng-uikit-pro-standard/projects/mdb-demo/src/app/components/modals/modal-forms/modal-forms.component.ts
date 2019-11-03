@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-modal-forms',

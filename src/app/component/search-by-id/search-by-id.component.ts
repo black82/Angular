@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {FormBuilder, FormGroup, ValidationErrors, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Company} from '../../DTO/CompanyDto';
 import {ClientServiceService} from '../../service/httpclient/clientService.service';
 
@@ -11,40 +11,45 @@ import {ClientServiceService} from '../../service/httpclient/clientService.servi
   styleUrls: ['./search-by-id.component.css']
 })
 export class SearchByIdComponent implements OnInit {
-  constructor(private http: HttpClient, private fb: FormBuilder, private client: ClientServiceService) {
-  }
-
-
   id: number;
   company: Company;
-  notFound: ValidationErrors;
   formId: FormGroup;
   alertShouw = false;
+  errorMessage: string;
 
+  constructor(private http: HttpClient, private fb: FormBuilder, private client: ClientServiceService) {
+  }
 
   createForm() {
     this.formId = this.fb.group({
       idControl: [{value: null},
         [
           Validators.required,
-          Validators.pattern(/^-?(0|[1-9]\d*)?$/)
+          Validators.nullValidator,
+          Validators.pattern('^[0-9]*$')
         ]
       ]
     });
   }
 
-  searcById() {
+  searcById($event) {
     if (this.formId.invalid) {
+      // tslint:disable-next-line:max-line-length
+      this.errorMessage = 'You entered an incorrect value. Enter a number from 1 to 5,000,000. Depending on the company ID. The wrong value is:\n'
+        + this.formId.controls.idControl.value;
       this.alertShouw = true;
-      this.notFound = this.formId.controls.idControl.errors;
-      return;
-    } else {
-      this.id = this.formId.controls.idControl.value;
-      this.client.GetCompanyOane(this.id).subscribe(response => {
-          console.log(response);
-          this.company = response;
-        }
-      );
+
+    } else if (!this.formId.invalid) {
+      this.client.GetCompanyOane(this.formId.controls.idControl.value)
+        .subscribe(response => {
+            this.company = response;
+          },
+          error => {
+            this.errorMessage = 'Something bad happened;   please try again later.';
+            this.formId.get('idControl').setErrors({incorrect: true});
+            this.alertShouw = true;
+          }
+        );
     }
   }
 

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CarouselFullpageExampleComponent } from './carousel-fullpage-example.component';
+import {CarouselFullpageExampleComponent} from './carousel-fullpage-example.component';
 
 describe('CarouselFullpageExampleComponent', () => {
   let component: CarouselFullpageExampleComponent;
@@ -8,9 +8,9 @@ describe('CarouselFullpageExampleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarouselFullpageExampleComponent ]
+      declarations: [CarouselFullpageExampleComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

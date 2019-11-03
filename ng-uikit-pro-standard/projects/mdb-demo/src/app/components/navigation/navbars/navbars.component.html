@@ -37,16 +37,17 @@
 
             <!-- Dropdown -->
             <li class="nav-item dropdown" dropdown>
-              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              <a class="nav-link dropdown-toggle waves-light" dropdownToggle mdbWavesEffect mdbWavesEffect
+                 type="button">
                 Basic dropdown
                 <span class="caret"></span>
               </a>
               <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
-                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
-                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Action</a>
+                <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Another action</a>
+                <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Something else here</a>
                 <div class="divider dropdown-divider"></div>
-                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+                <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Separated link</a>
               </div>
             </li>
 
@@ -56,7 +57,7 @@
           <!-- Search form -->
           <form class="form-inline waves-light" mdbWavesEffect>
             <div class="md-form mt-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <input class="form-control mr-sm-2" placeholder="Search" type="text">
             </div>
           </form>
         </links>
@@ -100,7 +101,7 @@
       <mdb-navbar SideClass="navbar navbar-dark indigo">
         <mdb-navbar-brand>
           <a class="navbar-brand" href="#">
-            <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="">
+            <img alt="" height="30" src="https://mdbootstrap.com/img/logo/mdb-transparent.png">
           </a>
         </mdb-navbar-brand>
       </mdb-navbar>
@@ -121,8 +122,10 @@
         <mdb-navbar-brand>
           <form class="form-inline waves-light" mdbWavesEffect>
             <div class="md-form mt-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" type="submit" mdbWavesEffect>Search</button>
+              <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="text">
+              <button class="my-0 waves-light" color="success" mdbBtn mdbWavesEffect outline="true" size="sm"
+                      type="submit">Search
+              </button>
             </div>
           </form>
         </mdb-navbar-brand>
@@ -147,8 +150,10 @@
         <links>
           <form class="form-inline waves-light waves-light ml-auto" mdbWavesEffect>
             <div class="md-form mt-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" type="submit" mdbWavesEffect>Search</button>
+              <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="text">
+              <button class="my-0 waves-light" color="success" mdbBtn mdbWavesEffect outline="true" size="sm"
+                      type="submit">Search
+              </button>
             </div>
           </form>
         </links>

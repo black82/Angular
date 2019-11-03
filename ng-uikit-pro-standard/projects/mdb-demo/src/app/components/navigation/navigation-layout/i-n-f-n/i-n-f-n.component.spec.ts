@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { INFNComponent } from './i-n-f-n.component';
+import {INFNComponent} from './i-n-f-n.component';
 
 describe('INFNComponent', () => {
   let component: INFNComponent;
@@ -8,9 +8,9 @@ describe('INFNComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ INFNComponent ]
+      declarations: [INFNComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

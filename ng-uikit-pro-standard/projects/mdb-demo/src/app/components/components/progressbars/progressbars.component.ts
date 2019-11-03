@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, AfterViewInit } from '@angular/core';
+import {AfterViewInit, Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-progressbars',
@@ -8,7 +8,7 @@ import { Component, ViewEncapsulation, AfterViewInit } from '@angular/core';
 })
 export class ProgressbarsComponent implements AfterViewInit {
   value = 0;
-  
+
   ngAfterViewInit() {
     const loadingBar = setInterval(() => {
       this.value < 100 ? this.value++ : clearInterval(loadingBar);

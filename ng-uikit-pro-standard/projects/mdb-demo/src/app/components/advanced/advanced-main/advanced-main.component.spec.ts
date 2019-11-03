@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AdvancedMainComponent } from './advanced-main.component';
+import {AdvancedMainComponent} from './advanced-main.component';
 
 describe('AdvancedMainComponent', () => {
   let component: AdvancedMainComponent;
@@ -8,9 +8,9 @@ describe('AdvancedMainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdvancedMainComponent ]
+      declarations: [AdvancedMainComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FbLikeComponent } from './fb-like.component';
+import {FbLikeComponent} from './fb-like.component';
 
 describe('FbLikeComponent', () => {
   let component: FbLikeComponent;
@@ -8,9 +8,9 @@ describe('FbLikeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FbLikeComponent ]
+      declarations: [FbLikeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

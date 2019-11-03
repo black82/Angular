@@ -10,8 +10,8 @@
     <div class="col-md-6 mx-auto mt-5">
       <h4 class="text-center">Basic example</h4>
       <div class="md-form">
-        <input mdbInputDirective type="text" id="form1" class="form-control">
-        <label for="form1" class="">Example label</label>
+        <input class="form-control" id="form1" mdbInputDirective type="text">
+        <label class="" for="form1">Example label</label>
       </div>
     </div>
   </div>
@@ -23,8 +23,8 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Two-way data binding</h4>
       <div class="md-form">
-        <input mdbInputDirective type="text" name="text" [(ngModel)]="text" id="form5" class="form-control">
-        <label for="form5" class="">Example label</label>
+        <input [(ngModel)]="text" class="form-control" id="form5" mdbInputDirective name="text" type="text">
+        <label class="" for="form5">Example label</label>
         <p class="text-center">Look at me! {{text}}</p>
       </div>
     </div>
@@ -37,8 +37,8 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Small input</h4>
       <div class="md-form form-sm">
-        <input mdbInputDirective type="text" id="form3" class="form-control form-control-sm">
-        <label for="form3" class="">Example label</label>
+        <input class="form-control form-control-sm" id="form3" mdbInputDirective type="text">
+        <label class="" for="form3">Example label</label>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
       <h4 class="text-center">Icon Prefixes</h4>
       <div class="md-form">
         <i class="fa fa-envelope prefix"></i>
-        <input mdbInputDirective type="text" id="form2" class="form-control">
+        <input class="form-control" id="form2" mdbInputDirective type="text">
         <label for="form2">Example label</label>
       </div>
     </div>
@@ -64,7 +64,7 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Placeholder</h4>
       <div class="md-form">
-        <input mdbInputDirective placeholder="Placeholder" type="text" id="form58" class="form-control">
+        <input class="form-control" id="form58" mdbInputDirective placeholder="Placeholder" type="text">
         <label for="form58">Example label</label>
       </div>
     </div>
@@ -77,7 +77,7 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Prefilling Text Inputs</h4>
       <div class="md-form">
-        <input value="John Doe" type="text" id="form6" class="form-control" mdbInputDirective>
+        <input class="form-control" id="form6" mdbInputDirective type="text" value="John Doe">
         <label for="form6">Example label</label>
       </div>
     </div>
@@ -92,39 +92,47 @@
       <form>
         <div class="md-form">
           <i class="fa fa-envelope prefix"></i>
-          <input mdbInputDirective data-error="wrong email" [formControl]="emailFormEx" data-success="valid email" minLength="8" maxLength="25"
-            type="email" class="form-control" id="form9" name="email" mdbInputDirective>
+          <input [formControl]="emailFormEx" class="form-control" data-error="wrong email" data-success="valid email"
+                 id="form9" maxLength="25"
+                 mdbInputDirective mdbInputDirective minLength="8" name="email" type="email">
           <label for="form9">Type your e-mail</label>
         </div>
 
         <div class="md-form">
           <i class="fa fa-lock prefix"></i>
-          <input mdbInputDirective data-error="wrong password" [formControl]="passwordFormEx" data-success="valid password" minLength="10"
-            maxLength="25" type="password" class="form-control" id="form10" name="password">
+          <input [formControl]="passwordFormEx" class="form-control" data-error="wrong password"
+                 data-success="valid password" id="form10"
+                 maxLength="25" mdbInputDirective minLength="10" name="password" type="password">
           <label for="form10">Type your password</label>
         </div>
 
         <div class="md-form">
-          <input mdbInputDirective data-error="wrong password" [mdbValidate]="false" [formControl]="noValidation" data-success="valid password"
-            type="text" class="form-control" id="form11" name="password">
+          <input [formControl]="noValidation" [mdbValidate]="false" class="form-control" data-error="wrong password"
+                 data-success="valid password"
+                 id="form11" mdbInputDirective name="password" type="text">
           <label for="form11">Turn off validation</label>
         </div>
 
         <div class="md-form">
-          <input mdbInputDirective data-error="wrong password" [validateSuccess]="false" [formControl]="noSuccessValidation" data-success="valid password"
-            type="text" class="form-control" id="form12" name="password">
+          <input [formControl]="noSuccessValidation" [validateSuccess]="false" class="form-control"
+                 data-error="wrong password" data-success="valid password"
+                 id="form12" mdbInputDirective name="password" type="text">
           <label for="form12">Turn off success validation</label>
         </div>
 
         <div class="md-form">
-          <input mdbInputDirective data-error="wrong password" [validateError]="false" [formControl]="noErrorValidation" data-success="valid password"
-            type="text" class="form-control" id="form13" name="password">
+          <input [formControl]="noErrorValidation" [validateError]="false" class="form-control"
+                 data-error="wrong password"
+                 data-success="valid password"
+                 id="form13" mdbInputDirective name="password" type="text">
           <label for="form13">Turn off error validation</label>
         </div>
 
         <div class="md-form">
-          <input mdbInputDirective [errorMessage]="errorMessage" [successMessage]="'Custom success message'" [formControl]="customMessages"
-            type="text" class="form-control" id="form14" name="password">
+          <input [errorMessage]="errorMessage" [formControl]="customMessages"
+                 [successMessage]="'Custom success message'"
+                 class="form-control"
+                 id="form14" mdbInputDirective name="password" type="text">
           <label for="form14">Custom validation messages</label>
         </div>
       </form>
@@ -138,8 +146,8 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Disabled input</h4>
       <div class="md-form form-sm">
-        <input type="text" id="form16" class="form-control" disabled>
-        <label for="form16" class="disabled">Example label</label>
+        <input class="form-control" disabled id="form16" type="text">
+        <label class="disabled" for="form16">Example label</label>
       </div>
     </div>
   </div>
@@ -154,17 +162,17 @@
 
         <div class="md-form form-group">
           <i class="fa fa-envelope prefix"></i>
-          <input mdbInputDirective type="email" class="form-control" id="form19" name="email">
+          <input class="form-control" id="form19" mdbInputDirective name="email" type="email">
           <label for="form19">Type your e-mail</label>
         </div>
         <div class="md-form form-group">
           <i class="fa fa-lock prefix"></i>
-          <input mdbInputDirective type="password" class="form-control" id="form18" name="password">
+          <input class="form-control" id="form18" mdbInputDirective name="password" type="password">
           <label for="form18">Type your password</label>
         </div>
 
         <div class="md-form form-group">
-          <a mdbBtn color="primary" size="lg" class="waves-light" mdbWavesEffect>Login</a>
+          <a class="waves-light" color="primary" mdbBtn mdbWavesEffect size="lg">Login</a>
         </div>
 
       </form>
@@ -184,7 +192,7 @@
           <div class="col-md-6">
             <div class="md-form">
               <i class="fa fa-envelope prefix"></i>
-              <input mdbInputDirective type="email" class="form-control" id="form17" name="email">
+              <input class="form-control" id="form17" mdbInputDirective name="email" type="email">
               <label for="form17">Type your e-mail</label>
             </div>
           </div>
@@ -193,7 +201,7 @@
           <div class="col-md-6">
             <div class="md-form">
               <i class="fa fa-lock prefix"></i>
-              <input mdbInputDirective type="password" class="form-control" id="form15" name="password">
+              <input class="form-control" id="form15" mdbInputDirective name="password" type="password">
               <label for="form15">Type your password</label>
             </div>
           </div>
@@ -206,7 +214,7 @@
           <div class="col-md-12">
 
             <div class="md-form">
-              <textarea mdbInputDirective type="text" id="form76" class="md-textarea form-control" rows="3"></textarea>
+              <textarea class="md-textarea form-control" id="form76" mdbInputDirective rows="3" type="text"></textarea>
               <label for="form76">Basic textarea</label>
             </div>
 
@@ -220,24 +228,24 @@
           <!--First column-->
           <div class="col-md-4">
             <div class="md-form">
-              <input mdbInputDirective type="text" id="form41" class="form-control">
-              <label for="form41" class="">Example label</label>
+              <input class="form-control" id="form41" mdbInputDirective type="text">
+              <label class="" for="form41">Example label</label>
             </div>
           </div>
 
           <!--Second column-->
           <div class="col-md-4">
             <div class="md-form">
-              <input mdbInputDirective type="text" id="form51" class="form-control">
-              <label for="form51" class="">Example label</label>
+              <input class="form-control" id="form51" mdbInputDirective type="text">
+              <label class="" for="form51">Example label</label>
             </div>
           </div>
 
           <!--Third column-->
           <div class="col-md-4">
             <div class="md-form">
-              <input mdbInputDirective type="text" id="form61" class="form-control">
-              <label for="form61" class="">Example label</label>
+              <input class="form-control" id="form61" mdbInputDirective type="text">
+              <label class="" for="form61">Example label</label>
             </div>
           </div>
 
@@ -255,14 +263,14 @@
       <h4 class="text-center">Textarea</h4>
       <!--Basic textarea-->
       <div class="md-form">
-        <textarea mdbInputDirective type="text" id="form7" class="md-textarea form-control" rows="3"></textarea>
+        <textarea class="md-textarea form-control" id="form7" mdbInputDirective rows="3" type="text"></textarea>
         <label for="form7">Basic textarea</label>
       </div>
 
       <!--Textarea with icon prefix-->
       <div class="md-form">
         <i class="fa fa-pencil prefix"></i>
-        <textarea mdbInputDirective type="text" id="form8" class="md-textarea form-control" rows="3"></textarea>
+        <textarea class="md-textarea form-control" id="form8" mdbInputDirective rows="3" type="text"></textarea>
         <label for="form8">Icon Prefix</label>
       </div>
     </div>
@@ -275,7 +283,7 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Numeric input</h4>
       <div class="md-form">
-        <input type="number" class="form-control" id="numberInputEx" mdbInputDirective>
+        <input class="form-control" id="numberInputEx" mdbInputDirective type="number">
         <label for="numberInputEx">Number input</label>
       </div>
     </div>
@@ -288,12 +296,13 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Basic Checkboxes</h4>
       <div class="form-check">
-        <input class="form-check-input" mdbInputDirective type="checkbox" id="checkbox1">
+        <input class="form-check-input" id="checkbox1" mdbInputDirective type="checkbox">
         <label class="form-check-label" for="checkbox1">Classic checkbox</label>
       </div>
 
       <div class="form-check">
-        <input class="form-check-input" mdbInputDirective type="checkbox" class="form-check-input filled-in" id="checkbox2">
+        <input class="form-check-input" class="form-check-input filled-in" id="checkbox2" mdbInputDirective
+               type="checkbox">
         <label class="form-check-label" for="checkbox2">Filled-in checkbox</label>
       </div>
     </div>
@@ -306,13 +315,14 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Disabled checkboxes</h4>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="checkbox3" disabled checked="checked">
-        <label class="form-check-label" for="checkbox3" class="disabled">Classic checkbox</label>
+        <input checked="checked" class="form-check-input" disabled id="checkbox3" type="checkbox">
+        <label class="form-check-label" class="disabled" for="checkbox3">Classic checkbox</label>
       </div>
 
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" class="form-check-input filled-in" id="checkbox4" disabled checked="checked">
-        <label class="form-check-label" for="checkbox4" class="disabled">Filled-in checkbox</label>
+        <input checked="checked" class="form-check-input filled-in" class="form-check-input" disabled id="checkbox4"
+               type="checkbox">
+        <label class="form-check-label" class="disabled" for="checkbox4">Filled-in checkbox</label>
       </div>
     </div>
   </div>
@@ -325,15 +335,16 @@
       <h4 class="text-center">Inline checkboxes</h4>
       <form class="form-inline">
         <div class="form-check mr-3">
-          <input class="form-check-input" type="checkbox" id="checkbox11" checked="checked">
+          <input checked="checked" class="form-check-input" id="checkbox11" type="checkbox">
           <label class="form-check-label" for="checkbox11">Classic checkbox</label>
         </div>
         <div class="form-check mr-3">
-          <input class="form-check-input" type="checkbox" class="form-check-input filled-in" id="checkbox22" checked="checked">
+          <input checked="checked" class="form-check-input filled-in" class="form-check-input" id="checkbox22"
+                 type="checkbox">
           <label class="form-check-label" for="checkbox22">Filled-in checkbox</label>
         </div>
         <div class="form-check mr-3">
-          <input class="form-check-input" type="checkbox" id="checkbox33" checked="checked">
+          <input checked="checked" class="form-check-input" id="checkbox33" type="checkbox">
           <label class="form-check-label" for="checkbox33">Classic checkbox</label>
         </div>
       </form>
@@ -347,17 +358,17 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Basic radio buttons</h4>
       <div class="form-check">
-        <input class="form-check-input" mdbInputDirective name="group1" type="radio" id="radio1">
+        <input class="form-check-input" id="radio1" mdbInputDirective name="group1" type="radio">
         <label class="form-check-label" for="radio1">Option 1</label>
       </div>
 
       <div class="form-check">
-        <input class="form-check-input" mdbInputDirective name="group1" type="radio" id="radio2">
+        <input class="form-check-input" id="radio2" mdbInputDirective name="group1" type="radio">
         <label class="form-check-label" for="radio2">Option 2</label>
       </div>
 
       <div class="form-check">
-        <input class="form-check-input" mdbInputDirective name="group1" type="radio" id="radio3">
+        <input class="form-check-input" id="radio3" mdbInputDirective name="group1" type="radio">
         <label class="form-check-label" for="radio3">Option 3</label>
       </div>
     </div>
@@ -370,17 +381,17 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Radio buttons with gap</h4>
       <div class="form-check">
-        <input name="group2" type="radio" class="form-check-input with-gap" id="radio4">
+        <input class="form-check-input with-gap" id="radio4" name="group2" type="radio">
         <label class="form-check-label" for="radio4">Option 1</label>
       </div>
 
       <div class="form-check">
-        <input name="group2" type="radio" class="form-check-input with-gap" id="radio5">
+        <input class="form-check-input with-gap" id="radio5" name="group2" type="radio">
         <label class="form-check-label" for="radio5">Option 2</label>
       </div>
 
       <div class="form-check">
-        <input name="group2" type="radio" class="form-check-input with-gap" id="radio6">
+        <input class="form-check-input with-gap" id="radio6" name="group2" type="radio">
         <label class="form-check-label" for="radio6">Option 3</label>
       </div>
     </div>
@@ -394,17 +405,17 @@
       <h4 class="text-center">Inline radio buttons</h4>
       <form class="form-inline">
         <div class="form-check mr-3">
-          <input class="form-check-input" name="group1" type="radio" id="radio11" checked="checked">
+          <input checked="checked" class="form-check-input" id="radio11" name="group1" type="radio">
           <label class="form-check-label" for="radio11">Option 1</label>
         </div>
 
         <div class="form-check mr-3">
-          <input class="form-check-input" name="group1" type="radio" id="radio21">
+          <input class="form-check-input" id="radio21" name="group1" type="radio">
           <label class="form-check-label" for="radio21">Option 2</label>
         </div>
 
         <div class="form-check mr-3">
-          <input class="form-check-input" name="group1" type="radio" id="radio31">
+          <input class="form-check-input" id="radio31" name="group1" type="radio">
           <label class="form-check-label" for="radio31">Option 3</label>
         </div>
       </form>
@@ -447,15 +458,15 @@
       <h4 class="text-center">Switch</h4>
       <form>
         <div class="file-field md-form">
-          <div mdbBtn color="primary" size="sm" class="waves-light" mdbWavesEffect>
+          <div class="waves-light" color="primary" mdbBtn mdbWavesEffect size="sm">
             <span>Choose file</span>
-            <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+            <input (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" mdbFileSelect type="file">
           </div>
           <div class="file-path-wrapper">
-            <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
+            <input [value]="showFiles()" class="file-path" placeholder="Upload your file" type="text">
           </div>
         </div>
-        <button class="btn btn-md btn-primary" (click)="startUpload()">Start uploading</button>
+        <button (click)="startUpload()" class="btn btn-md btn-primary">Start uploading</button>
       </form>
     </div>
   </div>
@@ -468,12 +479,15 @@
       <h4 class="text-center">Range</h4>
       <form class="range-field">
         <div class="track">
-          <div #rangeCloud class="range-cloud" title="range" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+          <div #rangeCloud [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}" class="range-cloud"
+               title="range">
             <span class="text-transform">{{range}}</span>
           </div>
         </div>
-        <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="range"
-          (change)="coverage()">
+        <input #input (blur)="visibility = false" (change)="coverage()" (focus)="visibility = true" [(ngModel)]="range"
+               max="100"
+               min="0" name="range"
+               type="range">
       </form>
     </div>
   </div>
@@ -485,7 +499,7 @@
     <div class="col-md-6 mx-auto">
       <h4 class="text-center">Character counter</h4>
       <div class="md-form">
-        <input id="input_text" class="form-control" type="text" length="10" mdbCharCounter mdbInputDirective>
+        <input class="form-control" id="input_text" length="10" mdbCharCounter mdbInputDirective type="text">
         <label for="input_text">Input text</label>
       </div>
     </div>

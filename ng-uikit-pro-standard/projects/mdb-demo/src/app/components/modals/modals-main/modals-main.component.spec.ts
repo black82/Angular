@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModalsMainComponent } from './modals-main.component';
+import {ModalsMainComponent} from './modals-main.component';
 
 describe('ModalsMainComponent', () => {
   let component: ModalsMainComponent;
@@ -8,9 +8,9 @@ describe('ModalsMainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalsMainComponent ]
+      declarations: [ModalsMainComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

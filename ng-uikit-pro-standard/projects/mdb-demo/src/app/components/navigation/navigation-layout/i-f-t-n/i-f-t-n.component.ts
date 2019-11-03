@@ -1,6 +1,7 @@
-import { Component, OnInit, Renderer2, Inject, RendererStyleFlags2, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { SharedService } from '../../../../shared/shared.service';
-import { DOCUMENT } from '@angular/common';
+import {Component, Inject, OnDestroy, OnInit, Renderer2, RendererStyleFlags2, ViewEncapsulation} from '@angular/core';
+import {SharedService} from '../../../../shared/shared.service';
+import {DOCUMENT} from '@angular/common';
+
 @Component({
   selector: 'app-i-f-t-n',
   templateUrl: './i-f-t-n.component.html',
@@ -10,8 +11,9 @@ import { DOCUMENT } from '@angular/common';
 export class IFTNComponent implements OnInit, OnDestroy {
 
   constructor(private sharedService: SharedService,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: any) { }
+              private renderer: Renderer2,
+              @Inject(DOCUMENT) private document: any) {
+  }
 
   ngOnInit() {
     const nav = this.document.querySelector('app-nav');

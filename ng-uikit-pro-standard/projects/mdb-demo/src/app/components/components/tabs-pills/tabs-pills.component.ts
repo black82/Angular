@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-tabs-pills',
@@ -16,18 +16,22 @@ export class TabsPillsComponent {
   selectFollowTab() {
     this.staticTabs.setActiveTab(2);
   }
+
   shown(event: any) {
     console.log('shown');
     console.log(event);
   }
+
   show(event: any) {
     console.log('show');
     console.log(event);
   }
+
   hide(event: any) {
     console.log('hide');
     console.log(event);
   }
+
   hidden(event: any) {
     console.log('hidden');
     console.log(event);

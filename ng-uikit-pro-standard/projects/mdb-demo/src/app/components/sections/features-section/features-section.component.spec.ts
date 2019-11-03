@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FeaturesSectionComponent } from './features-section.component';
+import {FeaturesSectionComponent} from './features-section.component';
 
 describe('FeaturesSectionComponent', () => {
   let component: FeaturesSectionComponent;
@@ -8,9 +8,9 @@ describe('FeaturesSectionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FeaturesSectionComponent ]
+      declarations: [FeaturesSectionComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

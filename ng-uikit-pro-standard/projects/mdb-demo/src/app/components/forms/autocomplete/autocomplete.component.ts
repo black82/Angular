@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CompleterData, CompleterService } from 'ng-uikit-pro-standard';
-import { Http } from '@angular/http';
+import {Component} from '@angular/core';
+import {CompleterData, CompleterService} from 'ng-uikit-pro-standard';
+import {Http} from '@angular/http';
 
 @Component({
   selector: 'app-autocomplete',
@@ -13,49 +13,49 @@ export class AutocompleteComponent {
   public searchStr: string;
   public dataService: CompleterData;
   public searchData = [
-    { color: 'red' },
-    { color: 'green' },
-    { color: 'blue' },
-    { color: 'cyan' },
-    { color: 'magenta' },
-    { color: 'yellow' },
-    { color: 'black' },
+    {color: 'red'},
+    {color: 'green'},
+    {color: 'blue'},
+    {color: 'cyan'},
+    {color: 'magenta'},
+    {color: 'yellow'},
+    {color: 'black'},
   ];
 
   public ngModelSearchStr: string;
   public ngModelDataService: CompleterData;
   public ngModelSearchData = [
-    { color: 'red' },
-    { color: 'green' },
-    { color: 'blue' },
-    { color: 'cyan' },
-    { color: 'magenta' },
-    { color: 'yellow' },
-    { color: 'black' },
+    {color: 'red'},
+    {color: 'green'},
+    {color: 'blue'},
+    {color: 'cyan'},
+    {color: 'magenta'},
+    {color: 'yellow'},
+    {color: 'black'},
   ];
 
   public initialValueDataService: CompleterData;
   public initialValueSearchData = [
-    { color: 'red' },
-    { color: 'green' },
-    { color: 'blue' },
-    { color: 'cyan' },
-    { color: 'magenta' },
-    { color: 'yellow' },
-    { color: 'black' },
+    {color: 'red'},
+    {color: 'green'},
+    {color: 'blue'},
+    {color: 'cyan'},
+    {color: 'magenta'},
+    {color: 'yellow'},
+    {color: 'black'},
   ];
   public initialValueSearchStr: string = this.initialValueSearchData[0].color;
 
   public inputClassSearchStr: string;
   public inputClassDataService: CompleterData;
   public inputClassSearchData = [
-    { color: 'red' },
-    { color: 'green' },
-    { color: 'blue' },
-    { color: 'cyan' },
-    { color: 'magenta' },
-    { color: 'yellow' },
-    { color: 'black' },
+    {color: 'red'},
+    {color: 'green'},
+    {color: 'blue'},
+    {color: 'cyan'},
+    {color: 'magenta'},
+    {color: 'yellow'},
+    {color: 'black'},
   ];
 
   constructor(public completerService: CompleterService, public http: Http) {

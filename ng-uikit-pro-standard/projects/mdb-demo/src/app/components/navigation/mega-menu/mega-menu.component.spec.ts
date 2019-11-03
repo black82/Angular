@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MegaMenuComponent } from './mega-menu.component';
+import {MegaMenuComponent} from './mega-menu.component';
 
 describe('MegaMenuComponent', () => {
   let component: MegaMenuComponent;
@@ -8,9 +8,9 @@ describe('MegaMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MegaMenuComponent ]
+      declarations: [MegaMenuComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

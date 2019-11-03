@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Location } from '@angular/common';
+import {Component} from '@angular/core';
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -7,6 +8,7 @@ import { Location } from '@angular/common';
 })
 export class NavComponent {
   previousUrl: string;
+
   constructor(private location: Location) {
   }
 

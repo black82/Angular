@@ -1,17 +1,20 @@
-#errorAlert{
-  position: relative;
+#errorAlert {
+  height: 60px;
+  color: #99004d;
+  background-color: #f169b4;
+  border-color: #800040;
 
-  animation: css 2s 4s forwards;
-}
 
-@keyframes css {
-  to {
-    visibility: hidden;
-  }
 }
 
 #errorMessage {
-  left: 40%;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  position: absolute;
+  left: 25%;
+  color: white;
 }
 
 

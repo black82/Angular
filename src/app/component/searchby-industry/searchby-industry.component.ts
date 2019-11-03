@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ClientServiceService} from '../../service/httpclient/clientService.service';
+import {IndustryArayService} from '../../service/services/industryAray.service';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 import {Company} from '../../DTO/CompanyDto';
 
 
@@ -9,213 +13,85 @@ import {Company} from '../../DTO/CompanyDto';
   styleUrls: ['./searchby-industry.component.css']
 })
 export class SearchbyIndustryComponent implements OnInit {
-  companies: Company [];
-  industry: string;
-  error: string;
-  // activity = [
-  //   'Umzuge', 'Apotek', 'Abbeizarbeiten', 'Abendgymnasium', 'Abfallbeseitigung', 'Abbeizarbeiten',
-  //   'Abbrucharbeiten',
-  //   'Abdichtungsunternehmen',
-  //   'Abendgymnasium',
-  //   'Abendrealschule',
-  //   'Abendschule',
-  //   'Abfallbeseitigung',
-  //   'Abfallentsorgung',
-  //   'Abgasuntersuchung',
-  //   'Abschleppdienst',
-  //   'Abschleppservice',
-  //   'absicherungsdienst',
-  //   'Abwasserentsorgung',
-  //   'Abwasserentsorgungsdienst',
-  //   'Abwasserreinigung',
-  //   'Abwasserunternehmen',
-  //   'Abwasserverband',
-  //   'Abwasserzweckverband',
-  //   'Achsvermessung',
-  //   'Ackerbau',
-  //   'ADAC',
-  //   'Aerobic',
-  //   'Agrargemeinschaft',
-  //   'Agrargenossenschaft',
-  //   'Agrarhandel',
-  //   'Agrarhof',
-  //   'Agraringenieur',
-  //   'Agrarprodukte',
-  //   'Agrarservice',
-  //   'Agrofarm',
-  //   'Agroservice',
-  //   'Airbus',
-  //   'Aircraft',
-  //   'Akademie',
-  //   'Akademische Vereine',
-  //   'Aktenvernichtung',
-  //   'Akupunktur',
-  //   'Aldi',
-  //   'Allergologe',
-  //   'Allgemeinarzt',
-  //   'Allgemeinbildende Schulen',
-  //   'Allianz',
-  //   'Alpenverein',
-  //   'Altbausanierung',
-  //   'Altenbetreuung',
-  //   'Altenheim',
-  //   'Altenpflege',
-  //   'Altenpflegeheim',
-  //   'Altersvorsorge',
-  //   'Altmetall',
-  //   'Großhandel',
-  //   'Altpapier',
-  //   'Großhandel',
-  //   'ambulanter',
-  //   'Pflegedienst',
-  //   ' ambulantes',
-  //   'Operieren',
-  //   'Ambulanz',
-  //   'amerikanische',
-  //   'Küche',
-  //   'Amtsgericht',
-  //   'Anästhesie',
-  //   'Angelgeschäft',
-  //   'Angelladen',
-  //   'Angelshop',
-  //   'Angelverein',
-  //   'Angler',
-  //   'und',
-  //   'Fischersport',
-  //   'Vereine',
-  //   'Anhänger Verkauf',
-  //   'Anhängermarkt',
-  //   'Anhängerverleih',
-  //   'Anlage und Vermögensberater',
-  //   'Anlageberater',
-  //   'Anlagenbau',
-  //   'Anstreicher',
-  //   'Antennenbau',
-  //   'antike Möbel',
-  //   'Antikladen',
-  //   'Antikschmuck',
-  //   'Antikuhren',
-  //   'Antiquariate',
-  //   'Antiquitäten',
-  //   'Antiquitätenhändler',
-  //   'Anwalt',
-  //   'Anwaltskammer',
-  //   'Anzeigenagentur',
-  //   'Anzeigenannehmestellen',
-  //   'AOK',
-  //   'Apotheke',
-  //   'Apparatebau',
-  //   'Apple',
-  //   'Aquaristik',
-  //   'Arbeitgeberverband',
-  //   'Arbeitsamt',
-  //   'Arbeitsbühnen',
-  //   'Arbeitsbühnenverleih',
-  //   'Arbeitsgericht',
-  //   'Arbeitskleidung',
-  //   ' arbeitsmedizinischer Dienst',
-  //   'Arbeitsrecht',
-  //   'Arbeitsvermittlung',
-  //   'Architekt',
-  //   'Architektenkammer',
-  //   'Archivierung',
-  //   'Arzneimittel',
-  //   'Asia Imbiss',
-  //   'asiatische Küche',
-  //   'asiatische Spezialitäten',
-  //   'asiatisches Restaurant',
-  //   'Atemtherapie',
-  //   'Audi',
-  //   'Augenarzt',
-  //   'Augenklinik',
-  //   'Augenoptiker',
-  //   'Augenzentrum',
-  //   'Auktionshaus',
-  //   'Ausbildungszentrum',
-  //   'Autoanhänger',
-  //   'Autoankauf',
-  //   'Autoaufbereitung',
-  //   'Autobahnmeisterei',
-  //   'Autobahnraststätte',
-  //   'Autobahntankstelle',
-  //   'Autobeschriftung',
-  //   'Autoersatzteile',
-  //   'Autogaragen',
-  //   'Autogenes Training',
-  //   'Autohaus',
-  //   'Autolackiererei',
-  //   'Automatikuhren',
-  //   'Automationsunternehmen',
-  //   'Automobilclub',
-  //   'Automobilzulieferer',
-  //   ' Autopflege',
-  //   'Autoradio Einzelhandel',
-  //   'Autoreinigung',
-  //   'Autosattlerei',
-  //   'Autoservice',
-  //   'Autoteile',
-  //   'Autotransportanhänger',
-  //   'Auto',
-  //   'Tuning',
-  //   'Werkstatt',
-  //   'Autovermietung',
-  //   'Autoverwerter',
-  //   'Autoverwertung',
-  //   'Autowaschanlage',
-  //   'Autowerkstatt',
-  //   'Autozubehör',
-  //   'AWO',
-  //   'Ayurveda',
-  //
-  // ];
+  visibili = false;
+  formByIndustry: FormGroup;
+  errorMessage: string;
+  filteredOptions: Observable<string[]>;
+  result: Company [];
+  isOpen = 'closed';
+  hideme = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private fb: FormBuilder,
+              private industryContainer: IndustryArayService,
+              private apiClient: ClientServiceService
+  ) {
   }
 
-  alertShouw: boolean;
-  private number: string[];
-  numberIsPresent = false;
-
-  click() {
-    this.alertShouw = true;
+  createForm() {
+    this.formByIndustry = this.fb.group({
+      branch: [{value: null},
+        [
+          Validators.required,
+          Validators.nullValidator
+        ]]
+    });
   }
 
-  onlyDigits(s) {
-    this.number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    for (let i = s.length - 1; i >= 0; i--) {
-
-      if (this.number.includes(s [i])) {
-        this.numberIsPresent = true;
-      }
-    }
-    if (this.numberIsPresent === true) {
-      return true;
-    }
-  }
-
-
-  searchByActivity() {
-    if (!this.onlyDigits(this.industry)) {
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        responseType: 'json'
-      });
-      this.http.get<Company[]>('http://127.0.0.1:8081/industry/' + this.industry, {headers})
-        .subscribe((response => {
-          this.companies = response;
-        }));
-    } else {
-      this.error = 'The text that you entered contains numbers you enter again';
-      setTimeout(this.refresh, 3000);
-    }
-
-  }
-
-  refresh(): void {
-    window.location.reload();
-  }
 
   ngOnInit() {
+    this.createForm();
+    this.formByIndustry.get('branch').setValue('');
+    this.filterBranchInput();
+  }
+
+  searchByActivity($even) {
+    if (this.formByIndustry.invalid) {
+      // tslint:disable-next-line:max-line-length
+      this.errorMessage = 'You have introduced a branch of the industry that is not accepted by our service. Please try again. The value entered is:'
+        + this.formByIndustry.controls.branch.value;
+      this.visibili = true;
+    }
+    if (!this.checkBranchIsPrezent()) {
+      this.errorMessage = 'You have introduced a branch of industry that is not present in the database. Please try again.' +
+        '\n Entered value is - ' + this.formByIndustry.controls.branch.value;
+      this.visibili = true;
+      this.formByIndustry.setErrors({incorrect: true});
+    } else {
+      this.apiClient.getListCompany('/industry/' + this.formByIndustry.controls.branch.value).subscribe(
+        company => {
+          this.result = company;
+        },
+        error => {
+          this.errorMessage = 'Something bad happened;   please try again later.';
+          this.visibili = true;
+          this.formByIndustry.setErrors({incorrect: true});
+        }
+      );
+    }
+  }
+
+  filterBranchInput() {
+    this.filteredOptions = this.formByIndustry.controls.branch.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
+  }
+
+
+  _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.industryContainer.industry.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  checkBranchIsPrezent(): boolean {
+    return this.industryContainer.industry.includes(this.formByIndustry.get('branch').value);
+  }
+
+
+  toggle() {
+    // @ts-ignore
+    this.isOpen = !this.isOpen;
   }
 }
 

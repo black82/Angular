@@ -1,7 +1,6 @@
-<div
-  ([hidden])="shoerore" *ngIf="control && control.invalid && (control.dirty || control.touched)"
-  class="alert alert-danger" id="errorAlert">
-  <div id="errorMessage">{{errorMessage}}</div>
+<div *ngIf="control && control.invalid && (control.dirty || control.touched)" [@toggleBox]
+     class="alert alert-danger" id="errorAlert">
+  <a id="errorMessage"><strong>{{errorMessage}}</strong></a>
 
 </div>
 

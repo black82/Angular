@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-pie',
@@ -23,7 +23,11 @@ export class PieComponent {
   public chartOptions: any = {
     responsive: true
   };
-  public chartClicked(): void { }
-  public chartHovered(): void { }
+
+  public chartClicked(): void {
+  }
+
+  public chartHovered(): void {
+  }
 
 }

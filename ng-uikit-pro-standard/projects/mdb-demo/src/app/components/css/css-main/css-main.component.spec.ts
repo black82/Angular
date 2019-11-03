@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CssMainComponent } from './css-main.component';
+import {CssMainComponent} from './css-main.component';
 
 describe('CssMainComponent', () => {
   let component: CssMainComponent;
@@ -8,9 +8,9 @@ describe('CssMainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CssMainComponent ]
+      declarations: [CssMainComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

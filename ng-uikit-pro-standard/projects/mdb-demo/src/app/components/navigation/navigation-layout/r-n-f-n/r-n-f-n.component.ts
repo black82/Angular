@@ -1,6 +1,7 @@
-import { Component, OnInit, Renderer2, Inject, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { SharedService } from '../../../../shared/shared.service';
-import { DOCUMENT } from '@angular/common';
+import {Component, Inject, OnDestroy, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
+import {SharedService} from '../../../../shared/shared.service';
+import {DOCUMENT} from '@angular/common';
+
 @Component({
   selector: 'app-r-n-f-n',
   templateUrl: './r-n-f-n.component.html',
@@ -10,8 +11,9 @@ import { DOCUMENT } from '@angular/common';
 export class RNFNComponent implements OnInit, OnDestroy {
 
   constructor(private sharedService: SharedService,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: any) { }
+              private renderer: Renderer2,
+              @Inject(DOCUMENT) private document: any) {
+  }
 
   ngOnInit() {
     const nav = this.document.querySelector('app-nav');

@@ -12,7 +12,8 @@
     </div>
     <div class="col-md-12 mx-auto d-flex justify-content-center flex-wrap">
       <div class="btn-group" mdbDropdown>
-        <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="primary" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Basic dropdown
         </button>
 
@@ -40,7 +41,8 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="primary" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="primary" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown primary
         </button>
 
@@ -56,7 +58,8 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="default" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="default" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown default
         </button>
 
@@ -72,7 +75,8 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="secondary" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="secondary" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown secondary
         </button>
 
@@ -88,7 +92,8 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="success" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="success" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown success
         </button>
 
@@ -104,7 +109,7 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="dark" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="dark" mdbBtn mdbDropdownToggle mdbWavesEffect type="button">
           Dropdown dark
         </button>
 
@@ -120,7 +125,8 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="danger" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown danger
         </button>
 
@@ -136,7 +142,7 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="info" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="info" mdbBtn mdbDropdownToggle mdbWavesEffect type="button">
           Dropdown info
         </button>
 
@@ -152,7 +158,8 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="warning" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="warning" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown warning
         </button>
 
@@ -168,7 +175,7 @@
       <div class="dropdown" mdbDropdown>
 
         <!--Trigger-->
-        <button mdbDropdownToggle mdbBtn color="ins" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="ins" mdbBtn mdbDropdownToggle mdbWavesEffect type="button">
           Dropdown ins
         </button>
 
@@ -196,9 +203,10 @@
 
       <!-- Split button -->
       <div class="btn-group" mdbDropdown>
-        <button type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Action</button>
-        <button type="button" mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
-          mdbWavesEffect></button>
+        <button class="waves-light" color="danger" mdbBtn mdbWavesEffect type="button">Action</button>
+        <button class="dropdown-toggle dropdown-toggle-split px-3 waves-light" color="danger" mdbBtn mdbDropdownToggle
+                mdbWavesEffect
+                type="button"></button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -224,7 +232,8 @@
       <div class="mr-2">
         <!-- Large button group -->
         <div class="btn-group" mdbDropdown>
-          <button mdbDropdownToggle mdbBtn color="danger" size="lg" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+          <button class="dropdown-toggle waves-light" color="danger" mdbBtn mdbDropdownToggle mdbWavesEffect size="lg"
+                  type="button">
             Large button
           </button>
           <div class="dropdown-menu">
@@ -240,7 +249,8 @@
       <div class="ml-2">
         <!-- Small button group -->
         <div class="btn-group" mdbDropdown>
-          <button mdbDropdownToggle mdbBtn color="danger" size="sm" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+          <button class="dropdown-toggle waves-light" color="danger" mdbBtn mdbDropdownToggle mdbWavesEffect size="sm"
+                  type="button">
             Small button
           </button>
           <div class="dropdown-menu">
@@ -266,10 +276,11 @@
     </div>
     <div class="col-md-12 mx-auto d-flex justify-content-center flex-wrap">
 
-      <div class="btn-group" mdbDropdown [dropup]="true">
-        <button type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect>Dropup</button>
-        <button type="button" mdbBtn color="primary" mdbDropdownToggle class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
-          mdbWavesEffect></button>
+      <div [dropup]="true" class="btn-group" mdbDropdown>
+        <button class="waves-light" color="primary" mdbBtn mdbWavesEffect type="button">Dropup</button>
+        <button class="dropdown-toggle dropdown-toggle-split px-3 waves-light" color="primary" mdbBtn mdbDropdownToggle
+                mdbWavesEffect
+                type="button"></button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -291,8 +302,9 @@
     </div>
     <div class="col-md-12 mx-auto d-flex justify-content-center flex-wrap">
 
-      <div class="dropdown" mdbDropdown dropright="true">
-        <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light" mdbWavesEffect>
+      <div class="dropdown" dropright="true" mdbDropdown>
+        <button class="dropdown-toggle waves-light" color="primary" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown - right
         </button>
 
@@ -316,7 +328,8 @@
     <div class="col-md-12 mx-auto d-flex justify-content-center flex-wrap">
 
       <div class="dropdown" mdbDropdown>
-        <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="primary" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown
         </button>
 
@@ -341,7 +354,8 @@
     <div class="col-md-12 mx-auto d-flex justify-content-center flex-wrap">
 
       <div class="dropdown" mdbDropdown>
-        <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="primary" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown
         </button>
 
@@ -367,7 +381,8 @@
     <div class="col-md-12 mx-auto mb-5 d-flex justify-content-center flex-wrap">
 
       <div class="dropdown" mdbDropdown>
-        <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light" mdbWavesEffect>
+        <button class="dropdown-toggle waves-light" color="primary" mdbBtn mdbDropdownToggle mdbWavesEffect
+                type="button">
           Dropdown
         </button>
 

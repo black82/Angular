@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FbShareComponent } from './fb-share.component';
+import {FbShareComponent} from './fb-share.component';
 
 describe('FbShareComponent', () => {
   let component: FbShareComponent;
@@ -8,9 +8,9 @@ describe('FbShareComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FbShareComponent ]
+      declarations: [FbShareComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { IntroCtaComponent } from './intro-cta.component';
+import {IntroCtaComponent} from './intro-cta.component';
 
 describe('IntroCtaComponent', () => {
   let component: IntroCtaComponent;
@@ -8,9 +8,9 @@ describe('IntroCtaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IntroCtaComponent ]
+      declarations: [IntroCtaComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

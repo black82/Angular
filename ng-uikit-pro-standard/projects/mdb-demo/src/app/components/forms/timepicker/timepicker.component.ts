@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-timepicker',
@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class TimepickerComponent implements OnInit {
   lightClock: any;
   darkClock: any;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

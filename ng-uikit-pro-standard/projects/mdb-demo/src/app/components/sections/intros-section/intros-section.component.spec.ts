@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { IntrosSectionComponent } from './intros-section.component';
+import {IntrosSectionComponent} from './intros-section.component';
 
 describe('IntrosSectionComponent', () => {
   let component: IntrosSectionComponent;
@@ -8,9 +8,9 @@ describe('IntrosSectionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IntrosSectionComponent ]
+      declarations: [IntrosSectionComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

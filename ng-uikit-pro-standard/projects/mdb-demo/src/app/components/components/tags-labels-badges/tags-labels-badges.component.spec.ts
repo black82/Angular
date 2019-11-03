@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TagsLabelsBadgesComponent } from './tags-labels-badges.component';
+import {TagsLabelsBadgesComponent} from './tags-labels-badges.component';
 
 describe('TagsLabelsBadgesComponent', () => {
   let component: TagsLabelsBadgesComponent;
@@ -8,9 +8,9 @@ describe('TagsLabelsBadgesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TagsLabelsBadgesComponent ]
+      declarations: [TagsLabelsBadgesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

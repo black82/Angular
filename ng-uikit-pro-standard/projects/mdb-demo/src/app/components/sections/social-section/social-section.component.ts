@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-social-section',
@@ -7,7 +7,8 @@ import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 })
 export class SocialSectionComponent implements OnInit {
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private el: ElementRef, private renderer: Renderer2) {
+  }
 
   ngOnInit() {
     let cardImg = this.el.nativeElement.querySelectorAll('mdb-card-img')[1];

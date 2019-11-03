@@ -1,6 +1,15 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, RendererStyleFlags2} from '@angular/core';
-import { PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser} from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+  Renderer2,
+  RendererStyleFlags2
+} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-carousel-fullpage-example',
@@ -11,6 +20,7 @@ export class CarouselFullpageExampleComponent implements OnInit, OnDestroy, Afte
 
   containerFluid: any = null;
   isBrowser: boolean;
+
   constructor(
     private el: ElementRef,
     private r: Renderer2,

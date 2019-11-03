@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { IntroVideoComponent } from './intro-video.component';
+import {IntroVideoComponent} from './intro-video.component';
 
 describe('IntroVideoComponent', () => {
   let component: IntroVideoComponent;
@@ -8,9 +8,9 @@ describe('IntroVideoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IntroVideoComponent ]
+      declarations: [IntroVideoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

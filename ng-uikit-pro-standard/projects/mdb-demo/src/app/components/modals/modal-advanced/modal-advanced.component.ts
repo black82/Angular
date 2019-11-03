@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-modal-advanced',
@@ -27,14 +27,14 @@ export class ModalAdvancedComponent implements OnInit {
 
   ngOnInit() {
     this.colorSelect = [
-      { value: 'Black', label: 'Black' },
-      { value: 'White', label: 'White' },
-      { value: 'Red', label: 'Red' },
+      {value: 'Black', label: 'Black'},
+      {value: 'White', label: 'White'},
+      {value: 'Red', label: 'Red'},
     ];
     this.sizeSelect = [
-      { value: 'XS', label: 'XS' },
-      { value: 'S', label: 'S' },
-      { value: 'L', label: 'L' },
+      {value: 'XS', label: 'XS'},
+      {value: 'S', label: 'S'},
+      {value: 'L', label: 'L'},
     ];
   }
 

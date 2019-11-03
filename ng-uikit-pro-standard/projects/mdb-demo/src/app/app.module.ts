@@ -257,4 +257,5 @@ import {FbLikeComponent} from './components/extended/fb-like/fb-like.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

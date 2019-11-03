@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import {Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -23,7 +23,8 @@ export class SliderComponent {
   thirdRange: any = 50;
   fullRange: any = 50;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2) {
+  }
 
   coverage() {
     if (typeof this.range === "string" && this.range.length !== 0) {

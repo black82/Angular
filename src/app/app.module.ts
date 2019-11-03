@@ -15,7 +15,6 @@ import {SearchbyCityComponent} from './component/searchby-city/searchby-city.com
 import {SearchbyIndustryComponent} from './component/searchby-industry/searchby-industry.component';
 import {NotFountComponent} from './component/not-fount/not-fount.component';
 import {ClientServiceService} from './service/httpclient/clientService.service';
-import {FilterPipe} from './component/searchby-industry/filter.pipe';
 import {AppAlertvalitationInputComponent} from './component/app-alert-valitation-input-by-empty/app-alertvalitation-input.component';
 
 import {MatAutocompleteModule, MatFormFieldModule, MatInputModule} from '@angular/material';
@@ -39,7 +38,6 @@ import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
     SearchbyCityComponent,
     SearchbyIndustryComponent,
     NotFountComponent,
-    FilterPipe,
     AppAlertvalitationInputComponent,
     PanelComponent,
     CaruseliComponent

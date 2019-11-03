@@ -1,4 +1,4 @@
-import { Component, ViewChildren, QueryList, ElementRef, HostListener, Renderer2, AfterViewInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, QueryList, Renderer2, ViewChildren} from '@angular/core';
 
 @Component({
   selector: 'app-pagination-basic',
@@ -9,12 +9,18 @@ export class PaginationBasicComponent implements AfterViewInit {
 
   @ViewChildren('pages') pages: QueryList<ElementRef>;
 
-  allPosts: Array<any> = [ ];
+  allPosts: Array<any> = [];
 
   activePage = 1;
   pageCount: Array<any> = [1, 2, 3];
   first = 1;
   last = 4;
+
+  constructor(private renderer: Renderer2) {
+    for (let i = 0; i <= 15; i++) {
+      this.allPosts.push({id: i, title: 'Post ' + i});
+    }
+  }
 
   @HostListener('click', ['$event']) onclick(event: any) {
     if (event.target.parentElement.innerText >= 1 || event.target.parentElement.innerText <= 3) {
@@ -25,12 +31,6 @@ export class PaginationBasicComponent implements AfterViewInit {
     this.first = +this.activePage * 4 - 4 + 1;
     this.last = +this.activePage * 4;
   }
-
-  constructor(private renderer: Renderer2) {
-    for (let i = 0; i <= 15; i++) {
-      this.allPosts.push({id: i, title: 'Post ' + i});
-    }
-   }
 
   ngAfterViewInit() {
     this.clearActive();

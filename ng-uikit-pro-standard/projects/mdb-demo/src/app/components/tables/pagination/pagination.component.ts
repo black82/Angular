@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import {Component, OnInit, QueryList, ViewChildren} from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
@@ -17,26 +17,26 @@ export class PaginationTableComponent implements OnInit {
   lastVisibleIndex: number = this.itemsPerPage;
   firstVisiblePaginator = 0;
   lastVisiblePaginator = this.numberOfVisiblePaginators;
-
-  constructor() {}
-
   tableData = [
-    { id: 1, firstName: 'Mark', lastName: 'Otto', username: '@mdo' },
-    { id: 2, firstName: 'John', lastName: 'Doe', username: '@john' },
-    { id: 3, firstName: 'Lessie', lastName: 'Moe', username: '@lessie' },
-    { id: 4, firstName: 'Otton', lastName: 'Otto', username: '@otton' },
-    { id: 5, firstName: 'Krauze', lastName: 'John', username: '@krauze' },
-    { id: 6, firstName: 'Lex', lastName: 'Lucky', username: '@lex' },
-    { id: 7, firstName: 'Allie', lastName: 'Bill', username: '@allie' },
-    { id: 8, firstName: 'Anna', lastName: 'Frost', username: '@anna' },
-    { id: 9, firstName: 'Bob', lastName: 'One', username: '@bob' },
-    { id: 10, firstName: 'Carl', lastName: 'Johnson', username: '@cj' },
-    { id: 11, firstName: 'Mia', lastName: 'Marx', username: '@mia' },
-    { id: 12, firstName: 'Cia', lastName: 'Fbi', username: '@cia' },
-    { id: 13, firstName: 'John', lastName: 'Doe', username: '@johny' },
-    { id: 14, firstName: 'Mark', lastName: 'Otto', username: '@mdo' },
-    { id: 15, firstName: 'Lessie', lastName: 'Moe', username: '@lessie'}
+    {id: 1, firstName: 'Mark', lastName: 'Otto', username: '@mdo'},
+    {id: 2, firstName: 'John', lastName: 'Doe', username: '@john'},
+    {id: 3, firstName: 'Lessie', lastName: 'Moe', username: '@lessie'},
+    {id: 4, firstName: 'Otton', lastName: 'Otto', username: '@otton'},
+    {id: 5, firstName: 'Krauze', lastName: 'John', username: '@krauze'},
+    {id: 6, firstName: 'Lex', lastName: 'Lucky', username: '@lex'},
+    {id: 7, firstName: 'Allie', lastName: 'Bill', username: '@allie'},
+    {id: 8, firstName: 'Anna', lastName: 'Frost', username: '@anna'},
+    {id: 9, firstName: 'Bob', lastName: 'One', username: '@bob'},
+    {id: 10, firstName: 'Carl', lastName: 'Johnson', username: '@cj'},
+    {id: 11, firstName: 'Mia', lastName: 'Marx', username: '@mia'},
+    {id: 12, firstName: 'Cia', lastName: 'Fbi', username: '@cia'},
+    {id: 13, firstName: 'John', lastName: 'Doe', username: '@johny'},
+    {id: 14, firstName: 'Mark', lastName: 'Otto', username: '@mdo'},
+    {id: 15, firstName: 'Lessie', lastName: 'Moe', username: '@lessie'}
   ];
+
+  constructor() {
+  }
 
   changePage(event: any) {
     if (event.target.text >= 1 && event.target.text <= this.numberOfPaginators) {
@@ -50,10 +50,10 @@ export class PaginationTableComponent implements OnInit {
     if (this.pages.last.nativeElement.classList.contains('active')) {
       if ((this.numberOfPaginators - this.numberOfVisiblePaginators) >= this.lastVisiblePaginator) {
         this.firstVisiblePaginator += this.numberOfVisiblePaginators;
-      this.lastVisiblePaginator += this.numberOfVisiblePaginators;
+        this.lastVisiblePaginator += this.numberOfVisiblePaginators;
       } else {
         this.firstVisiblePaginator += this.numberOfVisiblePaginators;
-      this.lastVisiblePaginator = this.numberOfPaginators;
+        this.lastVisiblePaginator = this.numberOfPaginators;
       }
     }
 
@@ -64,7 +64,7 @@ export class PaginationTableComponent implements OnInit {
 
   previousPage() {
     if (this.pages.first.nativeElement.classList.contains('active')) {
-      if ((this.lastVisiblePaginator - this.firstVisiblePaginator) === this.numberOfVisiblePaginators)  {
+      if ((this.lastVisiblePaginator - this.firstVisiblePaginator) === this.numberOfVisiblePaginators) {
         this.firstVisiblePaginator -= this.numberOfVisiblePaginators;
         this.lastVisiblePaginator -= this.numberOfVisiblePaginators;
       } else {

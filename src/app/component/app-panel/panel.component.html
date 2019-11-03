@@ -1,8 +1,8 @@
 <div class="panel panel-info">
-  <div class="panel-heading" (click)="toggle.emit()">
+  <div (click)="toggle.emit()" class="panel-heading">
     {{title}}
   </div>
-  <div class="panel-body" *ngIf="opened">
+  <div *ngIf="opened" class="panel-body">
     <ng-content></ng-content>
   </div>
 </div>

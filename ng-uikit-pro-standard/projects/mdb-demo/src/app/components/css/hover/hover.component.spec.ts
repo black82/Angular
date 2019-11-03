@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HoverComponent } from './hover.component';
+import {HoverComponent} from './hover.component';
 
 describe('HoverComponent', () => {
   let component: HoverComponent;
@@ -8,9 +8,9 @@ describe('HoverComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HoverComponent ]
+      declarations: [HoverComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs';
+import {Component, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-pagination-api',
@@ -23,7 +23,8 @@ export class PaginationApiComponent implements OnInit {
   tableData: string[];
 
   constructor(
-    private http: Http) {}
+    private http: Http) {
+  }
 
   getData(): Observable<any> {
     return this.http.get(this.url);
@@ -41,10 +42,10 @@ export class PaginationApiComponent implements OnInit {
     if (this.pages.last.nativeElement.classList.contains('active')) {
       if ((this.numberOfPaginators - this.numberOfVisiblePaginators) >= this.lastVisiblePaginator) {
         this.firstVisiblePaginator += this.numberOfVisiblePaginators;
-      this.lastVisiblePaginator += this.numberOfVisiblePaginators;
+        this.lastVisiblePaginator += this.numberOfVisiblePaginators;
       } else {
         this.firstVisiblePaginator += this.numberOfVisiblePaginators;
-      this.lastVisiblePaginator = this.numberOfPaginators;
+        this.lastVisiblePaginator = this.numberOfPaginators;
       }
     }
 
@@ -55,7 +56,7 @@ export class PaginationApiComponent implements OnInit {
 
   previousPage() {
     if (this.pages.first.nativeElement.classList.contains('active')) {
-      if ((this.lastVisiblePaginator - this.firstVisiblePaginator) === this.numberOfVisiblePaginators)  {
+      if ((this.lastVisiblePaginator - this.firstVisiblePaginator) === this.numberOfVisiblePaginators) {
         this.firstVisiblePaginator -= this.numberOfVisiblePaginators;
         this.lastVisiblePaginator -= this.numberOfVisiblePaginators;
       } else {

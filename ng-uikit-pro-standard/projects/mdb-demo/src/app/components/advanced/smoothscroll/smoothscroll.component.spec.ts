@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SmoothscrollComponent } from './smoothscroll.component';
+import {SmoothscrollComponent} from './smoothscroll.component';
 
 describe('SmoothscrollComponent', () => {
   let component: SmoothscrollComponent;
@@ -8,9 +8,9 @@ describe('SmoothscrollComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SmoothscrollComponent ]
+      declarations: [SmoothscrollComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

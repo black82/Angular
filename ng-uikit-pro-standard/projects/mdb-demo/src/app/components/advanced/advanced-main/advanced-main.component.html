@@ -1,12 +1,14 @@
 <main class="container-fluid">
-  <div class="row" *ngIf="!isChildRouteLoaded">
+  <div *ngIf="!isChildRouteLoaded" class="row">
     <div class="col-md-8 mx-auto my-5">
       <mdb-card>
         <mdb-card-body>
           <mdb-card-title>
             <h4>MDB Angular - Advanced category</h4>
           </mdb-card-title>
-          <mdb-card-text class="py-3">Alerts, Accordions, charts and many more! Get to know all our ready to use advanced components in one place.</mdb-card-text>
+          <mdb-card-text class="py-3">Alerts, Accordions, charts and many more! Get to know all our ready to use
+            advanced components in one place.
+          </mdb-card-text>
           <mdb-card-body>
             <!--Section: -->
             <section id="advanced-table-options">
@@ -14,7 +16,9 @@
               <div class="list-group">
 
                 <!-- Item -->
-                <a *ngFor="let item of itemsArray" routerLink="{{item.link}}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <a *ngFor="let item of itemsArray"
+                   class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                   routerLink="{{item.link}}">
                   <div>
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="h5 mb-3">{{item.name}}</h5>
@@ -30,12 +34,14 @@
             <!--/Section: -->
           </mdb-card-body>
           <div class="d-flex flex-row justify-content-center">
-            <a class="card-link" href="https://mdbootstrap.com/angular" alt="official documentation">Official documentation</a>
-            <a class="card-link" href="https://mdbootstrap.com/angular/angular-bootstrap-getting-started/" alt="getting started">Getting Started</a>
+            <a alt="official documentation" class="card-link" href="https://mdbootstrap.com/angular">Official
+              documentation</a>
+            <a alt="getting started" class="card-link"
+               href="https://mdbootstrap.com/angular/angular-bootstrap-getting-started/">Getting Started</a>
           </div>
         </mdb-card-body>
       </mdb-card>
     </div>
   </div>
-  <router-outlet  *ngIf="isChildRouteLoaded"></router-outlet>
+  <router-outlet *ngIf="isChildRouteLoaded"></router-outlet>
 </main>
