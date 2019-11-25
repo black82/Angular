@@ -5,7 +5,9 @@ div {
 }
 
 body {
-  display: flex;
-  min-height: auto;
-  flex-direction: column;
+  position: center;
+  display: grid;
+  flex-direction: initial;
+  background-size: cover;
+  min-height: 70vh;
 }

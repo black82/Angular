@@ -7,7 +7,7 @@ import {BodyComponent} from './component/body/body.component';
 import {ClockComponent} from './component/clock/clock.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SearchByIdComponent} from './component/search-by-id/search-by-id.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing-module';
 import {SearchbyCityComponent} from './component/searchby-city/searchby-city.component';
@@ -20,8 +20,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PanelComponent} from './component/app-panel/panel.component';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
 import {CarouselModule, CollapseModule} from 'ngx-bootstrap';
-import {CaruseliComponent} from './component/caruseli/caruseli.component';
 import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
+import {LoginComponent} from './component/login/login.component';
+import {RegisterComponent} from './component/register/register.component';
+import {TokenInterceptor} from './service/httpclient/TokenInterceptor';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -37,7 +41,8 @@ import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
     NotFountComponent,
     AppAlertvalitationInputComponent,
     PanelComponent,
-    CaruseliComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +59,15 @@ import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
     AccordionModule.forRoot(),
     CarouselModule,
     NgbCarouselModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [ClientServiceService],
+  providers: [ClientServiceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

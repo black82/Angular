@@ -1,0 +1,33 @@
+<body>
+<div class="example-container mat-elevation-z8">
+  <div *ngIf="isLoadingResults"
+       class="example-loading-shade">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <mat-card class="example-card">
+    <form (ngSubmit)="onFormSubmit(loginForm.value)" [formGroup]="loginForm">
+      <mat-form-field class="example-full-width">
+        <input [errorStateMatcher]="matcher" formControlName="email" matInput placeholder="Email"
+               type="email">
+        <mat-error>
+          <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Please enter your email</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input [errorStateMatcher]="matcher" formControlName="password" matInput placeholder="Password"
+               type="password">
+        <mat-error>
+          <span
+            *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Please enter your password</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button [disabled]="!loginForm.valid" color="primary" mat-flat-button type="submit">Login</button>
+      </div>
+      <div class="button-row">
+        <button (click)="register()" color="primary" mat-flat-button type="button">Register</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+</body>

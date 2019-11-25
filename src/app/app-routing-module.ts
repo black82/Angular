@@ -5,17 +5,41 @@ import {SearchByIdComponent} from './component/search-by-id/search-by-id.compone
 import {SearchbyCityComponent} from './component/searchby-city/searchby-city.component';
 import {SearchbyIndustryComponent} from './component/searchby-industry/searchby-industry.component';
 import {NotFountComponent} from './component/not-fount/not-fount.component';
+import {LoginComponent} from './component/login/login.component';
+import {RegisterComponent} from './component/register/register.component';
 
 const routers: Routes = [{
-  path: '', component: BodyComponent
+  path: '',
+  component: BodyComponent
 },
   {
-    path: 'byid', component: SearchByIdComponent
+    path: 'byid',
+    component: SearchByIdComponent
   },
-  {path: 'bycity', component: SearchbyCityComponent},
-  {path: 'byindustry', component: SearchbyIndustryComponent},
-  {path: '**', component: NotFountComponent},
-  {path: 'error', component: NotFountComponent}
+  {
+    path: 'bycity',
+    component: SearchbyCityComponent
+  },
+  {
+    path: 'byindustry',
+    component: SearchbyIndustryComponent
+  },
+  // {
+  //   path: '**',
+  //   component: NotFountComponent
+  // },
+  {
+    path: 'error',
+    component: NotFountComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  }
 ];
 
 @NgModule({

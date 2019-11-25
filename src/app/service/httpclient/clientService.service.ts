@@ -1,9 +1,8 @@
-import {Injectable, Output} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
-import {catchError, retry} from 'rxjs/operators';
-import {Observable, throwError} from 'rxjs';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {catchError, retry, tap} from 'rxjs/operators';
+import {Observable, of, throwError} from 'rxjs';
 import {Router} from '@angular/router';
 
 
@@ -11,24 +10,23 @@ import {Router} from '@angular/router';
   providedIn: 'root'
 })
 export class ClientServiceService {
+  isLoggedIn = false;
+  redirectUrl: string;
 
-
-  basetUrl = 'http://localhost:8081';
+  apiUrl = 'http://localhost:8081';
   router: Router;
-  @Output() errore: Error;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
-  notific: NotificationService;
 
   constructor(private http: HttpClient) {
 
   }
 
   GetCompanyOane(id): Observable<Company> {
-    return this.http.get<Company>(this.basetUrl + '/get/' + id, this.httpOptions)
+    return this.http.get<Company>(this.apiUrl + '/get/' + id, this.httpOptions)
       .pipe(
         retry(3),
         catchError(this.errorHandler)
@@ -36,7 +34,7 @@ export class ClientServiceService {
   }
 
   getListCompany(param): Observable<Company[]> {
-    return this.http.get<Company[]>(this.basetUrl + param, this.httpOptions)
+    return this.http.get<Company[]>(this.apiUrl + param, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.errorHandler)
@@ -58,22 +56,45 @@ export class ClientServiceService {
 
     return throwError(error.message);
   }
+
+
+  login(data: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl + '/api/auth/' + 'login', data)
+      .pipe(
+        tap(_ => this.isLoggedIn = true),
+        catchError(this.handleError('login', []))
+      );
+  }
+
+  logout(): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'signout')
+      .pipe(
+        tap(_ => this.isLoggedIn = false),
+        catchError(this.handleError('logout', []))
+      );
+  }
+
+  register(data: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl + '/api/auth/' + 'register', data)
+      .pipe(
+        tap(_ => this.log('login')),
+        catchError(this.handleError('login', []))
+      );
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      console.error(error); // log to console instead
+      this.log(`${operation} failed: ${error.message}`);
+
+      return of(result as T);
+    };
+  }
+
+  private log(message: string) {
+    console.log(message);
+  }
 }
 
-
-export class NotificationService {
-
-  constructor(public snackBar: MatSnackBar) {
-  }
-
-  showSuccess(message: string): void {
-    this.snackBar.open(message);
-  }
-
-  showError(message: string): void {
-
-
-    this.snackBar.open(message, 'X', {panelClass: ['error']});
-  }
-}
 
