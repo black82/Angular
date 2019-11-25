@@ -11,11 +11,9 @@ export class HeaderComponent implements OnInit {
   isColapset: boolean;
 
   constructor() {
-    this.url = 'https://teox.eu/';
+    this.url = 'dother compani home url';
     this.isColapset = true;
-    setTimeout(() => {
-      this.message = 'Company DataBase';
-    }, 1000);
+    this.message = 'Company DataBasse';
   }
 
   ngOnInit() {
@@ -23,7 +21,6 @@ export class HeaderComponent implements OnInit {
 
   teox(event) {
     this.isColapset = !this.isColapset;
-
   }
 
 }

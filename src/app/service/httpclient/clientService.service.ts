@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Output} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
 import {catchError, retry} from 'rxjs/operators';
@@ -15,6 +15,7 @@ export class ClientServiceService {
 
   basetUrl = 'http://localhost:8081';
   router: Router;
+  @Output() errore: Error;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

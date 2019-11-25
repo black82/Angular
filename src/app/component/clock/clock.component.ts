@@ -7,14 +7,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ClockComponent implements OnInit {
   clock: string;
-  date: string;
+  date: Date;
   visibility = true;
 
 
   constructor() {
     setInterval(() => {
-      this.clock = new Date().toLocaleTimeString().normalize();
-      this.date = new Date().toDateString().normalize();
+      this.date = new Date();
     }, 1000);
   }
 

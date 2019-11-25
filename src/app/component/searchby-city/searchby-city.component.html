@@ -19,7 +19,9 @@
           id="batonsSubmit" type="submit">Search By City
   </button>
 </form>
-
+<div *ngIf="companies?.length!=0" id="emptylistmessage">
+  <p> Somithing text to containt</p>
+</div>
 
 <div class="container">
   <div class="row">

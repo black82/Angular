@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './component/header/header.component';
 import {FooterComponent} from './component/footer/footer.component';
@@ -16,9 +15,7 @@ import {SearchbyIndustryComponent} from './component/searchby-industry/searchby-
 import {NotFountComponent} from './component/not-fount/not-fount.component';
 import {ClientServiceService} from './service/httpclient/clientService.service';
 import {AppAlertvalitationInputComponent} from './component/app-alert-valitation-input-by-empty/app-alertvalitation-input.component';
-
 import {MatAutocompleteModule, MatFormFieldModule, MatInputModule} from '@angular/material';
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PanelComponent} from './component/app-panel/panel.component';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
@@ -57,8 +54,6 @@ import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
     AccordionModule.forRoot(),
     CarouselModule,
     NgbCarouselModule,
-
-
   ],
   providers: [ClientServiceService],
   bootstrap: [AppComponent]

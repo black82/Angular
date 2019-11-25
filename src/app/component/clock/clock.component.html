@@ -1,6 +1,6 @@
 <div [ngClass]="{invisibile: !visibility}" class="text-info">
   <p>
-    Time:{{" " + clock + "  Date:  " + date}}
+    Time :  {{date | date: 'MMM d, y h:mm:ss a' :'local'}}
   </p>
 
 </div>

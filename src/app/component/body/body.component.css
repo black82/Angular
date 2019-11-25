@@ -1,8 +1,8 @@
 img {
   position: center;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
+  border: 5px solid #ddd;
+  border-radius: 14px;
+  padding: 1px;
   height: 160%;
   width: 70%;
 }
@@ -23,14 +23,14 @@ body {
   margin: 5px auto;
   overflow: hidden;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08);
-  border: 0px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 
 }
 
 .ia-container figure {
   position: absolute;
   top: 0;
-  left: 30px; /* width of visible piece */
+  left: 70px; /* width of visible piece */
   width: 100%;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
   transition: all 0.3s ease-in-out;
@@ -50,10 +50,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 10px; /* just cover visible part */
+  width: 5px; /* just cover visible part */
   height: 100%;
   cursor: pointer;
-  border: 0;
+  border: 10px;
   padding: 0;
   opacity: 0;
   z-index: 100;
@@ -128,3 +128,8 @@ body {
 
 }
 
+.contenthome {
+  text-align: center;
+  border: #11c449;
+  color: #800040;
+}

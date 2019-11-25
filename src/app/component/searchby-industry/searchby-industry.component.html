@@ -1,13 +1,13 @@
-
 <body>
 <app-app-alertvalitation-input *ngIf="visibili" [control]="formByIndustry"
                                errorMessage="{{errorMessage}}">
 </app-app-alertvalitation-input>
-<div class="form-inline md-form mr-auto mb-4">
-  <form (ngSubmit)="searchByActivity($event)" [formGroup]="formByIndustry">
+<div>
+  <form (ngSubmit)="searchByActivity($event)" [formGroup]="formByIndustry" class="form-inline md-form mr-auto mb-4">
     <mat-form-field class="example-full-width">
       <input [matAutocomplete]="auto" [readOnly]="true" autocapitalize="off"
-             formControlName="branch" id="inputIndustry" matInput placeholder="Industry Branch" type="text">
+             formControlName="branch" id="inputIndustry" matInput placeholder="Industry Branch" spellcheck="false"
+             type="text">
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
           {{option}}
@@ -16,7 +16,7 @@
     </mat-form-field>
     <button class="btn btn-outline-success"
             id="batonsSubmit" type="submit">Search by Industry Branch
-  </button>
+    </button>
   </form>
   <div class="container">
     <div class="row">

@@ -1,8 +1,6 @@
 
 body {
-
   min-height: 70vh;
-
 }
 
 form {
@@ -10,13 +8,15 @@ form {
 }
 
 .mat-form-field {
-  position: relative;
-  left: 29%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
 }
 
 button {
-  position: relative;
-  left: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
 }
 
 #companyShouw {

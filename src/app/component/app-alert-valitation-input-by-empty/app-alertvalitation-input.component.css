@@ -1,20 +1,31 @@
-#errorAlert {
+@keyframes myChange {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 60px;
+  }
+}
+
+div {
   height: 60px;
   color: #99004d;
   background-color: #f169b4;
   border-color: #800040;
-
-
+  animation: 0.5s myChange;
+  text-align: center;
 }
 
-#errorMessage {
+p {
+  font-weight: bold;
+  position: relative;
+  text-align: center;
   font-family: Georgia, serif;
   font-style: italic;
   font-variant: small-caps;
   text-transform: capitalize;
-  position: absolute;
-  left: 25%;
   color: white;
+  font-size: 17px;
 }
 
 
