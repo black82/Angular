@@ -17,7 +17,7 @@ export class SearchbyIndustryComponent implements OnInit {
   formByIndustry: FormGroup;
   errorMessage: string;
   filteredOptions: Observable<string[]>;
-  result: Company [];
+  companies: Company [];
   isOpen = 'closed';
   hideme = [];
 
@@ -59,7 +59,7 @@ export class SearchbyIndustryComponent implements OnInit {
     } else {
       this.apiClient.getListCompany('/industry/' + this.formByIndustry.controls.branch.value).subscribe(
         company => {
-          this.result = company;
+          this.companies = company;
         },
         error => {
           this.errorMessage = 'Something bad happened;   please try again later.';

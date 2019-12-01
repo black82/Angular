@@ -3,8 +3,6 @@ import {Company} from '../../DTO/CompanyDto';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-
-import {animate, state, style, transition, trigger} from '@angular/animations';
 import {CitiarrayService} from '../../service/services/citiarray.service';
 import {ClientServiceService} from '../../service/httpclient/clientService.service';
 
@@ -12,25 +10,8 @@ import {ClientServiceService} from '../../service/httpclient/clientService.servi
 @Component({
   selector: 'app-searchby-city',
   templateUrl: './searchby-city.component.html',
-  styleUrls: ['./searchby-city.component.css'],
-  animations: [
-    trigger('toggleBox', [
-      // ...
-      state('open', style({transform: 'translateX(0)'})),
-      state('closed', style({transform: 'translateX(0)', height: '100%'})),
-      transition('open => closed', [
-        style({transform: 'translateX(-100%)', display: 'flex', height: '100%'}),
-        animate('0.5s 300ms ease-in')
-      ]),
-
-      transition('closed => open', [
-        animate('0.3s ease-out', style({transform: 'translateX(0)'}))
-      ]),
-    ])
-  ]
-
+  styleUrls: ['./searchby-city.component.css']
 })
-
 export class SearchbyCityComponent implements OnInit {
 
 
