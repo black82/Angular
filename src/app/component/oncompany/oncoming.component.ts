@@ -9,11 +9,13 @@ import {Company} from '../../DTO/CompanyDto';
 export class OncomingComponent implements OnInit {
   @Input()
   company: Company;
+  emailArray: string[];
 
   constructor() {
   }
 
   ngOnInit() {
+
   }
 
 }

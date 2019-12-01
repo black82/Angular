@@ -1,10 +1,19 @@
 
 body {
   min-height: 70vh;
+  background-image: url("src/assets/image/backgroundimagisearch.jpg");
 }
 
 form {
   min-height: 20vh;
+  width: 60%;
+  margin-bottom: 50px;
+  padding: 50px 30px 50px 80px;
+  box-shadow: 0 0 10px 5px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid white;
+
 }
 
 .mat-form-field {
@@ -82,4 +91,40 @@ input::placeholder {
   text-decoration: none;
 
   font-variant: small-caps;
+}
+
+form {
+  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+form:before,
+form:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
+  left: 25%;
+}
+
+form:before {
+  top: 15px;
+}
+
+form:after {
+  bottom: 15px;
+}
+
+form p {
+  background: white;
+  margin: 0;
+  padding: 50px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #7A7B82;
+  line-height: 1.5;
 }

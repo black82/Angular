@@ -1,0 +1,259 @@
+#companyBranch {
+  width: 80%;
+  margin: 20px 20px 20px 10%;
+  box-shadow: 0 0 10px 5px;
+}
+
+#companyContact {
+  width: 80%;
+  margin: 20px 20px 20px 10%;
+  box-shadow: 0 0 10px 5px;
+}
+
+#companyEmails {
+  background-color: mintcream;
+  width: 80%;
+  margin: 20px 20px 20px 10%;
+  box-shadow: 0 0 10px 5px;
+}
+
+#companyName {
+  background-color: mintcream;
+  width: 80%;
+  margin: 20px 20px 20px 10%;
+  box-shadow: 0 0 10px 5px;
+
+}
+
+#companyWorker {
+  width: 80%;
+  margin: 20px 20px 20px 10%;
+  box-shadow: 0 0 10px 5px;
+}
+
+#companyJurid {
+  width: 80%;
+  margin: 20px 20px 20px 10%;
+
+}
+
+div p {
+  text-transform: capitalize;
+  font-family: Georgia, serif;
+}
+
+#companyJurid {
+  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#companyJurid:before,
+#companyJurid:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
+  left: 25%;
+}
+
+#companyJurid:before {
+  top: 15px;
+}
+
+#companyJurid:after {
+  bottom: 15px;
+}
+
+#companyJurid p {
+  background: white;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #7A7B82;
+  line-height: 1.5;
+}
+
+#companyWorker {
+  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#companyWorker:before,
+#companyWorker:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
+  left: 25%;
+}
+
+#companyWorker:before {
+  top: 15px;
+}
+
+#companyWorker:after {
+  bottom: 15px;
+}
+
+#companyWorker p {
+  background: white;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #7A7B82;
+  line-height: 1.5;
+}
+
+#companyName {
+  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#companyName:before,
+#companyName:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
+  left: 25%;
+}
+
+#companyName:before {
+  top: 15px;
+}
+
+#companyName:after {
+  bottom: 15px;
+}
+
+#companyName p {
+  background: white;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #7A7B82;
+  line-height: 1.5;
+}
+
+#companyEmails {
+  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#companyEmails:before,
+#companyEmails:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
+  left: 25%;
+}
+
+#companyEmails:before {
+  top: 15px;
+}
+
+#companyEmails:after {
+  bottom: 15px;
+}
+
+#companyEmails p {
+  background: white;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #7A7B82;
+  line-height: 1.5;
+}
+
+#companyContact {
+  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#companyContact:before,
+#companyContact:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
+  left: 25%;
+}
+
+#companyContact:before {
+  top: 15px;
+}
+
+#companyContact:after {
+  bottom: 15px;
+}
+
+#companyContact p {
+  background: white;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #7A7B82;
+  line-height: 1.5;
+}
+
+#companyBranch {
+  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#companyBranch:before,
+#companyBranch:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
+  left: 25%;
+}
+
+#companyBranch:before {
+  top: 15px;
+}
+
+#companyBranch:after {
+  bottom: 15px;
+}
+
+#companyBranch p {
+  background: white;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #7A7B82;
+  line-height: 1.5;
+}

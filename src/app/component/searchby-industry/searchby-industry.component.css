@@ -1,6 +1,6 @@
 body {
   min-height: 70vh;
-
+  background-image: url("src/assets/image/backgroundimagisearch.jpg");
 }
 
 
@@ -32,6 +32,11 @@ input::placeholder {
 
 form {
   min-height: 20vh;
+  background-image: url("src/assets/image/backgroundform.jpg");
+  border: 5px solid white;
+  margin-bottom: 50px;
+  padding: 50px 30px 50px 80px;
+
 }
 
 .mat-form-field {

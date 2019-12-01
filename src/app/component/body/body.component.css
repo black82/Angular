@@ -11,7 +11,7 @@ img {
 body {
   position: center;
   display: grid;
-  background-image: url('src/assets/image/backgraund.jpg');
+  background-image: url("src/assets/image/backgroundimagisearch.jpg");
   flex-direction: initial;
   background-size: cover;
   min-height: 70vh;

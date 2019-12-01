@@ -1,18 +1,18 @@
 <body>
-  <app-app-alertvalitation-input *ngIf="alertShouw" [control]="formId"
-                                 errorMessage="{{errorMessage}}">
-  </app-app-alertvalitation-input>
-  <form (ngSubmit)="searcById($event)" [formGroup]="formId" class="form-inline md-form mr-auto mb-4">
-    <mat-form-field class="example-full-width">
-      <input [readOnly]="true" autocapitalize="off" autocomplete="false"
-             formControlName="idControl" matInput
-             name="idControl"
-             placeholder="Search by Id" spellcheck="false">
-    </mat-form-field>
-    <button class="btn btn-outline-success" id="batonsSubmit" type="submit"
-    >Search By ID
-    </button>
-  </form>
-  <app-oncompany [company]=company></app-oncompany>
+<app-app-alertvalitation-input *ngIf="alertShouw" [control]="formId"
+                               errorMessage="{{errorMessage}}">
+</app-app-alertvalitation-input>
+<form (ngSubmit)="searcById($event)" [formGroup]="formId" class="form-inline md-form mr-auto mb-4">
+  <mat-form-field class="example-full-width">
+    <input [readOnly]="true" autocapitalize="off" autocomplete="false"
+           formControlName="idControl" matInput
+           name="idControl"
+           placeholder="Search by Id" spellcheck="false">
+  </mat-form-field>
+  <button class="btn btn-outline-success" id="batonsSubmit" type="submit"
+  >Search By ID
+  </button>
+</form>
+<app-oncompany [company]=company></app-oncompany>
 </body>
 
