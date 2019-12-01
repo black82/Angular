@@ -26,7 +26,8 @@ import {RegisterComponent} from './component/register/register.component';
 import {TokenInterceptor} from './service/httpclient/TokenInterceptor';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {ListtablesComponent} from './component/listtables/listtables.component';
+import {LisTablesComponent} from './component/listtables/lis-tables.component';
+import {OncomingComponent} from './component/oncompany/oncoming.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {ListtablesComponent} from './component/listtables/listtables.component';
     PanelComponent,
     LoginComponent,
     RegisterComponent,
-    ListtablesComponent
+    LisTablesComponent,
+    OncomingComponent
   ],
   imports: [
     BrowserModule,

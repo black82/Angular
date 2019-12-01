@@ -5,8 +5,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-listtables',
-  templateUrl: './listtables.component.html',
-  styleUrls: ['./listtables.component.css'],
+  templateUrl: './lis-tables.component.html',
+  styleUrls: ['./lis-tables.component.css'],
   animations: [
     trigger('toggleBox', [
       // ...
@@ -24,7 +24,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ]
 
 })
-export class ListtablesComponent implements OnInit {
+export class LisTablesComponent implements OnInit {
   @Input()
   control: FormGroup;
   @Input()
