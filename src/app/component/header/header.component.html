@@ -1,20 +1,18 @@
 <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">
-    <div id="titleMessage"><h1 style="width: 35%">{{message}}</h1></div>
+
     <button (click)="teox($event)" *ngIf="isColapset" class="badge badge-light">
       <img class="d-inline-block align-top" height="35" src="assets/image/favicon.ico" width="35">
     </button>
     <button (click)="teox($event)" *ngIf="!isColapset" class="badge badge-light">
       <img class="d-inline-block align-top" height="35" src="assets/image/favicon.ico" width="35">
     </button>
-    <div *ngIf="!isColapset">
-      <a class="badge badge-light" href="https://teox.eu/">Company dother url</a>
-    </div>
+  <div *ngIf="!isColapset">
+    <a class="badge badge-light" href="https://teox.eu/">Company doter url</a>
+  </div>
+  <div id="titleMessage">{{message}}</div>
     <app-clock></app-clock>
-  </a>
-  <br>
 </nav>
 <div class="topnav">
   <a class="active" href="">Home</a>
