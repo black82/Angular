@@ -9,16 +9,19 @@
     <app-app-alertvalitation-input *ngIf="alertShouw" [control]="formId"
                                    errorMessage="{{errorMessage}}">
     </app-app-alertvalitation-input>
-    <h3>Написать нам</h3>
+    <h3>Search Company by Id</h3>
 
     <input autocapitalize="off" autocomplete="false"
            formControlName="idControl"
            name="idControl"
-           placeholder="Search by Id" spellcheck="false">
+           spellcheck="false">
 
     <input type="submit" value="Search By ID">
   </div>
 </form>
+<app-app-alertvalitation-input *ngIf="alertShouw" [control]="formId" [position]="byid"
+                               errorMessage="{{errorMessage}}">
+</app-app-alertvalitation-input>
 <app-oncompany [company]=company></app-oncompany>
 </body>
 

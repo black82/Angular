@@ -16,6 +16,7 @@ export class SearchByIdComponent implements OnInit {
   formId: FormGroup;
   alertShouw = false;
   errorMessage: string;
+  byid = 'byid';
 
   constructor(private http: HttpClient, private fb: FormBuilder, private client: ClientServiceService) {
   }

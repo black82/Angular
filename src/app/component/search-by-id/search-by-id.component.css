@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #f69a73;
+  background: #5b5a61;
   min-height: 80vh;
 
 }
@@ -17,7 +17,7 @@ body {
   margin: 30px auto 0;
   background: white;
   border-radius: 30px;
-  box-shadow: 5px 5px 20px;
+  box-shadow: 5px 5px 20px white;
 }
 
 .form-left-decoration,
@@ -26,7 +26,7 @@ body {
   position: absolute;
   width: 50px;
   height: 20px;
-  background: #f69a73;
+  background: #5b5a61;
   border-radius: 20px;
 }
 
@@ -79,14 +79,14 @@ body {
   height: 20px;
   border-radius: 50%;
   background: white;
+
 }
 
 .form-inner {
   padding: 50px;
 }
 
-.form-inner input,
-.form-inner textarea {
+.form-inner input {
   display: block;
   width: 100%;
   padding: 0 20px;
@@ -96,6 +96,7 @@ body {
   border-width: 0;
   border-radius: 20px;
   font-family: 'Roboto', sans-serif;
+
 }
 
 .form-inner input[type="submit"] {
@@ -104,23 +105,44 @@ body {
   border-bottom: 4px solid #d87d56;
   color: white;
   font-size: 14px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
-.form-inner textarea {
-  resize: none;
+.form-inner input[type="submit"]:hover {
+  background: #d87d56;;
+  box-shadow: 0 15px 20px #2EE59D;
+  color: white;
+  transform: translateY(-2px);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
 }
+
+
+
 
 .form-inner h3 {
-  margin-top: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  color: #707981;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  color: #d87d56;
+
+  font-weight: bold;
+
 }
 .mat-form-field {
   margin-right: auto;
   margin-left: auto;
   display: flex;
+
 }
 
 

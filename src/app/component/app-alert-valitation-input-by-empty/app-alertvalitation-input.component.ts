@@ -11,6 +11,9 @@ export class AppAlertvalitationInputComponent implements OnInit {
   control: FormGroup;
   @Input()
   errorMessage: string;
+  hiddenAlertB = true;
+  @Input()
+  position: string;
 
   constructor() {
   }
@@ -20,4 +23,7 @@ export class AppAlertvalitationInputComponent implements OnInit {
 
   }
 
+  hiddenAlert() {
+    this.hiddenAlertB = !this.hiddenAlertB;
+  }
 }
