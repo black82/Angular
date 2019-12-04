@@ -1,83 +1,32 @@
-<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-<nav class="navbar navbar-light bg-light">
-
-    <button (click)="teox($event)" *ngIf="isColapset" class="badge badge-light">
-      <img class="d-inline-block align-top" height="35" src="assets/image/favicon.ico" width="35">
-    </button>
-    <button (click)="teox($event)" *ngIf="!isColapset" class="badge badge-light">
-      <img class="d-inline-block align-top" height="35" src="assets/image/favicon.ico" width="35">
-    </button>
-  <div *ngIf="!isColapset">
-    <a class="badge badge-light" href="https://teox.eu/">Company doter url</a>
-  </div>
+<!--<app-clock></app-clock>-->
+<div id="container">
   <div id="titleMessage">{{message}}</div>
-    <app-clock></app-clock>
-</nav>
-<div class="topnav">
-  <a class="active" href="">Home</a>
-  <a href="byid">Search by ID</a>
-  <a href="bycity">Search by City</a>
-  <a href="byindustry">Search by Industry</a>
+  <nav id="menuTop">
+    <ul class="topmenu">
+      <!--    <button  class="badge badge-light">-->
+      <!--      <img class="d-inline-block align-top" height="35" src="assets/image/favicon.ico" width="35">-->
+      <!--    </button>-->
+      <li><a href="#">Home</a></li>
+      <li><a href="">Shop</a></li>
+      <li><a href="">Blog</a>
+        <ul class="submenu">
+          <li><a href="byid">Search by Id</a></li>
+          <li><a href="bycity">Search By City</a></li>
+          <li><a href="byindustry">Search by Branch </a></li>
+          <li><a href="">Tags</a></li>
+        </ul>
+      </li>
+      <li><a href="">Portfolio</a>
+        <ul class="submenu">
+          <li><a href="">Category</a></li>
+          <li><a href="">Author</a></li>
+          <li><a href="">Archive</a></li>
+          <li><a href="">Tags</a></li>
+        </ul>
+      </li>
+      <li><a href="">Contact</a></li>
+    </ul>
+
+  </nav>
 </div>
-<script>
-    // type anything here
-    const text = 'hover me';
 
-    // this function turns a string into an array
-    const createLetterArray = (string) => {
-        return string.split('');
-    };
-
-    // this function creates letter layers wrapped in span tags
-    const createLetterLayers = (array) => {
-        return array.map((letter) => {
-            let layer = '';
-            //specify # of layers per letter
-            for (let i = 1; i <= 2; i++) {
-                // if letter is a space
-                if (letter == ' ') {
-                    layer += '<span class="space"></span>';
-                } else {
-                    layer += '<span class="letter-' + i + '">' + letter + '</span>';
-                }
-            }
-            return layer;
-        });
-    };
-
-    // this function wraps each letter in a parent container
-    const createLetterContainers = (array) => {
-        return array.map((item) => {
-            let container = '';
-            container += '<div class="wrapper">' + item + '</div>';
-            return container;
-        });
-    };
-
-    // use a promise to output text layers into DOM first
-    const outputLayers = new Promise(function (resolve, reject) {
-        document.getElementById('text').innerHTML = createLetterContainers(createLetterLayers(createLetterArray(text))).join('');
-        resolve();
-    });
-
-    // then adjust width and height of each letter
-    const spans = Array.prototype.slice.call(document.getElementsByTagName('span'));
-    outputLayers.then(() => {
-        return spans.map((span) => {
-            setTimeout(() => {
-                span.parentElement.style.width = span.offsetWidth + 'px';
-                span.parentElement.style.height = span.offsetHeight + 'px';
-            }, 250);
-        });
-    }).then(() => {
-        // then slide letters into view one at a time
-        let time = 250;
-        return spans.map((span) => {
-            time += 75;
-            setTimeout(() => {
-                span.parentElement.style.top = '0px';
-            }, time);
-        });
-    });
-</script>

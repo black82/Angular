@@ -1,10 +1,9 @@
-<div [ngClass]="{invisibile: !visibility}" class="text-info">
-  <p>
+<a (click)="show()" *ngIf="!visibility" id="show">Hide
+  <p id="time">
     Time :  {{date | date: 'MMM d, y h:mm:ss a' :'local'}}
   </p>
-
-</div>
-<a (click)="show()" *ngIf="!visibility" class="btn btn-light" type="button"><p class="text-info">Show Time</p>
 </a>
-<a (click)="show()" *ngIf="visibility" class="btn btn-light" type="button"><p class="text-info">Hide</p></a>
+<a (click)="show()" *ngIf="visibility" id="hide">Show
+</a>
+
 

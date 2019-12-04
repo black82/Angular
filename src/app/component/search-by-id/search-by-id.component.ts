@@ -54,7 +54,6 @@ export class SearchByIdComponent implements OnInit {
     }
   }
 
-
   ngOnInit() {
     this.createForm();
     this.formId.get('idControl').setValue('');

@@ -1,26 +1,22 @@
-.text-info {
+#time {
   border: #aa66cc;
-  font-family: Georgia, serif;
   font-size: 15px;
-  letter-spacing: -0.8px;
-  word-spacing: 6px;
   color: #6351ce;
   font-weight: 400;
-  text-decoration: none;
-  font-style: italic;
   font-variant: small-caps;
   text-transform: capitalize;
-  position: absolute;
-  left: 75%;
-  bottom: 0;
+  left: 83%;
+
 }
 
-.invisibile {
-  display: none;
+#show, #hide {
+  border: #aa66cc;
+  font-size: 15px;
+  color: #6351ce;
+  font-weight: 400;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  margin-left: 79%;
 }
 
-button {
-  position: absolute;
-  left: 70%;
-  bottom: 0;
-}
+
