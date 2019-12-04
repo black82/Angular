@@ -12,6 +12,7 @@ import {ClientServiceService} from '../../service/httpclient/clientService.servi
   templateUrl: './searchby-city.component.html',
   styleUrls: ['./searchby-city.component.css']
 })
+
 export class SearchbyCityComponent implements OnInit {
 
 
