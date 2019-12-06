@@ -1,26 +1,26 @@
 <body>
-<app-app-alertvalitation-input *ngIf="visibili" [control]="formByCity"
-                               errorMessage="{{errorMessage}}">
-</app-app-alertvalitation-input>
-<form (ngSubmit)="searchByCity($event)" [formGroup]="formByCity" class="form-inline md-form mr-auto mb-4">
-  <mat-form-field class="example-full-width">
-    <input [matAutocomplete]="auto" [readOnly]="true" autocapitalize="off"
-           formControlName="city" matInput
-           name="city"
-           placeholder="Search by City"
-           spellcheck="false" type="text">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option}}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-  <button class="btn btn-outline-success"
-          id="batonsSubmit" type="submit">Search By City
-  </button>
+<br>
+<br>
+<form (ngSubmit)="searchByCity($event)" [formGroup]="formByCity" class="decor">
+  <div class="form-left-decoration"></div>
+  <div class="form-right-decoration"></div>
+  <div class="circle"></div>
+  <div class="form-inner">
+    <a>Search Company by City</a>
+    <hr>
+    <input [(ngModel)]="city"
+           [ngbTypeahead]="search"
+           class="form-control"
+           formControlName="city"
+           id="input"
+           placeholder="Search...."
+           type="text"/>
+    <button id="batonsSubmit" type="submit">Search By ID</button>
+  </div>
 </form>
-<div *ngIf="companies?.length==0" id="emptylistmessage">
-  <p> Somithing text to containt</p>
-</div>
+<app-app-alertvalitation-input *ngIf="alertShouw" [control]="formByCity" [error]=error
+                               [position]="bycity" errorMessage="{{alertShouw}}">
+</app-app-alertvalitation-input>
 <app-listtables [companies]=companies [control]="formByCity"></app-listtables>
 </body>
+

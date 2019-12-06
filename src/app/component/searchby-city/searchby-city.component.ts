@@ -2,9 +2,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Company} from '../../DTO/CompanyDto';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 import {CitiarrayService} from '../../service/services/citiarray.service';
 import {ClientServiceService} from '../../service/httpclient/clientService.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 
 @Component({
@@ -15,11 +16,10 @@ import {ClientServiceService} from '../../service/httpclient/clientService.servi
 
 export class SearchbyCityComponent implements OnInit {
 
-
-  errorMessage: string;
+  bycity = 'bycity';
+  alertShouw: string;
   isOpen = 'closed';
   hideme = [];
-  filteredOptions: Observable<string[]>;
   @Input()
   company: Company;
   city: string;
@@ -27,6 +27,9 @@ export class SearchbyCityComponent implements OnInit {
   formByCity: FormGroup;
   @Output()
   submitUser: EventEmitter<Company> = new EventEmitter();
+  // tslint:disable-next-line:no-output-native
+  @Output()
+  error: HttpErrorResponse;
   visibili = false;
   private cityarr: string[];
 
@@ -35,14 +38,14 @@ export class SearchbyCityComponent implements OnInit {
               private client: ClientServiceService) {
   }
 
-  searchByCity($event) {
+  searchByCity() {
     if (this.formByCity.invalid) {
-      this.errorMessage = 'You entered an incorrect value in the search field. Try again !!! ' + this.formByCity.controls.city.value;
+      this.alertShouw = 'You entered an incorrect value in the search field. Try again !!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
     }
     if (!this.cheekCity()) {
       this.formByCity.get('city').setErrors({incorrect: true});
-      this.errorMessage = 'The value you entered is not present in the list of cities!!! ' + this.formByCity.controls.city.value;
+      this.alertShouw = 'The value you entered is not present in the list of cities!!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
     } else {
       this.client.getListCompany('/get1000/' + this.formByCity.controls.city.value)
@@ -50,7 +53,8 @@ export class SearchbyCityComponent implements OnInit {
             this.companies = company;
           },
           error => {
-            this.errorMessage = 'Something bad happened;   please try again later.';
+            this.error = (error as HttpErrorResponse);
+            this.alertShouw = 'Something bad happened;   please try again later.';
             this.formByCity.get('city').setErrors({incorrect: true});
             this.visibili = true;
           }
@@ -69,29 +73,27 @@ export class SearchbyCityComponent implements OnInit {
     });
   }
 
-
   ngOnInit() {
     this.cityarr = this.citis.cityarr;
     this.createForm();
     this.formByCity.get('city').setValue('');
-    this.filteredOptions = this.formByCity.controls.city.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
   }
 
   cheekCity() {
     return this.cityarr.includes(this.formByCity.get('city').value);
   }
 
-  _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-    return this.cityarr.filter(option => option.toLowerCase().includes(filterValue));
-  }
+  search = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => term.length < 2 ? []
+        : this.cityarr.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)));
 
   toggle() {
     // @ts-ignore
     this.isOpen = !this.isOpen;
   }
+
+
 }

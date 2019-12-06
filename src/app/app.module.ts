@@ -20,7 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PanelComponent} from './component/app-panel/panel.component';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
 import {CarouselModule, CollapseModule} from 'ngx-bootstrap';
-import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbCarouselModule, NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 import {LoginComponent} from './component/login/login.component';
 import {RegisterComponent} from './component/register/register.component';
 import {TokenInterceptor} from './service/httpclient/TokenInterceptor';
@@ -28,6 +28,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {LisTablesComponent} from './component/listtables/lis-tables.component';
 import {OncomingComponent} from './component/oncompany/oncoming.component';
+import {OpitonComponent} from './component/opiton/opiton.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {OncomingComponent} from './component/oncompany/oncoming.component';
     LoginComponent,
     RegisterComponent,
     LisTablesComponent,
-    OncomingComponent
+    OncomingComponent,
+    OpitonComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,8 @@ import {OncomingComponent} from './component/oncompany/oncoming.component';
     NgbCarouselModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    NgbTypeaheadModule,
+
   ],
   providers: [ClientServiceService,
     {

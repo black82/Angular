@@ -26,7 +26,7 @@ export interface Company {
   fax: string;
   url: string;
   sector_of_activity: string;
-  officers: Array<Rabotnik>;
+  officers: Rabotnik;
   sic: string;
   kapital: string;
   email: string;

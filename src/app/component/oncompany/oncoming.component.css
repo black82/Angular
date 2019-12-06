@@ -1,259 +1,136 @@
-#companyBranch {
-  width: 80%;
-  margin: 20px 20px 20px 10%;
-  box-shadow: 0 0 10px 5px;
+
+.post-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-#companyContact {
-  width: 80%;
-  margin: 20px 20px 20px 10%;
-  box-shadow: 0 0 10px 5px;
+.post-item {
+  padding: 15px;
+  cursor: pointer;
 }
 
-#companyEmails {
-  background-color: mintcream;
-  width: 80%;
-  margin: 20px 20px 20px 10%;
-  box-shadow: 0 0 10px 5px;
+.post-item * {
+  transition: .3s linear;
 }
 
-#companyName {
-  background-color: mintcream;
-  width: 80%;
-  margin: 20px 20px 20px 10%;
-  box-shadow: 0 0 10px 5px;
-
-}
-
-#companyWorker {
-  width: 80%;
-  margin: 20px 20px 20px 10%;
-  box-shadow: 0 0 10px 5px;
-}
-
-#companyJurid {
-  width: 80%;
-  margin: 20px 20px 20px 10%;
-
-}
-
-div p {
-  text-transform: capitalize;
-  font-family: Georgia, serif;
-}
-
-#companyJurid {
-  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
-  position: relative;
+.item-content {
+  background: #413D4C;
   padding: 40px;
-  box-sizing: border-box;
 }
 
-#companyJurid:before,
-#companyJurid:after {
+.item-icon:before {
+  content: "";
+  font-family: FontAwesome;
+  color: #F09EA3;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.item-icon.photo:before {
+  content: "\f030";
+}
+
+.item-icon.video:before {
+  content: "\f03d";
+}
+
+.item-icon.gift:before {
+  content: "\f06b";
+}
+
+.item-icon.group:before {
+  content: "\f0c0";
+}
+
+.item-icon.tree:before {
+  content: "\f1bb";
+}
+
+.item-icon.anchor:before {
+  content: "\f13d";
+}
+
+.post-item:hover .item-icon,
+.post-item:hover .item-body h3,
+.post-item:hover .item-body p {
+  transform: translateY(-8px);
+}
+
+.item-body {
+  color: #F5E2CD;
+  font-size: 14px;
+}
+
+.item-body h3 {
+  font-weight: 500;
+  margin-bottom: 15px;
+  transition-delay: .05s;
+}
+
+.item-body p {
+  transition-delay: .1s;
+}
+
+.item-footer {
+  padding-top: 15px;
+}
+
+.link {
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  padding-right: 30px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #F5E2CD;
+}
+
+.link:before {
   content: "";
   position: absolute;
-  width: 50%;
-  height: 10px;
-  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
-  left: 25%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: .125rem;
+  margin: auto;
+  background: #F09EA3;
+  transform: scaleX(.2);
+  transform-origin: left center;
+  z-index: 0;
+  transition: .6s cubic-bezier(.6, .01, 0, 1);
 }
 
-#companyJurid:before {
-  top: 15px;
-}
-
-#companyJurid:after {
-  bottom: 15px;
-}
-
-#companyJurid p {
-  background: white;
-  margin: 0;
-  padding: 10px 0;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  color: #7A7B82;
-  line-height: 1.5;
-}
-
-#companyWorker {
-  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
+.link span {
+  display: inline-block;
   position: relative;
-  padding: 40px;
-  box-sizing: border-box;
+  transform: translateX(-200%);
+  transition: .6s cubic-bezier(.6, .01, 0, 1);
 }
 
-#companyWorker:before,
-#companyWorker:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 10px;
-  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
-  left: 25%;
+.post-item:hover .link span {
+  transform: translateX(0%);
 }
 
-#companyWorker:before {
-  top: 15px;
+.post-item:hover .link:before {
+  transform-origin: right center;
 }
 
-#companyWorker:after {
-  bottom: 15px;
+@media (min-width: 768px) {
+  .post-item {
+    flex-basis: 50%;
+    flex-shrink: 0;
+  }
 }
 
-#companyWorker p {
-  background: white;
-  margin: 0;
-  padding: 10px 0;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  color: #7A7B82;
-  line-height: 1.5;
+@media (min-width: 960px) {
+  .post-item {
+    flex-basis: 33.333333333%;
+  }
 }
 
-#companyName {
-  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
-  position: relative;
-  padding: 40px;
-  box-sizing: border-box;
-}
-
-#companyName:before,
-#companyName:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 10px;
-  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
-  left: 25%;
-}
-
-#companyName:before {
-  top: 15px;
-}
-
-#companyName:after {
-  bottom: 15px;
-}
-
-#companyName p {
-  background: white;
-  margin: 0;
-  padding: 10px 0;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  color: #7A7B82;
-  line-height: 1.5;
-}
-
-#companyEmails {
-  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
-  position: relative;
-  padding: 40px;
-  box-sizing: border-box;
-}
-
-#companyEmails:before,
-#companyEmails:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 10px;
-  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
-  left: 25%;
-}
-
-#companyEmails:before {
-  top: 15px;
-}
-
-#companyEmails:after {
-  bottom: 15px;
-}
-
-#companyEmails p {
-  background: white;
-  margin: 0;
-  padding: 10px 0;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  color: #7A7B82;
-  line-height: 1.5;
-}
-
-#companyContact {
-  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
-  position: relative;
-  padding: 40px;
-  box-sizing: border-box;
-}
-
-#companyContact:before,
-#companyContact:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 10px;
-  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
-  left: 25%;
-}
-
-#companyContact:before {
-  top: 15px;
-}
-
-#companyContact:after {
-  bottom: 15px;
-}
-
-#companyContact p {
-  background: white;
-  margin: 0;
-  padding: 10px 0;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  color: #7A7B82;
-  line-height: 1.5;
-}
-
-#companyBranch {
-  background: linear-gradient(90deg, #EFEFE7 50%, #BCE8EA 50%);
-  position: relative;
-  padding: 40px;
-  box-sizing: border-box;
-}
-
-#companyBranch:before,
-#companyBranch:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 10px;
-  background: linear-gradient(90deg, #BCE8EA 50%, #EFEFE7 50%);
-  left: 25%;
-}
-
-#companyBranch:before {
-  top: 15px;
-}
-
-#companyBranch:after {
-  bottom: 15px;
-}
-
-#companyBranch p {
-  background: white;
-  margin: 0;
-  padding: 10px 0;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  color: #7A7B82;
-  line-height: 1.5;
-}

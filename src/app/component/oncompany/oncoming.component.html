@@ -1,46 +1,94 @@
-<div *ngIf="company!=null&& company" class="clr-row clr-align-items-start">
-  <div class="clr-col" id="companyName">
-    <p id="titleCompany">Company Id -{{company.id}}</p>
-    <p id="nameCompany">Company Name - {{company.name}}</p>
-    <p id="registratCompany">Company Register Art -{{company.register_art}}</p>
+<div *ngIf="company!=null&& company" class="post-wrap">
+  <div class="post-item">
+    <div class="item-content">
+      <div class="item-body">
+        <h3>{{company.name}} </h3>
+        <p>Name : {{company.name}}</p>
+        <p>City : {{company.registrar}}</p>
+        <p>Street : {{company.registered_address}}</p>
+        <p>Phone : {{company.telephone}}</p>
+        <p>Phone : {{company.fax}}</p>
+        <p>Website: {{company.url}}</p>
+      </div>
+      <div class="item-footer">
+        <a class="link" href="#"><span>Home</span></a>
+      </div>
+    </div>
   </div>
-  <div class="clr-col" id="companyJurid">
-    <p [hidden]="!company.current_status">Company Current Status - {{company.current_status}}</p>
-    <p [hidden]="!company.registeredoffice">Company Land - {{company.registeredoffice}}</p>
-    <p [hidden]="!company.former_registrar">Company Former Registrar - {{company.former_registrar}}</p>
-    <p [hidden]="!company.jurisdiction_code">Company Jurisdiction -{{company.jurisdiction_code}}</p>
-    <p [hidden]="!company.native_company_number">Company Native Number -{{company.native_company_number}}</p>
-    <p [hidden]="!company.registeredoffice">Company Registered Officer -{{company.registeredoffice}}</p>
-  </div>
-  <div class="clr-col" id="companyContact">
-    <p>Company SiteToGoogle - {{company.googleUri}}</p>
-    <p>Company Number -{{company.company_number}}</p>
-    <p>Company Phone -{{company.telephone}}</p>
-    <p>Company Fax - {{company.fax}}</p>
-    <p>Company SiteToWeb -{{company.url}}</p>
 
+  <div class="post-item">
+    <div class="item-content">
+      <div class="item-body">
+        <h3>Jurisdiction INFO</h3>
+        <p>Shop name {{company.name}}</p>
+        <p>HR N {{company.company_number}}</p>
+        <p>HR Native {{company.native_company_number}}</p>
+        <p>HR Native {{company.native_company_number}}</p>
+        <p>Current status {{company.current_status}}</p>
+        <p>Jurisdiction Code {{company.jurisdiction_code}}</p>
+      </div>
+      <div class="item-footer">
+        <a class="link" href="#"><span>Search by Name</span></a>
+      </div>
+    </div>
   </div>
-  <div class="clr-col" id="companyEmails">
-    <ul>
-      <p>Company Email - {{company?.emails}}</p>
-    </ul>
-    <p>Company another email - {{company.email}}</p>
-    <p>Company email to google - {{company.googleEmail}}</p>
+
+  <div class="post-item">
+    <div class="item-content">
+      <div class="item-body">
+        <h3>BUSINESS INFO</h3>
+        <p>Company Category {{company.catalog}}</p>
+        <p>Company Capital {{company.kapital}}</p>
+        <p>Company Sector {{company.sic}}</p>
+        <p>Company Possibility Sector {{company.sector_of_activity}}</p>
+      </div>
+      <div class="item-footer">
+        <a class="link" href="byindustry"><span>Search by </span></a>
+      </div>
+    </div>
   </div>
-  <div class="clr-col" id="companyBranch">
-    <p>Company Industry Branch - {{company.keywordsIndustry}}</p>
-    <p>Company Industry Activity - {{company.activity}}</p>
-    <p>Company Industry Possibility Sector of Activity -{{company.sector_of_activity}}</p>
-    <p>Company Industry Catalog Activity -{{company.catalog}}</p>
-    <p>Company Capital -{{company.kapital}}</p>
+  <div class="post-item">
+    <div class="item-content">
+      <div class="item-body">
+        <h3>Activity</h3>
+        <p>{{company.activity}}</p>
+      </div>
+      <div class="item-footer">
+        <a class="link" href="#"><span>Search</span></a>
+      </div>
+    </div>
   </div>
-  <div *ngFor="let worke of company.officers" class="clr-col" id="companyWorker">
-    <p>Company Officer Last Name First Name - {{worke.lastname}}
-      {{worke.firstname}}</p>
-    <p> Company Officer City {{worke.city}}</p>
-    <p> Company Officer Position {{worke.position}}</p>
-    <p> Company Officer Title {{worke.title}}</p>
-    <p> Company Officer Type {{worke.type}}</p>
+
+  <div class="post-item">
+    <div class="item-content">
+      <div class="item-body">
+        <h3>Manager</h3>
+        <p> Name : {{company?.officers?.name}}{{company?.officers?.lastname}}</p>
+        <p> City : {{company?.officers?.city}}</p>
+        <p> Position : {{company?.officers?.position}}</p>
+        <p> Start Work Date : {{company?.officers?.start_date}}</p>
+        <p> Title : {{company?.officers?.title}}</p>
+        <p> Start Work Date : {{company?.officers?.start_date}}</p>
+      </div>
+      <div class="item-footer">
+        <a class="link" href="#"><span>Search</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="post-item">
+    <div class="item-content">
+      <div class="item-body">
+        <h3>Company Mor Contact</h3>
+        <p>{{company.googleUri}}</p>
+        <p>{{company.url}}</p>
+        <p>{{company.googleEmail}}</p>
+        <p>{{company.telephone}}</p>
+        <p>{{company.fax}}</p>
+      </div>
+      <div class="item-footer">
+        <a class="link" href="#"><span>Goo to Company Web Site</span></a>
+      </div>
+    </div>
   </div>
 </div>
 
