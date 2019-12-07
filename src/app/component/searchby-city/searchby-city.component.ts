@@ -27,11 +27,10 @@ export class SearchbyCityComponent implements OnInit {
   formByCity: FormGroup;
   @Output()
   submitUser: EventEmitter<Company> = new EventEmitter();
-  // tslint:disable-next-line:no-output-native
   @Output()
-  error: HttpErrorResponse;
+  errorResponse: HttpErrorResponse;
   visibili = false;
-  private cityarr: string[];
+  cityarr: string[];
 
   constructor(private fb: FormBuilder,
               private citis: CitiarrayService,
@@ -40,12 +39,12 @@ export class SearchbyCityComponent implements OnInit {
 
   searchByCity() {
     if (this.formByCity.invalid) {
-      this.alertShouw = 'You entered an incorrect value in the search field. Try again !!! ' + this.formByCity.controls.city.value;
+      this.alertShouw = 'You entered an incorrect value in the search field. Try again. !!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
     }
     if (!this.cheekCity()) {
       this.formByCity.get('city').setErrors({incorrect: true});
-      this.alertShouw = 'The value you entered is not present in the list of cities!!! ' + this.formByCity.controls.city.value;
+      this.alertShouw = 'The value you entered is not present in the list of cities.!!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
     } else {
       this.client.getListCompany('/get1000/' + this.formByCity.controls.city.value)
@@ -53,8 +52,8 @@ export class SearchbyCityComponent implements OnInit {
             this.companies = company;
           },
           error => {
-            this.error = (error as HttpErrorResponse);
-            this.alertShouw = 'Something bad happened;   please try again later.';
+            this.errorResponse = (error as HttpErrorResponse);
+            this.alertShouw = 'Something bad happened  please try again later.';
             this.formByCity.get('city').setErrors({incorrect: true});
             this.visibili = true;
           }

@@ -17,6 +17,7 @@ body {
 
 }
 
+
 .form-left-decoration,
 .form-right-decoration {
   content: "";
@@ -175,7 +176,7 @@ body {
   font-weight: bold;
   letter-spacing: 2px;
   color: white;
-  transition: .15s ease-in-out;
+  transition: .30s ease-in-out;
   margin: 10px 20px 10px 30%;
 
 }
@@ -189,14 +190,13 @@ body {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 3px;
-
-
 }
 
 .form-inner a {
   font-size: 15px;
   text-transform: uppercase;
-  margin-left: 25%;
+  display: flex;
+  justify-content: center;
   color: #F09EA3;
   font-weight: bold;
   font-family: Georgia, serif;

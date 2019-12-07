@@ -1,7 +1,7 @@
 <body>
 <br>
 <br>
-<form (ngSubmit)="searchByCity($event)" [formGroup]="formByCity" class="decor">
+<form (ngSubmit)="searchByCity()" [formGroup]="formByCity" class="decor">
   <div class="form-left-decoration"></div>
   <div class="form-right-decoration"></div>
   <div class="circle"></div>
@@ -18,7 +18,7 @@
     <button id="batonsSubmit" type="submit">Search By ID</button>
   </div>
 </form>
-<app-app-alertvalitation-input *ngIf="alertShouw" [control]="formByCity" [error]=error
+<app-app-alertvalitation-input *ngIf="alertShouw" [control]="formByCity" [error]=errorResponse
                                [position]="bycity" errorMessage="{{alertShouw}}">
 </app-app-alertvalitation-input>
 <app-listtables [companies]=companies [control]="formByCity"></app-listtables>

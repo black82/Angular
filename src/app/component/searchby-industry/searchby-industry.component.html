@@ -1,22 +1,25 @@
 <body>
-<app-app-alertvalitation-input *ngIf="visibili" [control]="formByIndustry"
-                               errorMessage="{{errorMessage}}">
-
+<br>
+<br>
+<form (ngSubmit)="searchByActivity()" [formGroup]="formByIndustry" class="decor">
+  <div class="form-left-decoration"></div>
+  <div class="form-right-decoration"></div>
+  <div class="circle"></div>
+  <div class="form-inner">
+    <a>Search Company by Industry Branch</a>
+    <hr>
+    <input [(ngModel)]="branch"
+           [ngbTypeahead]="search"
+           class="form-control"
+           formControlName="branch"
+           id="input"
+           placeholder="Search...."
+           type="text"/>
+    <button id="batonsSubmit" type="submit">Search</button>
+  </div>
+</form>
+<app-app-alertvalitation-input *ngIf="alertShouw" [control]=formByIndustry [error]=errorResponse
+                               [position]=byindustry errorMessage="{{errorMessage}}">
 </app-app-alertvalitation-input>
-  <form (ngSubmit)="searchByActivity($event)" [formGroup]="formByIndustry" class="form-inline md-form mr-auto mb-4">
-    <mat-form-field class="example-full-width">
-      <input [matAutocomplete]="auto" [readOnly]="true" autocapitalize="off"
-             formControlName="branch" id="inputIndustry" matInput placeholder="Industry Branch" spellcheck="false"
-             type="text">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-    <button class="btn btn-outline-success"
-            id="batonsSubmit" type="submit">Search by Industry Branch
-    </button>
-  </form>
 <app-listtables [companies]=companies [control]="formByIndustry"></app-listtables>
 </body>

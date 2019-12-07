@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component, OnInit, Output} from '@angular/core';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Company} from '../../DTO/CompanyDto';
 import {ClientServiceService} from '../../service/httpclient/clientService.service';
@@ -17,6 +17,8 @@ export class SearchByIdComponent implements OnInit {
   alertShouw = false;
   errorMessage: string;
   byid = 'byid';
+  @Output()
+  errorResponse: HttpErrorResponse;
 
   constructor(private http: HttpClient, private fb: FormBuilder, private client: ClientServiceService) {
   }
@@ -36,7 +38,7 @@ export class SearchByIdComponent implements OnInit {
   searcById($event) {
     if (this.formId.invalid) {
       // tslint:disable-next-line:max-line-length
-      this.errorMessage = 'You entered an incorrect value. Enter a number from 1 to 5,000,000. Depending on the company ID. The wrong value is:\n'
+      this.errorMessage = 'You entered an incorrect value. Enter a number from 1 to 5,000,000. Depending on the company ID. The wrong value. !!!'
         + this.formId.controls.idControl.value;
       this.alertShouw = true;
 
@@ -46,7 +48,8 @@ export class SearchByIdComponent implements OnInit {
             this.company = response;
           },
           error => {
-            this.errorMessage = 'Something bad happened;   please try again later.';
+            this.errorResponse = (error as HttpErrorResponse);
+            this.errorMessage = 'Something bad happened. Please try again later.';
             this.formId.get('idControl').setErrors({incorrect: true});
             this.alertShouw = true;
           }

@@ -20,7 +20,7 @@
     <button id="batonsSubmit" type="submit">Search By ID</button>
   </div>
 </form>
-<app-app-alertvalitation-input *ngIf="alertShouw" [control]="formId" [position]="byid"
+<app-app-alertvalitation-input *ngIf="alertShouw" [control]="formId" [error]=errorResponse [position]="byid"
                                errorMessage="{{errorMessage}}">
 </app-app-alertvalitation-input>
 <app-oncompany [company]=company></app-oncompany>
