@@ -1,3 +1,4 @@
+<app-header></app-header>
 <body>
 <br>
 <br>
@@ -21,5 +22,6 @@
 <app-app-alertvalitation-input *ngIf="alertShouw" [control]=formByIndustry [error]=errorResponse
                                [position]=byindustry errorMessage="{{errorMessage}}">
 </app-app-alertvalitation-input>
-<app-listtables [companies]=companies [control]="formByIndustry"></app-listtables>
+<app-listtables [company]="companies" [control]="formByIndustry"></app-listtables>
 </body>
+<app-footer></app-footer>

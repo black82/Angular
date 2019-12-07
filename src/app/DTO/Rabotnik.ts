@@ -1,5 +1,5 @@
 export interface Rabotnik {
-  id: LongRange;
+  id: number;
   name: string;
   position: string;
   start_date: string;

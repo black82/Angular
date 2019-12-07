@@ -19,7 +19,7 @@ export class SearchbyCityComponent implements OnInit {
   bycity = 'bycity';
   alertShouw: string;
   isOpen = 'closed';
-  hideme = [];
+  hidemeWaitCursor = false;
   @Input()
   company: Company;
   city: string;
@@ -38,6 +38,7 @@ export class SearchbyCityComponent implements OnInit {
   }
 
   searchByCity() {
+    this.hidemeWaitCursor = true;
     if (this.formByCity.invalid) {
       this.alertShouw = 'You entered an incorrect value in the search field. Try again. !!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
@@ -50,6 +51,7 @@ export class SearchbyCityComponent implements OnInit {
       this.client.getListCompany('/get1000/' + this.formByCity.controls.city.value)
         .subscribe(company => {
             this.companies = company;
+            this.hidemeWaitCursor = false;
           },
           error => {
             this.errorResponse = (error as HttpErrorResponse);

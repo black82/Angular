@@ -1,82 +1,32 @@
-
-<div class="container">
-  <div class="row">
-    <div class="col" id="right">
-
-    </div>
-    <div class="d-inline-flex p-2 bd-highlight">
-      <table *ngIf="companies?.length>0&& true" class="table table-hover">
-        <thead class="table table-hover">
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">Id</th>
-          <th scope="col">Name Company</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Industry</th>
-          <th scope="col">Site</th>
-          <th scope="col">Email</th>
-          <th scope="col">Company Number</th>
-        </tr>
-        </thead>
-        <tbody *ngFor="let company of companies let i = index">
-        <tr>
-          <td>
-            <button (click)="hideme[i] = !hideme[i];toggle()" [hidden]="hideme[i]"
-                    class="btn btn-outline-success" type="button">Show
-            </button>
-            <button (click)="hideme[i] = !hideme[i];toggle()" [hidden]="!hideme[i]" class="btn btn-outline-warning"
-                    type="button">Hidden
-            </button>
-          </td>
-          <td *ngIf="company.id">{{company.id}}</td>
-          <td *ngIf="company.name">{{company.name}}</td>
-          <td *ngIf="company.telephone">{{company.telephone}}</td>
-          <td *ngIf="company.keywordsIndustry">{{company.keywordsIndustry}}</td>
-          <td *ngIf="company.googleUri">{{company.googleUri }}</td>
-          <td *ngIf="company.url">{{company.url}}</td>
-          <td *ngIf="company.emails">{{company.emails}}</td>
-          <td *ngIf="company.company_number">{{company.company_number}}</td>
-        </tr>
-        <ul [@toggleBox]="isOpen ? 'open' : 'closed'" [hidden]="!hideme[i]" [id]="i">
-          <p>Company Information</p>
-          <li>Company Id - <u>{{company.id}}</u></li>
-          <li>Company Name - <u> {{company.name}}</u></li>
-          <li>Company Current Status - <u> {{company.current_status}}</u></li>
-          <li>Company Land - <u> {{company.registeredoffice}}</u></li>
-          <li>Company Jurisdiction - <u>{{company.jurisdiction_code}}</u></li>
-          <li>Company Number - <u>{{company.company_number}}</u></li>
-          <li>Company Native Number - <u>{{company.native_company_number}}</u></li>
-          <li>Company Registered Officer - <u>{{company.registeredoffice}}</u></li>
-          <li>Company Register Art - <u>{{company.register_art}}</u></li>
-          <li>Company Former Registrar - <u> {{company.former_registrar}}</u></li>
-          <li>Company Phone - <u>{{company.telephone}}</u></li>
-          <li>Company Fax - <u> {{company.fax}}</u></li>
-          <li>Company SiteToWeb - <u>{{company.url}}</u></li>
-          <li>Company SiteToGoogle - <u> {{company.googleUri}}</u></li>
-          <li>Company Industry Branch - <u> {{company.keywordsIndustry}}</u></li>
-          <li>Company Industry Activity - <u> {{company.activity}}</u></li>
-          <li>Company Industry Possibility Sector of Activity - <u>{{company.sector_of_activity}}</u></li>
-          <li>Company Industry Catalog Activity - <u>{{company.catalog}}</u></li>
-          <li>Company Capital - <u>{{company.kapital}}</u></li>
-          <li>Company Email - <u> {{company.emails}}    {{company.email}}</u></li>
-        </ul>
-        <ul *ngFor="let Rabotnik of company.officers">
-          <p>Company Officer :</p>
-          <li>Company Officer Last Name First Name - <u> {{Rabotnik.lastname}}
-            {{Rabotnik.firstname}}</u></li>
-          <li> Company Officer City -<u>{{Rabotnik.city}}</u></li>
-          <li> Company Officer Position -<u>{{Rabotnik.position}}</u></li>
-          <li> Company Officer Title -<u>{{Rabotnik.title}}</u></li>
-          <li> Company Officer Type -<u>{{Rabotnik.type}}</u></li>
-        </ul>
-        </tbody>
-
-      </table>
-    </div>
-    <div class="col" id="left">
-
+<div *ngFor=" let comp of company ; let i = index" class="post-wrap">
+  <div class="post-item">
+    <div class="item-content">
+      <div class="item-body">
+        <p *ngIf="comp?.name">Name : {{comp.name}}</p>
+        <p *ngIf="comp?.registrar">City : {{comp.registrar}}</p>
+        <p *ngIf="comp?.registered_address">Street : {{comp.registered_address}}</p>
+      </div>
+      <div class="item-footer">
+        <a (click)="openModalWithClass(i)" class="link"><span>Show</span></a>
+      </div>
     </div>
   </div>
 </div>
-<br>
-<br>
+<div *ngIf="companyShouw" class="overlay"
+     id="popup1">
+  <div class="popup">
+    <div>
+      <h2>Company All Information {{companyShouw.name}}</h2>
+      <div class="content">
+        <app-oncompany [company]="companyShouw"></app-oncompany>
+      </div>
+      <button (click)=hide() class="close">x</button>
+    </div>
+  </div>
+</div>
+<!--<nav aria-label="Page navigation example">-->
+<!--  <ul class="pagination">-->
+<!--    <li class="page-item"><a class="page-link" (click)="previos()">Previous</a></li>-->
+<!--    <li class="page-item"><a class="page-link" (click)="next()">Next</a></li>-->
+<!--  </ul>-->
+<!--</nav>-->

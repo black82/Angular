@@ -1,46 +1,68 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, Input, OnInit, TemplateRef} from '@angular/core';
 import {Company} from '../../DTO/CompanyDto';
 import {FormGroup} from '@angular/forms';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+
+let contentChild: any;
+// @ts-ignore
+contentChild = ContentChild(TemplateRef);
 
 @Component({
   selector: 'app-listtables',
   templateUrl: './lis-tables.component.html',
-  styleUrls: ['./lis-tables.component.css'],
-  animations: [
-    trigger('toggleBox', [
-      // ...
-      state('open', style({transform: 'translateX(0)'})),
-      state('closed', style({transform: 'translateX(0)', height: '100%'})),
-      transition('open => closed', [
-        style({transform: 'translateX(-100%)', display: 'flex', height: '100%'}),
-        animate('0.5s 300ms ease-in')
-      ]),
-
-      transition('closed => open', [
-        animate('0.3s ease-out', style({transform: 'translateX(0)'}))
-      ]),
-    ])
-  ]
-
+  styleUrls: ['./lis-tables.component.css']
 })
 export class LisTablesComponent implements OnInit {
+  @contentChild
+  content: TemplateRef<any>;
   @Input()
   control: FormGroup;
   @Input()
-  companies: Company[];
-  isOpen = 'closed';
-  hideme = [];
+  company: Company[];
+  companyShouw: Company;
+  conpanyPage: Company[];
+  hideme = false;
+  curentpage = 1;
+  curentIndex = 1;
 
   constructor() {
   }
 
   ngOnInit() {
+
   }
 
-  toggle() {
-    // @ts-ignore
-    this.isOpen = !this.isOpen;
+  openModalWithClass(i: number) {
+    this.companyShouw = null;
+    this.companyShouw = this.company[i];
+
   }
 
+  hide() {
+    this.companyShouw = null;
+  }
+
+
+  next() {
+    if (this.curentIndex + 10 > this.company.length) {
+      this.curentIndex = this.curentpage * 10;
+      this.copyarr(this.curentIndex, (this.curentIndex + 10));
+      this.curentpage++;
+    }
+  }
+
+  previos() {
+    if (this.curentIndex - 10 < this.company.length) {
+      this.curentIndex = this.curentpage * 10;
+      this.copyarr(this.curentIndex, (this.curentIndex - 10));
+      this.curentpage++;
+    }
+  }
+
+  copyarr(start: number, end: number) {
+    let count = 0;
+    for (let i = start; i < end; i++) {
+      this.conpanyPage[count] = this.company[i];
+      count++;
+    }
+  }
 }

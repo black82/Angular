@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {OpitonComponent} from './opiton.component';
+import {AnimationCursorComponent} from './animation-cursor.component';
 
 describe('OpitonComponent', () => {
-  let component: OpitonComponent;
-  let fixture: ComponentFixture<OpitonComponent>;
+  let component: AnimationCursorComponent;
+  let fixture: ComponentFixture<AnimationCursorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [OpitonComponent]
+      declarations: [AnimationCursorComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OpitonComponent);
+    fixture = TestBed.createComponent(AnimationCursorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

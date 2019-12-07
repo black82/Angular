@@ -19,7 +19,7 @@ import {MatAutocompleteModule, MatFormFieldModule, MatInputModule} from '@angula
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PanelComponent} from './component/app-panel/panel.component';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
-import {CarouselModule, CollapseModule} from 'ngx-bootstrap';
+import {CarouselModule, CollapseModule, ModalModule} from 'ngx-bootstrap';
 import {NgbCarouselModule, NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 import {LoginComponent} from './component/login/login.component';
 import {RegisterComponent} from './component/register/register.component';
@@ -28,7 +28,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {LisTablesComponent} from './component/listtables/lis-tables.component';
 import {OncomingComponent} from './component/oncompany/oncoming.component';
-import {OpitonComponent} from './component/opiton/opiton.component';
+import {AnimationCursorComponent} from './component/animation-cursor/animation-cursor.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -48,8 +50,10 @@ import {OpitonComponent} from './component/opiton/opiton.component';
     RegisterComponent,
     LisTablesComponent,
     OncomingComponent,
-    OpitonComponent
+    AnimationCursorComponent,
+    LisTablesComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -68,7 +72,9 @@ import {OpitonComponent} from './component/opiton/opiton.component';
     MatCardModule,
     MatProgressSpinnerModule,
     NgbTypeaheadModule,
-
+    MatDialogModule,
+    MatButtonModule,
+    ModalModule.forRoot(),
   ],
   providers: [ClientServiceService,
     {
