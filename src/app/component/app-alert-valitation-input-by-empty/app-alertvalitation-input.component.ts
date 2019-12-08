@@ -7,6 +7,7 @@ import {HttpErrorResponse} from '@angular/common/http';
   templateUrl: './app-alertvalitation-input.component.html',
   styleUrls: ['./app-alertvalitation-input.component.css']
 })
+
 export class AppAlertvalitationInputComponent implements OnInit {
   @Input()
   control: FormGroup;

@@ -5,8 +5,9 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './animation-cursor.component.html',
   styleUrls: ['./animation-cursor.component.css']
 })
+
 export class AnimationCursorComponent implements OnInit {
-  ngOnInit(): void {
+  ngOnInit() {
   }
 }
 

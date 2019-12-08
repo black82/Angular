@@ -7,6 +7,15 @@ body {
   min-height: 80vh;
 }
 
+.decor:hover {
+  position: relative;
+  max-width: 550px;
+  margin: 30px auto 0;
+  background: #413D4C;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px white;
+
+}
 .decor {
   position: relative;
   max-width: 550px;

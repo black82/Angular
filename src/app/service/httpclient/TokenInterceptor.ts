@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Injector} from '@angular/core';
 import {
   HttpErrorResponse,
   HttpEvent,
@@ -9,12 +9,13 @@ import {
 } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private router: Router) {
+  constructor(private router: Router, private route: ActivatedRoute, private injector: Injector) {
   }
+
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -45,7 +46,10 @@ export class TokenInterceptor implements HttpInterceptor {
         return event;
       }),
       catchError((error: HttpErrorResponse) => {
-        console.log(error);
+        if (error.error.toString().includes('Expired or invalid JWT token')) {
+          localStorage.removeItem('token');
+          this.router.navigate(['login']);
+        }
         if (error.status === 401) {
           this.router.navigate(['login']);
         }

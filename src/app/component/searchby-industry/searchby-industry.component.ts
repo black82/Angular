@@ -25,6 +25,7 @@ export class SearchbyIndustryComponent implements OnInit {
   @Output()
   errorResponse: HttpErrorResponse;
   branch: any;
+  hidemeWaitCursor = false;
 
   constructor(private fb: FormBuilder,
               private industryContainer: IndustryArayService,
@@ -49,6 +50,7 @@ export class SearchbyIndustryComponent implements OnInit {
   }
 
   searchByActivity() {
+    this.hidemeWaitCursor = true;
     if (this.formByIndustry.invalid) {
       // tslint:disable-next-line:max-line-length
       this.errorMessage = 'You have introduced a branch of the industry that is not accepted by our service. Please try again.!!!'
@@ -63,9 +65,11 @@ export class SearchbyIndustryComponent implements OnInit {
     } else {
       this.apiClient.getListCompany('/industry/' + this.formByIndustry.controls.branch.value).subscribe(
         company => {
+          this.hidemeWaitCursor = false;
           this.companies = company;
         },
         error => {
+          this.hidemeWaitCursor = false;
           this.errorResponse = (error as HttpErrorResponse);
           this.errorMessage = 'Something bad happened. Please try again later.';
           this.alertShouw = true;

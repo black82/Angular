@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 <body>
 <br>
 <br>
@@ -16,12 +16,13 @@
            id="input"
            placeholder="Search...."
            type="text"/>
-    <button id="batonsSubmit" type="submit">Search</button>
+    <button id="batonsSubmit" type="submit">Search Branch</button>
   </div>
 </form>
 <app-app-alertvalitation-input *ngIf="alertShouw" [control]=formByIndustry [error]=errorResponse
                                [position]=byindustry errorMessage="{{errorMessage}}">
 </app-app-alertvalitation-input>
 <app-listtables [company]="companies" [control]="formByIndustry"></app-listtables>
+<app-animation *ngIf="hidemeWaitCursor"></app-animation>
 </body>
-<app-footer></app-footer>
+

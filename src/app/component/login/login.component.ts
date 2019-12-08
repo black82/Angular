@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validat
 import {Router} from '@angular/router';
 import {ClientServiceService} from '../../service/httpclient/clientService.service';
 import {ErrorStateMatcher} from '@angular/material/core';
+import {HttpErrorResponse} from "@angular/common/http";
 
 
 @Component({
@@ -14,9 +15,12 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   email = '';
   password = '';
-  matcher = new MyErrorStateMatcher();
   isLoadingResults = false;
   hidemeWaitCursor = false;
+  alertShouw = false;
+  errorResponse: HttpErrorResponse;
+  byid = 'login';
+  errorMessage: string;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: ClientServiceService) {
   }
@@ -38,16 +42,25 @@ export class LoginComponent implements OnInit {
   }
 
   onFormSubmit(form: NgForm) {
+    if (this.loginForm.invalid) {
+      this.errorMessage = 'You insert is illegal. !!!' + this.loginForm.controls.email.value;
+      this.alertShouw = true;
+      return;
+    }
     this.hidemeWaitCursor = true;
     this.authService.login(form)
       .subscribe(res => {
-        console.log('++++++++login+++++++++++');
         if (res.token) {
           this.hidemeWaitCursor = false;
           localStorage.setItem('token', res.token);
-          this.router.navigate(['']).then(r => r);
+          this.router.navigate(['']);
         }
+        this.hidemeWaitCursor = false;
       }, (err) => {
+        this.hidemeWaitCursor = false;
+        this.errorMessage = 'You credential is invalid s';
+        this.alertShouw = true;
+        this.errorResponse = err;
         console.log(err);
       });
   }

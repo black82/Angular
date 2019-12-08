@@ -42,11 +42,13 @@ export class SearchbyCityComponent implements OnInit {
     if (this.formByCity.invalid) {
       this.alertShouw = 'You entered an incorrect value in the search field. Try again. !!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
+      this.hidemeWaitCursor = false;
     }
     if (!this.cheekCity()) {
       this.formByCity.get('city').setErrors({incorrect: true});
       this.alertShouw = 'The value you entered is not present in the list of cities.!!! ' + this.formByCity.controls.city.value;
       this.visibili = true;
+      this.hidemeWaitCursor = false;
     } else {
       this.client.getListCompany('/get1000/' + this.formByCity.controls.city.value)
         .subscribe(company => {
@@ -54,6 +56,7 @@ export class SearchbyCityComponent implements OnInit {
             this.hidemeWaitCursor = false;
           },
           error => {
+            this.hidemeWaitCursor = false;
             this.errorResponse = (error as HttpErrorResponse);
             this.alertShouw = 'Something bad happened  please try again later.';
             this.formByCity.get('city').setErrors({incorrect: true});

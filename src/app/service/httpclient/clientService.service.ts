@@ -4,6 +4,7 @@ import {Company} from '../../DTO/CompanyDto';
 import {catchError, retry, tap} from 'rxjs/operators';
 import {Observable, of, throwError} from 'rxjs';
 import {Router} from '@angular/router';
+import {Error} from 'tslint/lib/error';
 
 
 @Injectable({
@@ -46,7 +47,8 @@ export class ClientServiceService {
     return this.http.post<any>(this.apiUrl + '/api/auth/' + 'login', data)
       .pipe(
         tap(_ => this.isLoggedIn = true),
-        catchError(this.handleError('login', []))
+        catchError(
+          this.handleError('login', []))
       );
   }
 
@@ -61,17 +63,15 @@ export class ClientServiceService {
   register(data: any): Observable<any> {
     return this.http.post<any>(this.apiUrl + '/api/auth/' + 'register', data)
       .pipe(
-        tap(_ => this.log('login')),
-        catchError(this.handleError('login', []))
+        tap(_ => this.log('register')),
+        catchError(this.handleError('register', []))
       );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
       console.error(error); // log to console instead
       this.log(`${operation} failed: ${error.message}`);
-
       return of(result as T);
     };
   }
@@ -81,13 +81,16 @@ export class ClientServiceService {
   }
 
   errorHandler(error: HttpErrorResponse) {
+    if (!navigator.onLine) {
+      return throwError(new Error(error.error));
+    }
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong,
-      console.error(
+      console.error(error.name +
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
     }
