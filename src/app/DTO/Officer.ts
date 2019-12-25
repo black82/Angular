@@ -1,4 +1,4 @@
-export interface Rabotnik {
+export interface Officer {
   id: number;
   name: string;
   position: string;

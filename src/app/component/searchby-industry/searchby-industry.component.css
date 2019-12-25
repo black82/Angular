@@ -99,7 +99,7 @@ body {
   box-sizing: border-box;
   border: 2px solid #F09EA3;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 20px;
   background-color: #F5E2CD;
   background-position: 10px 10px;
   background-repeat: no-repeat;
@@ -227,6 +227,22 @@ hr {
   box-shadow: 2px 2px 10px #F09EA3;
 }
 
+label {
+  background-color: #F5E2CD;
+  margin-right: 5px;
+
+  vertical-align: center;
+  border: 2px solid #F09EA3;
+  align-self: center;
+  border-radius: 20%;
+}
+
+.form__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+}
 
 
 

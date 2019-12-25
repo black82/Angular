@@ -92,12 +92,6 @@ export class SearchbyCityComponent implements OnInit {
       debounceTime(200),
       distinctUntilChanged(),
       map(term => term.length < 2 ? []
-        : this.cityarr.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)));
-
-  toggle() {
-    // @ts-ignore
-    this.isOpen = !this.isOpen;
-  }
-
+        : this.cityarr.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)))
 
 }

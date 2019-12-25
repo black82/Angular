@@ -4,11 +4,11 @@
       <div class="item-body">
         <h3>{{company.name}} </h3>
         <p>Name : {{company.name}}</p>
-        <p>City : {{company.registrar}}</p>
-        <p>Street : {{company.registered_address}}</p>
-        <p>Phone : {{company.telephone}}</p>
-        <p>Phone : {{company.fax}}</p>
-        <p>Website: {{company.url}}</p>
+        <p>City : {{company.addressCompany.registrar}}</p>
+        <p>Street : {{company.addressCompany.registered_address}}</p>
+        <p>Phone : {{company.contactCompany.telephone}}</p>
+        <p>Phone : {{company.contactCompany.fax}}</p>
+        <p>Website: {{company.contactCompany.url}}</p>
       </div>
       <div class="item-footer">
         <a class="link" href="#"><span>Home</span></a>
@@ -36,9 +36,9 @@
       <div class="item-body">
         <h3>BUSINESS INFO</h3>
         <p>Company Category {{company.catalog}}</p>
-        <p>Company Capital {{company.kapital}}</p>
+        <p>Company Capital {{company.capital}}</p>
         <p>Company Sector {{company.sic}}</p>
-        <p>Company Possibility Sector {{company.sector_of_activity}}</p>
+        <p>Company Possibility Sector {{company?.keywordsIndustry}}</p>
       </div>
       <div class="item-footer">
         <a class="link" href="byindustry"><span>Search by </span></a>
@@ -60,12 +60,12 @@
     <div class="item-content">
       <div class="item-body">
         <h3>Manager</h3>
-        <p> Name : {{company?.officers?.name}}{{company?.officers?.lastname}}</p>
-        <p> City : {{company?.officers?.city}}</p>
-        <p> Position : {{company?.officers?.position}}</p>
-        <p> Start Work Date : {{company?.officers?.start_date}}</p>
-        <p> Title : {{company?.officers?.title}}</p>
-        <p> Start Work Date : {{company?.officers?.start_date}}</p>
+        <p> Name : {{company?.officers[0].name}}{{company?.officers[0].lastname}}</p>
+        <p> City : {{company?.officers[0].city}}</p>
+        <p> Position : {{company?.officers[0].position}}</p>
+        <p> Start Work Date : {{company?.officers[0].start_date}}</p>
+        <p> Title : {{company?.officers[0].title}}</p>
+        <p> Start Work Date : {{company?.officers[0].start_date}}</p>
       </div>
       <div class="item-footer">
         <a class="link" href="#"><span>Search</span></a>
@@ -76,11 +76,11 @@
     <div class="item-content">
       <div class="item-body">
         <h3>Company Mor Contact</h3>
-        <p>{{company.googleUri}}</p>
-        <p>{{company.url}}</p>
-        <p>{{company.googleEmail}}</p>
-        <p>{{company.telephone}}</p>
-        <p>{{company.fax}}</p>
+        <p>{{company.contactCompany.googleUri}}</p>
+        <p>{{company.contactCompany.url}}</p>
+        <p>{{company.contactCompany.email}}</p>
+        <p>{{company.contactCompany.telephone}}</p>
+        <p>{{company.contactCompany.fax}}</p>
       </div>
       <div class="item-footer">
         <a class="link" href="#"><span>Goo to Company Web Site</span></a>

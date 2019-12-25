@@ -1,0 +1,42 @@
+<body>
+<br>
+<br>
+<form (ngSubmit)="searchByActivityAndCity()" [formGroup]="formByCityAndBranch" class="decor">
+  <div class="form-left-decoration"></div>
+  <div class="form-right-decoration"></div>
+  <div class="circle"></div>
+  <div class="form-inner">
+    <a>Search Company by Industry Branch and City</a>
+    <hr>
+    <div class="form__field">
+      <label for="inputCity"><img class="iconSearch" height="40" src="assets/image/searchicon.png " width="40"> </label>
+      <input [(ngModel)]="city"
+             [ngbTypeahead]="searccity"
+             class="form-control"
+             formControlName="city"
+             id="inputCity"
+             placeholder="City...."
+             type="text"/>
+    </div>
+    <div class="form__field">
+      <label for="inputBranch"><img class="iconSearch" height="40" src="assets/image/searchicon.png " width="40">
+      </label>
+      <input [(ngModel)]="branch"
+             [ngbTypeahead]="searchbranch"
+             class="form-control"
+             formControlName="branch"
+             id="inputBranch"
+             placeholder="Branch...."
+             type="text"/>
+    </div>
+    <button id="batonsSubmit" type="submit">Search</button>
+
+  </div>
+</form>
+<app-app-alertvalitation-input *ngIf="alertShouw" [control]=formByCityAndBranch [error]=errorResponse
+                               [position]=byindustry errorMessage="{{errorMessage}}">
+</app-app-alertvalitation-input>
+<app-listtables [company]="companies" [control]="formByCityAndBranch"></app-listtables>
+<app-animation *ngIf="hidemeWaitCursor"></app-animation>
+</body>
+

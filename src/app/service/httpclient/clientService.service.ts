@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Company} from '../../DTO/CompanyDto';
 import {catchError, retry, tap} from 'rxjs/operators';
 import {Observable, of, throwError} from 'rxjs';
@@ -16,6 +16,7 @@ export class ClientServiceService {
 
   apiUrl = 'http://localhost:8081';
   router: Router;
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -41,6 +42,13 @@ export class ClientServiceService {
         catchError(this.errorHandler)
       );
 
+  }
+
+  getListCompanyParam(param: HttpParams): Observable<Company[]> {
+    console.log('service');
+    return this.http.get<Company[]>(this.apiUrl + '/search/', {params: param})
+      .pipe(retry(2),
+        catchError(this.errorHandler));
   }
 
   login(data: any): Observable<any> {

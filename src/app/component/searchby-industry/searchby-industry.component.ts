@@ -58,6 +58,7 @@ export class SearchbyIndustryComponent implements OnInit {
       this.alertShouw = true;
     }
     if (!this.checkBranchIsPrezent()) {
+      this.hidemeWaitCursor = false;
       // tslint:disable-next-line:max-line-length
       this.errorMessage = `You have introduced a branch of industry that is not present in the database. Please try again.!!! ${this.formByIndustry.controls.branch.value}`;
       this.alertShouw = true;
@@ -91,10 +92,5 @@ export class SearchbyIndustryComponent implements OnInit {
     return this.industryContainer.industry.includes(this.formByIndustry.get('branch').value);
   }
 
-
-  toggle() {
-    // @ts-ignore
-    this.isOpen = !this.isOpen;
-  }
 }
 

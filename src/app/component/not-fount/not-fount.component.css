@@ -1,10 +1,5 @@
 div {
-  position: absolute;
   left: 30%;
-
-}
-
-body {
   position: center;
   display: grid;
   flex-direction: initial;

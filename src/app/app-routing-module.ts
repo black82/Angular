@@ -7,6 +7,7 @@ import {SearchbyIndustryComponent} from './component/searchby-industry/searchby-
 import {NotFountComponent} from './component/not-fount/not-fount.component';
 import {LoginComponent} from './component/login/login.component';
 import {RegisterComponent} from './component/register/register.component';
+import {BycityandbranchComponent} from "./component/bycityandbranch/bycityandbranch.component";
 
 const routers: Routes = [{
   path: '',
@@ -39,6 +40,10 @@ const routers: Routes = [{
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'cityandbranch',
+    component: BycityandbranchComponent
   }
 ];
 

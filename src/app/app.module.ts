@@ -31,6 +31,8 @@ import {OncomingComponent} from './component/oncompany/oncoming.component';
 import {AnimationCursorComponent} from './component/animation-cursor/animation-cursor.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import {BycityandbranchComponent} from './component/bycityandbranch/bycityandbranch.component';
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import {MatButtonModule} from '@angular/material/button';
     LisTablesComponent,
     OncomingComponent,
     AnimationCursorComponent,
-    LisTablesComponent
+    LisTablesComponent,
+    BycityandbranchComponent
   ],
 
   imports: [
@@ -74,7 +77,9 @@ import {MatButtonModule} from '@angular/material/button';
     NgbTypeaheadModule,
     MatDialogModule,
     MatButtonModule,
+    MatIconModule,
     ModalModule.forRoot(),
+    MatIconModule,
   ],
   providers: [ClientServiceService,
     {

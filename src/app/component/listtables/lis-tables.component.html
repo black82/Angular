@@ -3,8 +3,8 @@
     <div class="item-content">
       <div class="item-body">
         <p *ngIf="comp?.name">Name : {{comp.name}}</p>
-        <p *ngIf="comp?.registrar">City : {{comp.registrar}}</p>
-        <p *ngIf="comp?.registered_address">Street : {{comp.registered_address}}</p>
+        <p *ngIf="comp?.addressCompany.registrar">City : {{comp.addressCompany.registrar}}</p>
+        <p *ngIf="comp?.addressCompany.registered_address">Street : {{comp.addressCompany.registered_address}}</p>
       </div>
       <div class="item-footer">
         <a (click)="openModalWithClass(i)" class="link"><span>Show</span></a>

@@ -9,13 +9,16 @@
   <div class="form-inner">
     <a>Search Company by Industry Branch</a>
     <hr>
-    <input [(ngModel)]="branch"
+    <div class="form__field">
+      <label for="input"><img class="iconSearch" height="40" src="assets/image/searchicon.png " width="40"> </label>
+      <input [(ngModel)]="branch"
            [ngbTypeahead]="search"
            class="form-control"
            formControlName="branch"
            id="input"
            placeholder="Search...."
            type="text"/>
+    </div>
     <button id="batonsSubmit" type="submit">Search Branch</button>
   </div>
 </form>

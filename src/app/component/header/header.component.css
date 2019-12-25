@@ -198,3 +198,17 @@ body {
 .ia-container input:hover + figcaption {
 
 }
+
+.topmenu img {
+  float: left;
+  margin-top: -7px;
+  filter: opacity(50%) drop-shadow(0 0 0 #F09EA3);
+  margin-right: 5px;
+}
+
+.topmenu img:hover {
+  float: left;
+  margin-top: -7px;
+  filter: opacity(100%) drop-shadow(0 0 0 #c0a97a);
+  margin-right: 5px;
+}
