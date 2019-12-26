@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ClientServiceService} from '../../service/httpclient/clientService.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,11 @@ export class HeaderComponent implements OnInit {
   message: string;
   url: string;
   isColapset: boolean;
+  // tslint:disable-next-line:variable-name
+  _client: ClientServiceService;
 
-  constructor() {
+  constructor(client: ClientServiceService) {
+    this._client = client;
     this.url = 'dother compani home url';
     this.isColapset = true;
     this.message = 'Company DataBasse';
@@ -21,6 +25,10 @@ export class HeaderComponent implements OnInit {
 
   teox(event) {
     this.isColapset = !this.isColapset;
+  }
+
+  logout() {
+    this._client.logout();
   }
 
 }

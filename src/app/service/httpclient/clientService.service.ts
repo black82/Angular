@@ -60,16 +60,12 @@ export class ClientServiceService {
       );
   }
 
-  logout(): Observable<any> {
-    return this.http.get<any>(this.apiUrl + 'signout')
-      .pipe(
-        tap(_ => this.isLoggedIn = false),
-        catchError(this.handleError('logout', []))
-      );
+  logout(): void {
+    return localStorage.removeItem('token');
   }
 
   register(data: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl + '/api/auth/' + 'register', data)
+    return this.http.post<any>(this.apiUrl + '/api/auth/' + 'register', data, this.httpOptions)
       .pipe(
         tap(_ => this.log('register')),
         catchError(this.handleError('register', []))
