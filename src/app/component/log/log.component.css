@@ -1,0 +1,32 @@
+
+body, table {
+  font-family: arial, sans-serif;
+  font-size: x-small;
+  background: #F5E2CD;
+  min-height: 80vh;
+
+
+}
+
+th {
+  background: #336699;
+  color: #FFFFFF;
+  text-align: left;
+  max-height: 100%;
+}
+
+
+button {
+  background-color: #ea4c88;
+  outline: none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px #F09EA3 inset, 0 0 0 0 #F5E2CD;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  transition: 1s ease-in-out;
+  margin: 10px 20px 10px 30%;
+}

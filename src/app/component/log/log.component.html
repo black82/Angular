@@ -1,0 +1,6 @@
+<body>
+
+<button (click)="serviceGetLogHtml()" [hidden]="!hidden">Show Log</button>
+<button (click)="swouwHidden()" [hidden]="hidden">Hidden Log</button>
+<div *ngIf="logHtml&& !hidden" [innerHtml]="logHtml" class="ContainerLog"></div>
+</body>

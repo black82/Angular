@@ -8,6 +8,7 @@ import {NotFountComponent} from './component/not-fount/not-fount.component';
 import {LoginComponent} from './component/login/login.component';
 import {RegisterComponent} from './component/register/register.component';
 import {BycityandbranchComponent} from "./component/bycityandbranch/bycityandbranch.component";
+import {LogComponent} from "./component/log/log.component";
 
 const routers: Routes = [{
   path: '',
@@ -44,6 +45,10 @@ const routers: Routes = [{
   {
     path: 'cityandbranch',
     component: BycityandbranchComponent
+  },
+  {
+    path: 'logview',
+    component: LogComponent
   }
 ];
 

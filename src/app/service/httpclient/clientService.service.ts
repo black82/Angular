@@ -22,6 +22,11 @@ export class ClientServiceService {
       'Content-Type': 'application/json'
     })
   };
+  httpOptionsHtml = {
+    headers: new HttpHeaders({
+      Accept: 'text/html'
+    })
+  };
 
   constructor(private http: HttpClient) {
 
@@ -64,12 +69,18 @@ export class ClientServiceService {
     return localStorage.removeItem('token');
   }
 
-  register(data: any): Observable<any> {
+  register(data: any): Observable<string> {
     return this.http.post<any>(this.apiUrl + '/api/auth/' + 'register', data, this.httpOptions)
       .pipe(
         tap(_ => this.log('register')),
         catchError(this.handleError('register', []))
       );
+  }
+
+  logGetHtml(): Observable<string> {
+    return this.http.get(this.apiUrl + '/api/logs', {
+      responseType: 'text'
+    });
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
