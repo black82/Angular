@@ -20,7 +20,6 @@ export class LogComponent implements OnInit {
   serviceGetLogHtml() {
     this.hidden = false;
     this.client.logGetHtml().subscribe(html => {
-      console.log(html);
       this.logHtml = this.sanitizer.bypassSecurityTrustHtml(html);
     }, error => {
       console.log(error);

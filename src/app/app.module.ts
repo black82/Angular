@@ -34,6 +34,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {BycityandbranchComponent} from './component/bycityandbranch/bycityandbranch.component';
 import {MatIconModule} from "@angular/material/icon";
 import {LogComponent} from './component/log/log.component';
+import {ColecttowebComponent} from './component/colecttoweb/colecttoweb.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import {LogComponent} from './component/log/log.component';
     AnimationCursorComponent,
     LisTablesComponent,
     BycityandbranchComponent,
-    LogComponent
+      LogComponent,
+      ColecttowebComponent
   ],
 
   imports: [

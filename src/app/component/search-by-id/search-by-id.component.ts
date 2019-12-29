@@ -1,5 +1,5 @@
 import {Component, OnInit, Output} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpErrorResponse} from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Company} from '../../DTO/CompanyDto';
 import {ClientServiceService} from '../../service/httpclient/clientService.service';
@@ -20,7 +20,7 @@ export class SearchByIdComponent implements OnInit {
   @Output()
   errorResponse: HttpErrorResponse;
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private client: ClientServiceService) {
+  constructor(private fb: FormBuilder, private client: ClientServiceService) {
   }
 
   createForm() {

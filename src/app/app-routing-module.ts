@@ -9,6 +9,7 @@ import {LoginComponent} from './component/login/login.component';
 import {RegisterComponent} from './component/register/register.component';
 import {BycityandbranchComponent} from "./component/bycityandbranch/bycityandbranch.component";
 import {LogComponent} from "./component/log/log.component";
+import {ColecttowebComponent} from "./component/colecttoweb/colecttoweb.component";
 
 const routers: Routes = [{
   path: '',
@@ -49,6 +50,10 @@ const routers: Routes = [{
   {
     path: 'logview',
     component: LogComponent
+  },
+  {
+    path: 'collectedweb',
+    component: ColecttowebComponent
   }
 ];
 

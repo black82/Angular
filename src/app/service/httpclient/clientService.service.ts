@@ -34,35 +34,35 @@ export class ClientServiceService {
 
   GetCompanyOane(id): Observable<Company> {
     return this.http.get<Company>(this.apiUrl + '/get/' + id, this.httpOptions)
-      .pipe(
-        retry(3),
-        catchError(this.errorHandler)
-      );
+        .pipe(
+            retry(3),
+            catchError(this.errorHandler)
+        );
   }
 
   getListCompany(param): Observable<Company[]> {
     return this.http.get<Company[]>(this.apiUrl + param, this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.errorHandler)
-      );
+        .pipe(
+            retry(2),
+            catchError(this.errorHandler)
+        );
 
   }
 
   getListCompanyParam(param: HttpParams): Observable<Company[]> {
     console.log('service');
     return this.http.get<Company[]>(this.apiUrl + '/search/', {params: param})
-      .pipe(retry(2),
-        catchError(this.errorHandler));
+        .pipe(retry(2),
+            catchError(this.errorHandler));
   }
 
   login(data: any): Observable<any> {
     return this.http.post<any>(this.apiUrl + '/api/auth/' + 'login', data)
-      .pipe(
-        tap(_ => this.isLoggedIn = true),
-        catchError(
-          this.handleError('login', []))
-      );
+        .pipe(
+            tap(_ => this.isLoggedIn = true),
+            catchError(
+                this.handleError('login', []))
+        );
   }
 
   logout(): void {
@@ -71,10 +71,10 @@ export class ClientServiceService {
 
   register(data: any): Observable<string> {
     return this.http.post<any>(this.apiUrl + '/api/auth/' + 'register', data, this.httpOptions)
-      .pipe(
-        tap(_ => this.log('register')),
-        catchError(this.handleError('register', []))
-      );
+        .pipe(
+            tap(_ => this.log('register')),
+            catchError(this.handleError('register', []))
+        );
   }
 
   logGetHtml(): Observable<string> {
@@ -83,16 +83,16 @@ export class ClientServiceService {
     });
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error); // log to console instead
-      this.log(`${operation} failed: ${error.message}`);
-      return of(result as T);
-    };
+  colecttoweb(id: number): Observable<boolean> {
+    return this.http.get<boolean>(this.apiUrl + '/api/collweb/' + id, this.httpOptions)
+        .pipe(retry(2),
+            catchError(this.errorHandler));
   }
 
-  private log(message: string) {
-    console.log(message);
+  stopCollect(): Observable<boolean> {
+    return this.http.get<boolean>(this.apiUrl + '/api/stopcollectweb', this.httpOptions)
+        .pipe(retry(1),
+            catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {
@@ -106,11 +106,23 @@ export class ClientServiceService {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong,
       console.error(error.name +
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+          `Backend returned code ${error.status}, ` +
+          `body was: ${error.error}`);
     }
 
     return throwError(error);
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error); // log to console instead
+      this.log(`${operation} failed: ${error.message}`);
+      return of(result as T);
+    };
+  }
+
+  private log(message: string) {
+    console.log(message);
   }
 }
 

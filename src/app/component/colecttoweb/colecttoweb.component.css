@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #5b5a61;
+    min-height: 80vh;
+}
+
+.post-wrap {
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.post-item {
+    padding: 10px;
+}
+
+.post-item-wrap {
+    background: #F7F7F2;
+    position: relative;
+    margin-top: 10%;
+    border-radius: 10%;
+    margin-right: 50px;
+    size: 500px;
+}
+
+.post-item-wrap:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #F09EA3;
+    transform: rotate(1deg);
+    transform-origin: left bottom;
+    transition: .3s ease-in-out;
+}
+
+.post-item-wrap:hover:after {
+    top: 5px;
+    left: 5px;
+    transform: rotate(2deg);
+}
+
+.post-link {
+    text-decoration: none;
+    display: block;
+    padding: 30px;
+}
+
+.post-title {
+    color: #F09EA3;
+    margin-bottom: 15px;
+    transition: .3s ease-in-out;
+}
+
+.post-item-wrap:hover .post-title {
+    color: #c0a97a;
+}
+
+.post-content {
+    color: #c0a97a;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .post-item {
+        flex-basis: 50%;
+        flex-shrink: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .post-item {
+        flex-basis: 33.333333333%;
+    }
+}
+
+.form-control {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #F09EA3;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: #F5E2CD;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 10px 15px 10px 20px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    box-shadow: 2px 2px 10px #F09EA3;
+
+}
+
+.form-control:focus {
+    width: 100%;
+    background-color: #F5E2CD;
+}
+
+#idInput::placeholder {
+    color: #413D4C;
+}
+
+.batonsSubmit {
+    background-color: #ea4c88;
+    outline: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #F09EA3 inset, 0 0 0 0 #F5E2CD;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    transition: 1s ease-in-out;
+    margin: 10px 20px 10px 30%;
+}
+
+
+label {
+    background-color: #F5E2CD;
+    margin-right: 5px;
+
+    vertical-align: center;
+    border: 2px solid #F09EA3;
+    align-self: center;
+    border-radius: 20%;
+}
+
+.form__field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 20px;
+}
